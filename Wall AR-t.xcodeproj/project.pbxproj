@@ -1,0 +1,1270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52067C2C2C19C34D00E80F0A /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
+		52067C2D2C19C34D00E80F0A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
+		527EE8E62C185B0D00314E94 /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8E52C185B0D00314E94 /* Domain.docc */; };
+		527EE8EC2C185B0D00314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
+		527EE8F32C185B0D00314E94 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8F22C185B0D00314E94 /* DomainTests.swift */; };
+		527EE8F42C185B0D00314E94 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 527EE8E42C185B0D00314E94 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527EE8F72C185B0D00314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
+		527EE8F82C185B0D00314E94 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		527EE9022C185B3800314E94 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE9012C185B3800314E94 /* Artwork.swift */; };
+		527EE90C2C185BC600314E94 /* ARDomain.docc in Sources */ = {isa = PBXBuildFile; fileRef = 527EE90B2C185BC600314E94 /* ARDomain.docc */; };
+		527EE9122C185BC700314E94 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
+		527EE9192C185BC700314E94 /* ARDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE9182C185BC700314E94 /* ARDomainTests.swift */; };
+		527EE91A2C185BC700314E94 /* ARDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 527EE90A2C185BC600314E94 /* ARDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527EE91D2C185BC700314E94 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
+		527EE91E2C185BC700314E94 /* ARDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		527EE9282C185BF300314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
+		527EE9292C185BF300314E94 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		527EE92F2C185C1E00314E94 /* ArtworkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE92E2C185C1E00314E94 /* ArtworkEntity.swift */; };
+		527EE9392C185D5F00314E94 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 527EE9382C185D5F00314E94 /* RealityKitContent */; };
+		527EE93B2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93A2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift */; };
+		527EE93D2C185D5F00314E94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93C2C185D5F00314E94 /* ContentView.swift */; };
+		527EE93F2C185D5F00314E94 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93E2C185D5F00314E94 /* ImmersiveView.swift */; };
+		527EE9412C185D6000314E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9402C185D6000314E94 /* Assets.xcassets */; };
+		527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9432C185D6100314E94 /* Preview Assets.xcassets */; };
+		52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */; };
+		52BA5C402C185A70009734F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3F2C185A70009734F2 /* ContentView.swift */; };
+		52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C412C185A72009734F2 /* Assets.xcassets */; };
+		52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C442C185A72009734F2 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		527EE8ED2C185B0D00314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE8E12C185B0D00314E94;
+			remoteInfo = Domain;
+		};
+		527EE8EF2C185B0D00314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52BA5C392C185A70009734F2;
+			remoteInfo = "Wall AR-t";
+		};
+		527EE8F52C185B0D00314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE8E12C185B0D00314E94;
+			remoteInfo = Domain;
+		};
+		527EE9132C185BC700314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE9072C185BC600314E94;
+			remoteInfo = ARDomain;
+		};
+		527EE9152C185BC700314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52BA5C392C185A70009734F2;
+			remoteInfo = "Wall AR-t";
+		};
+		527EE91B2C185BC700314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE9072C185BC600314E94;
+			remoteInfo = ARDomain;
+		};
+		527EE9252C185BD900314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE8E12C185B0D00314E94;
+			remoteInfo = Domain;
+		};
+		527EE92A2C185BF300314E94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 527EE8E12C185B0D00314E94;
+			remoteInfo = Domain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		527EE8F92C185B0D00314E94 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				527EE8F82C185B0D00314E94 /* Domain.framework in Embed Frameworks */,
+				527EE91E2C185BC700314E94 /* ARDomain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE92C2C185BF300314E94 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				527EE9292C185BF300314E94 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		527EE8E22C185B0D00314E94 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527EE8E42C185B0D00314E94 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		527EE8E52C185B0D00314E94 /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
+		527EE8EB2C185B0D00314E94 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		527EE8F22C185B0D00314E94 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
+		527EE9012C185B3800314E94 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		527EE9082C185BC600314E94 /* ARDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527EE90A2C185BC600314E94 /* ARDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARDomain.h; sourceTree = "<group>"; };
+		527EE90B2C185BC600314E94 /* ARDomain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ARDomain.docc; sourceTree = "<group>"; };
+		527EE9112C185BC700314E94 /* ARDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		527EE9182C185BC700314E94 /* ARDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDomainTests.swift; sourceTree = "<group>"; };
+		527EE92E2C185C1E00314E94 /* ArtworkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkEntity.swift; sourceTree = "<group>"; };
+		527EE9342C185D5F00314E94 /* Wall AR-t visionOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall AR-t visionOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		527EE9372C185D5F00314E94 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		527EE93A2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_AR_t_visionOSApp.swift; sourceTree = "<group>"; };
+		527EE93C2C185D5F00314E94 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		527EE93E2C185D5F00314E94 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		527EE9402C185D6000314E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		527EE9432C185D6100314E94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		527EE9452C185D6100314E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BA5C3A2C185A70009734F2 /* Wall AR-t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall AR-t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_AR_tApp.swift; sourceTree = "<group>"; };
+		52BA5C3F2C185A70009734F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52BA5C412C185A72009734F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52BA5C442C185A72009734F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		527EE8DF2C185B0D00314E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE8E82C185B0D00314E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE8EC2C185B0D00314E94 /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9052C185BC600314E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE9282C185BF300314E94 /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE90E2C185BC700314E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE9122C185BC700314E94 /* ARDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9312C185D5F00314E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52067C2D2C19C34D00E80F0A /* Domain.framework in Frameworks */,
+				52067C2C2C19C34D00E80F0A /* ARDomain.framework in Frameworks */,
+				527EE9392C185D5F00314E94 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BA5C372C185A70009734F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE8F72C185B0D00314E94 /* Domain.framework in Frameworks */,
+				527EE91D2C185BC700314E94 /* ARDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		527EE8E32C185B0D00314E94 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				527EE9002C185B2200314E94 /* Models */,
+				527EE8E42C185B0D00314E94 /* Domain.h */,
+				527EE8E52C185B0D00314E94 /* Domain.docc */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		527EE8F12C185B0D00314E94 /* DomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				527EE8F22C185B0D00314E94 /* DomainTests.swift */,
+			);
+			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		527EE9002C185B2200314E94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				527EE9012C185B3800314E94 /* Artwork.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		527EE9092C185BC600314E94 /* ARDomain */ = {
+			isa = PBXGroup;
+			children = (
+				527EE92D2C185BFC00314E94 /* Entities */,
+				527EE90A2C185BC600314E94 /* ARDomain.h */,
+				527EE90B2C185BC600314E94 /* ARDomain.docc */,
+			);
+			path = ARDomain;
+			sourceTree = "<group>";
+		};
+		527EE9172C185BC700314E94 /* ARDomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				527EE9182C185BC700314E94 /* ARDomainTests.swift */,
+			);
+			path = ARDomainTests;
+			sourceTree = "<group>";
+		};
+		527EE9272C185BF300314E94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		527EE92D2C185BFC00314E94 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				527EE92E2C185C1E00314E94 /* ArtworkEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		527EE9352C185D5F00314E94 /* Wall AR-t visionOS */ = {
+			isa = PBXGroup;
+			children = (
+				527EE93A2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift */,
+				527EE93C2C185D5F00314E94 /* ContentView.swift */,
+				527EE93E2C185D5F00314E94 /* ImmersiveView.swift */,
+				527EE9402C185D6000314E94 /* Assets.xcassets */,
+				527EE9452C185D6100314E94 /* Info.plist */,
+				527EE9422C185D6100314E94 /* Preview Content */,
+			);
+			path = "Wall AR-t visionOS";
+			sourceTree = "<group>";
+		};
+		527EE9362C185D5F00314E94 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				527EE9372C185D5F00314E94 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		527EE9422C185D6100314E94 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				527EE9432C185D6100314E94 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52BA5C312C185A70009734F2 = {
+			isa = PBXGroup;
+			children = (
+				52BA5C3C2C185A70009734F2 /* Wall AR-t */,
+				527EE9352C185D5F00314E94 /* Wall AR-t visionOS */,
+				527EE8E32C185B0D00314E94 /* Domain */,
+				527EE8F12C185B0D00314E94 /* DomainTests */,
+				527EE9092C185BC600314E94 /* ARDomain */,
+				527EE9172C185BC700314E94 /* ARDomainTests */,
+				527EE9362C185D5F00314E94 /* Packages */,
+				52BA5C3B2C185A70009734F2 /* Products */,
+				527EE9272C185BF300314E94 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52BA5C3B2C185A70009734F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52BA5C3A2C185A70009734F2 /* Wall AR-t.app */,
+				527EE8E22C185B0D00314E94 /* Domain.framework */,
+				527EE8EB2C185B0D00314E94 /* DomainTests.xctest */,
+				527EE9082C185BC600314E94 /* ARDomain.framework */,
+				527EE9112C185BC700314E94 /* ARDomainTests.xctest */,
+				527EE9342C185D5F00314E94 /* Wall AR-t visionOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52BA5C3C2C185A70009734F2 /* Wall AR-t */ = {
+			isa = PBXGroup;
+			children = (
+				52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */,
+				52BA5C3F2C185A70009734F2 /* ContentView.swift */,
+				52BA5C412C185A72009734F2 /* Assets.xcassets */,
+				52BA5C432C185A72009734F2 /* Preview Content */,
+			);
+			path = "Wall AR-t";
+			sourceTree = "<group>";
+		};
+		52BA5C432C185A72009734F2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				52BA5C442C185A72009734F2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		527EE8DD2C185B0D00314E94 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE8F42C185B0D00314E94 /* Domain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9032C185BC600314E94 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE91A2C185BC700314E94 /* ARDomain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		527EE8E12C185B0D00314E94 /* Domain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527EE8FE2C185B0D00314E94 /* Build configuration list for PBXNativeTarget "Domain" */;
+			buildPhases = (
+				527EE8DD2C185B0D00314E94 /* Headers */,
+				527EE8DE2C185B0D00314E94 /* Sources */,
+				527EE8DF2C185B0D00314E94 /* Frameworks */,
+				527EE8E02C185B0D00314E94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Domain;
+			productName = Domain;
+			productReference = 527EE8E22C185B0D00314E94 /* Domain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		527EE8EA2C185B0D00314E94 /* DomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527EE8FF2C185B0D00314E94 /* Build configuration list for PBXNativeTarget "DomainTests" */;
+			buildPhases = (
+				527EE8E72C185B0D00314E94 /* Sources */,
+				527EE8E82C185B0D00314E94 /* Frameworks */,
+				527EE8E92C185B0D00314E94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				527EE8EE2C185B0D00314E94 /* PBXTargetDependency */,
+				527EE8F02C185B0D00314E94 /* PBXTargetDependency */,
+			);
+			name = DomainTests;
+			productName = DomainTests;
+			productReference = 527EE8EB2C185B0D00314E94 /* DomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		527EE9072C185BC600314E94 /* ARDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527EE91F2C185BC700314E94 /* Build configuration list for PBXNativeTarget "ARDomain" */;
+			buildPhases = (
+				527EE9032C185BC600314E94 /* Headers */,
+				527EE9042C185BC600314E94 /* Sources */,
+				527EE9052C185BC600314E94 /* Frameworks */,
+				527EE9062C185BC600314E94 /* Resources */,
+				527EE92C2C185BF300314E94 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				527EE9262C185BD900314E94 /* PBXTargetDependency */,
+				527EE92B2C185BF300314E94 /* PBXTargetDependency */,
+			);
+			name = ARDomain;
+			productName = ARDomain;
+			productReference = 527EE9082C185BC600314E94 /* ARDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		527EE9102C185BC700314E94 /* ARDomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527EE9222C185BC700314E94 /* Build configuration list for PBXNativeTarget "ARDomainTests" */;
+			buildPhases = (
+				527EE90D2C185BC700314E94 /* Sources */,
+				527EE90E2C185BC700314E94 /* Frameworks */,
+				527EE90F2C185BC700314E94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				527EE9142C185BC700314E94 /* PBXTargetDependency */,
+				527EE9162C185BC700314E94 /* PBXTargetDependency */,
+			);
+			name = ARDomainTests;
+			productName = ARDomainTests;
+			productReference = 527EE9112C185BC700314E94 /* ARDomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		527EE9332C185D5F00314E94 /* Wall AR-t visionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527EE9462C185D6100314E94 /* Build configuration list for PBXNativeTarget "Wall AR-t visionOS" */;
+			buildPhases = (
+				527EE9302C185D5F00314E94 /* Sources */,
+				527EE9312C185D5F00314E94 /* Frameworks */,
+				527EE9322C185D5F00314E94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wall AR-t visionOS";
+			packageProductDependencies = (
+				527EE9382C185D5F00314E94 /* RealityKitContent */,
+			);
+			productName = "Wall AR-t visionOS";
+			productReference = 527EE9342C185D5F00314E94 /* Wall AR-t visionOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52BA5C392C185A70009734F2 /* Wall AR-t */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BA5C482C185A72009734F2 /* Build configuration list for PBXNativeTarget "Wall AR-t" */;
+			buildPhases = (
+				52BA5C362C185A70009734F2 /* Sources */,
+				52BA5C372C185A70009734F2 /* Frameworks */,
+				52BA5C382C185A70009734F2 /* Resources */,
+				527EE8F92C185B0D00314E94 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				527EE8F62C185B0D00314E94 /* PBXTargetDependency */,
+				527EE91C2C185BC700314E94 /* PBXTargetDependency */,
+			);
+			name = "Wall AR-t";
+			productName = "Wall AR-t";
+			productReference = 52BA5C3A2C185A70009734F2 /* Wall AR-t.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52BA5C322C185A70009734F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					527EE8E12C185B0D00314E94 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					527EE8EA2C185B0D00314E94 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 52BA5C392C185A70009734F2;
+					};
+					527EE9072C185BC600314E94 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					527EE9102C185BC700314E94 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 52BA5C392C185A70009734F2;
+					};
+					527EE9332C185D5F00314E94 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					52BA5C392C185A70009734F2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 52BA5C352C185A70009734F2 /* Build configuration list for PBXProject "Wall AR-t" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52BA5C312C185A70009734F2;
+			productRefGroup = 52BA5C3B2C185A70009734F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52BA5C392C185A70009734F2 /* Wall AR-t */,
+				527EE9332C185D5F00314E94 /* Wall AR-t visionOS */,
+				527EE8E12C185B0D00314E94 /* Domain */,
+				527EE8EA2C185B0D00314E94 /* DomainTests */,
+				527EE9072C185BC600314E94 /* ARDomain */,
+				527EE9102C185BC700314E94 /* ARDomainTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		527EE8E02C185B0D00314E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE8E92C185B0D00314E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9062C185BC600314E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE90F2C185BC700314E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9322C185D5F00314E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
+				527EE9412C185D6000314E94 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BA5C382C185A70009734F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
+				52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		527EE8DE2C185B0D00314E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE9022C185B3800314E94 /* Artwork.swift in Sources */,
+				527EE8E62C185B0D00314E94 /* Domain.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE8E72C185B0D00314E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE8F32C185B0D00314E94 /* DomainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9042C185BC600314E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE90C2C185BC600314E94 /* ARDomain.docc in Sources */,
+				527EE92F2C185C1E00314E94 /* ArtworkEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE90D2C185BC700314E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE9192C185BC700314E94 /* ARDomainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527EE9302C185D5F00314E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527EE93D2C185D5F00314E94 /* ContentView.swift in Sources */,
+				527EE93B2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift in Sources */,
+				527EE93F2C185D5F00314E94 /* ImmersiveView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52BA5C362C185A70009734F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52BA5C402C185A70009734F2 /* ContentView.swift in Sources */,
+				52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		527EE8EE2C185B0D00314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE8E12C185B0D00314E94 /* Domain */;
+			targetProxy = 527EE8ED2C185B0D00314E94 /* PBXContainerItemProxy */;
+		};
+		527EE8F02C185B0D00314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52BA5C392C185A70009734F2 /* Wall AR-t */;
+			targetProxy = 527EE8EF2C185B0D00314E94 /* PBXContainerItemProxy */;
+		};
+		527EE8F62C185B0D00314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE8E12C185B0D00314E94 /* Domain */;
+			targetProxy = 527EE8F52C185B0D00314E94 /* PBXContainerItemProxy */;
+		};
+		527EE9142C185BC700314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE9072C185BC600314E94 /* ARDomain */;
+			targetProxy = 527EE9132C185BC700314E94 /* PBXContainerItemProxy */;
+		};
+		527EE9162C185BC700314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52BA5C392C185A70009734F2 /* Wall AR-t */;
+			targetProxy = 527EE9152C185BC700314E94 /* PBXContainerItemProxy */;
+		};
+		527EE91C2C185BC700314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE9072C185BC600314E94 /* ARDomain */;
+			targetProxy = 527EE91B2C185BC700314E94 /* PBXContainerItemProxy */;
+		};
+		527EE9262C185BD900314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE8E12C185B0D00314E94 /* Domain */;
+			targetProxy = 527EE9252C185BD900314E94 /* PBXContainerItemProxy */;
+		};
+		527EE92B2C185BF300314E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 527EE8E12C185B0D00314E94 /* Domain */;
+			targetProxy = 527EE92A2C185BF300314E94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		527EE8FA2C185B0D00314E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		527EE8FB2C185B0D00314E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		527EE8FC2C185B0D00314E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wall AR-t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wall AR-t";
+			};
+			name = Debug;
+		};
+		527EE8FD2C185B0D00314E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wall AR-t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wall AR-t";
+			};
+			name = Release;
+		};
+		527EE9202C185BC700314E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		527EE9212C185BC700314E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		527EE9232C185BC700314E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wall AR-t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wall AR-t";
+			};
+			name = Debug;
+		};
+		527EE9242C185BC700314E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wall AR-t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wall AR-t";
+			};
+			name = Release;
+		};
+		527EE9472C185D6100314E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wall AR-t visionOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbertruiter.Wall-AR-t-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.1;
+			};
+			name = Debug;
+		};
+		527EE9482C185D6100314E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wall AR-t visionOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbertruiter.Wall-AR-t-visionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.1;
+			};
+			name = Release;
+		};
+		52BA5C462C185A72009734F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52BA5C472C185A72009734F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52BA5C492C185A72009734F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wall AR-t/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbertruiter.Wall-AR-t";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52BA5C4A2C185A72009734F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wall AR-t/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbertruiter.Wall-AR-t";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		527EE8FE2C185B0D00314E94 /* Build configuration list for PBXNativeTarget "Domain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527EE8FA2C185B0D00314E94 /* Debug */,
+				527EE8FB2C185B0D00314E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		527EE8FF2C185B0D00314E94 /* Build configuration list for PBXNativeTarget "DomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527EE8FC2C185B0D00314E94 /* Debug */,
+				527EE8FD2C185B0D00314E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		527EE91F2C185BC700314E94 /* Build configuration list for PBXNativeTarget "ARDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527EE9202C185BC700314E94 /* Debug */,
+				527EE9212C185BC700314E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		527EE9222C185BC700314E94 /* Build configuration list for PBXNativeTarget "ARDomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527EE9232C185BC700314E94 /* Debug */,
+				527EE9242C185BC700314E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		527EE9462C185D6100314E94 /* Build configuration list for PBXNativeTarget "Wall AR-t visionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527EE9472C185D6100314E94 /* Debug */,
+				527EE9482C185D6100314E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BA5C352C185A70009734F2 /* Build configuration list for PBXProject "Wall AR-t" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BA5C462C185A72009734F2 /* Debug */,
+				52BA5C472C185A72009734F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BA5C482C185A72009734F2 /* Build configuration list for PBXNativeTarget "Wall AR-t" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52BA5C492C185A72009734F2 /* Debug */,
+				52BA5C4A2C185A72009734F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		527EE9382C185D5F00314E94 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 52BA5C322C185A70009734F2 /* Project object */;
+}

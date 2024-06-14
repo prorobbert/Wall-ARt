@@ -12,42 +12,42 @@ import SwiftUI
 
 @Observable
 public final class PlacementManager {
-    
+
     private let worldTracking = WorldTrackingProvider()
     private let planeDetection = PlaneDetectionProvider()
-    
+
     private var planeAnchorHandler: PlaneAnchorHandler
     private var persistenceManager: PersistenceManager
-    
-    public var appState: AppState? = nil {
+
+    public var appState: AppState? {
         didSet {
             persistenceManager.placeableObjectsByFileName = appState?.placeableObjectByFileName ?? [:]
         }
     }
-    
-    private var currentDrag: DragState? = nil {
+
+    private var currentDrag: DragState? {
         didSet {
             placementState.dragInProgress = currentDrag != nil
         }
     }
-    
+
     public var placementState = PlacementState()
-    
+
     public var rootEntity: Entity
-    
+
     private let deviceLocation: Entity
     private let raycastOrigin: Entity
     private let placementLocation: Entity
-    private weak var placementTooltip: Entity? = nil
-    public weak var dragTooltip: Entity? = nil
-    public weak var deleteButton: Entity? = nil
-    
+    private weak var placementTooltip: Entity?
+    public weak var dragTooltip: Entity?
+    public weak var deleteButton: Entity?
+
     // Place objects on planes with a small gap.
     static private let placedObjectsOffsetOnPlanes: Float = 0.01
-    
+
     // Snap dragged objects to a nearby horizontal plane with +/- 4 centimeters.
     static private let snapToPlaneDistanceForDraggedObjects: Float = 0.04
-    
+
     @MainActor
     public init() {
         let root = Entity()
@@ -55,39 +55,39 @@ public final class PlacementManager {
         placementLocation = Entity()
         deviceLocation = Entity()
         raycastOrigin = Entity()
-        
+
         planeAnchorHandler = PlaneAnchorHandler(rootEntity: root)
         persistenceManager = PersistenceManager(worldTracking: worldTracking, rootEntity: root)
         persistenceManager.loadPersistendObjects()
-        
+
         rootEntity.addChild(placementLocation)
-        
+
         deviceLocation.addChild(raycastOrigin)
-        
+
         // Angle raycast 15 degrees down.
         let raycastDownwardAngle = 15.0 * (Float.pi / 180)
         raycastOrigin.orientation = simd_quatf(angle: -raycastDownwardAngle, axis: [1.0, 0.0, 0.0])
     }
-    
+
     func saveWorldAnchorsObjectsMapToDisk() {
         persistenceManager.saveWorldAnchorsObjectsMapToDisk()
     }
-    
+
     @MainActor
     public func addPlacementTooltip(_ tooltip: Entity) {
         placementTooltip = tooltip
-        
+
         // Add a tooltip 10 centimeters in front of the placement location to give users feedback about why they can't currently place an object.
         placementLocation.addChild(tooltip)
         tooltip.position = [0.0, 0.05, 0.01]
     }
-    
+
     public func removeHighlightedObject() async {
         if let highlightedObject = placementState.highlightedObject {
             await persistenceManager.removeObject(highlightedObject)
         }
     }
-    
+
     @MainActor
     public func runARKitSession() async {
         do {
@@ -97,20 +97,20 @@ public final class PlacementManager {
             // No need to handle the error here; the app is already monitoring the session for errors.
             return
         }
-        
+
         if let firstFileName = appState?.modelDescriptors.first?.fileName, let object = appState?.placeableObjectByFileName[firstFileName] {
             select(object)
         }
     }
-    
+
     @MainActor
     public func collisionBegan(_ event: CollisionEvents.Began) {
         guard let selectedObject = placementState.selectedObject else { return }
         guard selectedObject.matchesCollisionEvent(event: event) else { return }
-        
+
         placementState.activeCollisions += 1
     }
-    
+
     @MainActor
     public func collisionEnded(_ event: CollisionEvents.Ended) {
         guard let selectedObject = placementState.selectedObject else { return }
@@ -119,63 +119,63 @@ public final class PlacementManager {
             print("Received a collision ended event without a corresponding collision start event.")
             return
         }
-        
+
         placementState.activeCollisions -= 1
     }
-    
+
     @MainActor
     public func select(_ object: PlaceableObject?) {
         if let oldSelection = placementState.selectedObject {
             // Remove the current preview entity.
             placementLocation.removeChild(oldSelection.previewEntity)
-            
+
             // Handle delection. Selecting the same object again in the app deselects it.
             if oldSelection.descriptor.fileName == object?.descriptor.fileName {
                 select(nil)
                 return
             }
         }
-        
+
         // Update state.
         placementState.selectedObject = object
         appState?.selectedFileName = object?.descriptor.fileName
-        
+
         if let object {
             // Add new preview entity.
             placementLocation.addChild(object.previewEntity)
         }
     }
-    
+
     @MainActor
     public func processWorldAnchorUpdated() async {
         for await anchorUpdate in worldTracking.anchorUpdates {
             persistenceManager.process(anchorUpdate)
         }
     }
-    
+
     @MainActor
     public func processDeviceAnchorUpdate() async {
         await run(function: self.queryAndProcessLatestDeviceAnchor, withFrequency: 90)
     }
-    
+
     @MainActor
     private func queryAndProcessLatestDeviceAnchor() async {
         // Device anchors are only available when the provider is running.
         guard worldTracking.state == .running else { return }
-        
+
         let deviceAnchor = worldTracking.queryDeviceAnchor(atTimestamp: CACurrentMediaTime())
-        
+
         placementState.deviceAnchorPresent = deviceAnchor != nil
         placementState.planeAnchorsPresent = !planeAnchorHandler.planeAnchors.isEmpty
         placementState.selectedObject?.previewEntity.isEnabled = placementState.shouldShowPreview
-        
+
         guard let deviceAnchor, deviceAnchor.isTracked else { return }
-        
+
         await updateUserFacingUIOrientations(deviceAnchor)
         await checkWhichObjectDeviceIsPointingAt(deviceAnchor)
         await updatePlacementLocation(deviceAnchor)
     }
-    
+
     @MainActor
     private func updateUserFacingUIOrientations(_ deviceAnchor: DeviceAnchor) async {
         // 1. Orient the front side of the highlighted object's UI to face the user.
@@ -185,7 +185,7 @@ public final class PlacementManager {
             let uiRotationOnYAxis = uiOrigin.transformMatrix(relativeTo: nil).gravityAligned.rotation
             uiOrigin.setOrientation(uiRotationOnYAxis, relativeTo: nil)
         }
-        
+
         // 2. Orient each UI element to face the user.
         for entity in [placementTooltip, dragTooltip, deleteButton] {
             if let entity {
@@ -193,32 +193,32 @@ public final class PlacementManager {
             }
         }
     }
-    
+
     @MainActor
     private func updatePlacementLocation(_ deviceAnchor: DeviceAnchor) async {
         deviceLocation.transform = Transform(matrix: deviceAnchor.originFromAnchorTransform)
         let originFromUprightDeviceAnchorTransform = deviceAnchor.originFromAnchorTransform.gravityAligned
-        
+
         // Determine a placement location on planes in front of the device by casting a ray.
-        
+
         // Cast the ray from the device origin.
         let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).translation
-        
+
         // Cast the ray along the negatice z-axis of the device anchors, but with a slight downward angle.
         // (The downward angle is configurable using the `raycastOrigin` orientation.)
         let direction: SIMD3<Float> = -raycastOrigin.transformMatrix(relativeTo: nil).zAxis
-        
+
         // Only consider raycast results that are within 0.2 to 3 meters from the device.
         let minDistance: Float = 0.2
         let maxDistance: Float = 3
-        
+
         // Only raycast against horizontal planes.
         let collisionMask = PlaneAnchor.allPlanesCollisionGroup
-        
-        var originFromPointOnPlaneTransform: float4x4? = nil
+
+        var originFromPointOnPlaneTransform: float4x4?
         if let result = rootEntity.scene?.raycast(origin: origin, direction: direction, length: maxDistance, query: .nearest, mask: collisionMask)
                                                   .first, result.distance > minDistance {
-            if (appState?.detectVerticalPlanes != nil && appState?.detectVerticalPlanes == true) {
+            if appState?.detectVerticalPlanes != nil && appState?.detectVerticalPlanes == true {
                 if result.entity.components[CollisionComponent.self]?.filter.group == PlaneAnchor.verticalCollisionGroup {
                     // If the raycast hit a vertical plane, use that result with a small, fixed offset.
                     originFromPointOnPlaneTransform = originFromUprightDeviceAnchorTransform
@@ -232,8 +232,7 @@ public final class PlacementManager {
                 }
             }
         }
-        
-        
+
         if let originFromPointOnPlaneTransform {
             placementLocation.transform = Transform(matrix: originFromPointOnPlaneTransform)
             placementState.planeToProjectOnFound = true
@@ -244,18 +243,18 @@ public final class PlacementManager {
             var uprightDeviceAnchorFromOffsetTransform = matrix_identity_float4x4
             uprightDeviceAnchorFromOffsetTransform.translation = [0, -downwardsOffset, -distanceFromDeviceAnchor]
             let originFromOffsetTransform = originFromUprightDeviceAnchorTransform * uprightDeviceAnchorFromOffsetTransform
-            
+
             placementLocation.transform = Transform(matrix: originFromOffsetTransform)
             placementState.planeToProjectOnFound = false
         }
     }
-    
+
     @MainActor
     private func checkWhichObjectDeviceIsPointingAt(_ deviceAnchor: DeviceAnchor) async {
         let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).translation
         let direction: SIMD3<Float> = -raycastOrigin.transformMatrix(relativeTo: nil).zAxis
         let collisionMask = PlacedObject.collisionGroup
-        
+
         if let result = rootEntity.scene?.raycast(origin: origin, direction: direction, query: .nearest, mask: collisionMask).first {
             if let pointedAtObject = persistenceManager.object(for: result.entity) {
                 setHighlightedObject(pointedAtObject)
@@ -266,73 +265,73 @@ public final class PlacementManager {
             setHighlightedObject(nil)
         }
     }
-    
+
     @MainActor
     func setHighlightedObject(_ objectToHighlight: PlacedObject?) {
         guard placementState.highlightedObject != objectToHighlight else {
             return
         }
         placementState.highlightedObject = objectToHighlight
-        
+
         // Detach UI from the previously highlighted object.
         guard let deleteButton, let dragTooltip else { return }
         deleteButton.removeFromParent()
         dragTooltip.removeFromParent()
-        
+
         guard let objectToHighlight else { return }
-        
+
         // Position and attach the UI to the newly highlighted object.
         let extents = objectToHighlight.extents
         let topLeftCorner: SIMD3<Float> = [-extents.x / 2, (extents.y / 2) + 0.02, 0]
         let frontBottomCenter: SIMD3<Float> = [0, (-extents.y / 2) + 0.04, extents.z / 2 + 0.04]
         deleteButton.position = topLeftCorner
         dragTooltip.position = frontBottomCenter
-        
+
         objectToHighlight.uiOrigin.addChild(deleteButton)
         deleteButton.scale = 1 / objectToHighlight.scale
         objectToHighlight.uiOrigin.addChild(dragTooltip)
         dragTooltip.scale = 1 / objectToHighlight.scale
     }
-    
+
     public func removeAllPlacedObjects() async {
         await persistenceManager.removeAllPlacedObjects()
     }
-    
+
     public func processPlaneDetectionUpdates() async {
         for await anchorUpdate in planeDetection.anchorUpdates {
             await planeAnchorHandler.process(anchorUpdate)
         }
     }
-    
+
     @MainActor
     public func placeSelectedObject() {
         // Ensure there's a placeable object.
         guard let objectToPlace = placementState.objectToPlace else { return }
-        
+
         let object = objectToPlace.materialize()
         object.position = placementLocation.position
         object.orientation = placementLocation.orientation
-        
+
         Task {
             await persistenceManager.attachObjectToWorldAnchor(object)
         }
         placementState.userPlacedAnObject = true
     }
-    
+
     @MainActor
     public func checkIfAnchoredObjectsNeedToBeDetached() async {
         // Check whether objects should be detached from their world anchor.
         // This runs at 10 Hz to ensure that objects are quickly detached from their world anchor as soon as they are moved - otherwise a world anchor update could overwrite the object's position.
         await run(function: persistenceManager.checkIfAnchoredObjectsNeedToBeDetached, withFrequency: 10)
     }
-    
+
     @MainActor
     public func checkIfMovingObjectsCanBeAnchored() async {
         // Check wheter objects can be reanchored.
         // This runs at 2 Hx - objects should be reanchored eventualy but it's not time critical.
         await run(function: persistenceManager.checkIfMovingObjectsCanBeAnchored, withFrequency: 2)
     }
-    
+
     @MainActor
     public func updateDrag(value: EntityTargetValue<DragGesture.Value>) {
         if let currentDrag, currentDrag.draggedObject !== value.entity {
@@ -340,31 +339,35 @@ public final class PlacementManager {
             print("A new drag started but the previous one never ended - ending that one now.")
             endDrag()
         }
-        
+
         // At the start of the drag gesture, remember which object is being manipulated.
         if currentDrag == nil {
             guard let object = persistenceManager.object(for: value.entity) else {
                 print("Unable to start drag - failed to identify the dragged object.")
                 return
             }
-            
+
             object.isBeingDragged = true
             currentDrag = DragState(objectToDrag: object)
             placementState.userPlacedAnObject = true
         }
-        
+
         // Update the dragged object's position.
         if let currentDrag {
             currentDrag.draggedObject.position = currentDrag.initialPosition + value.convert(value.translation3D, from: .local, to: rootEntity)
-            
+
             // If possible, snap the dragged object to a nearby horizontal plane.
             let maxDistance = PlacementManager.snapToPlaneDistanceForDraggedObjects
-            if let projectedTransform = PlaneProjector.project(point: currentDrag.draggedObject.transform.matrix, ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors, withMaxDistance: maxDistance) {
+            if let projectedTransform = PlaneProjector.project(
+                point: currentDrag.draggedObject.transform.matrix,
+                ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors,
+                withMaxDistance: maxDistance
+            ) {
                 currentDrag.draggedObject.position = projectedTransform.translation
             }
         }
     }
-    
+
     @MainActor
     public func endDrag() {
         guard let currentDrag else { return }

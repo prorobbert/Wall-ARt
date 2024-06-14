@@ -11,9 +11,9 @@ public struct ModelDescriptor: Identifiable, Hashable {
     public let fileName: String
     public let displayName: String
     let placeableOnPlane: PlaceablePlane
-    
+
     public var id: String { fileName }
-    
+
     init(fileName: String, displayName: String? = nil, placeableOnPlane: PlaceablePlane = .horizontal) {
         self.fileName = fileName
         self.displayName = displayName ?? fileName

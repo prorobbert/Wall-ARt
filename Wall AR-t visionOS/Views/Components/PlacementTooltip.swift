@@ -11,13 +11,13 @@ import ARDomain
 struct PlacementTooltip: View {
     var placementState: PlacementState
     var detectVerticalPlanes: Bool = false
-    
+
     var body: some View {
         if let message {
             TooltipView(text: message)
         }
     }
-    
+
     var message: String? {
         // Decide on a message to display, in order of importance.
         if !placementState.planeToProjectOnFound {
@@ -49,7 +49,7 @@ private extension PlacementState {
         planeToProjectOnFound = true
         return self
     }
-    
+
     func withCollisionDetected() -> PlacementState {
         activeCollisions = 1
         return self

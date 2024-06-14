@@ -17,7 +17,7 @@ extension PlacementManager {
             if Task.isCancelled {
                 return
             }
-            
+
             // Sleep for 1 s / hz before calling the function.
             let nanoSecondsToSleep: UInt64 = NSEC_PER_SEC / hz
             do {
@@ -26,7 +26,7 @@ extension PlacementManager {
                 // Sleep fails when the Task is cancelled. Exit the loop.
                 return
             }
-            
+
             await function()
         }
     }

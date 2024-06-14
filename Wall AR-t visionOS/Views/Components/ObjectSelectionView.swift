@@ -10,9 +10,9 @@ import ARDomain
 
 struct ObjectSelectionView: View {
     let modelDescriptors: [ModelDescriptor]
-    var selectedFileName: String? = nil
-    var selectionHandler: ((ModelDescriptor) -> Void)? = nil
-    
+    var selectedFileName: String?
+    var selectionHandler: ((ModelDescriptor) -> Void)?
+
     private func binding(for descriptor: ModelDescriptor) -> Binding<Bool> {
         Binding<Bool>(
             get: { selectedFileName == descriptor.fileName },
@@ -23,12 +23,12 @@ struct ObjectSelectionView: View {
             }
         )
     }
-    
+
     var body: some View {
         VStack(spacing: 20) {
             Text("Choose an object to place:")
                 .padding(10)
-            
+
             Grid {
                 ForEach(0 ..< ((modelDescriptors.count + 1) / 2), id: \.self) { row in
                     GridRow {

@@ -14,22 +14,26 @@ private enum UIIdentifier {
 }
 
 @main
-struct Wall_AR_t_visionOSApp: App {
-    
+struct WallARtVisionOSApp: App {
+
     @State private var appState = AppState()
     @State private var modelLoader = ModelLoader()
-    
+
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
-    
+
     @MainActor
     private func setupModelLoader() {
         modelLoader = ModelLoader()
     }
-    
+
     var body: some Scene {
         WindowGroup {
-            HomeView(appState: appState, modelLoader: modelLoader, immersiveSpaceIdentifier: UIIdentifier.immersiveSpace)
+            HomeView(
+                appState: appState,
+                modelLoader: modelLoader,
+                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
+            )
                 .task {
 //                    setupModelLoader()
                     await modelLoader.loadObjects()

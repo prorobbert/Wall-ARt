@@ -10,7 +10,7 @@ import ARDomain
 
 struct InfoLabel: View {
     let appState: AppState
-    
+
     var body: some View {
         Text(infoMessage)
             .font(.subheadline)
@@ -22,7 +22,9 @@ struct InfoLabel: View {
         } else if !appState.allRequiredAuthorizationsAreGranted {
             return "This app is missing necessary authorizations, You can change this in Settings > Privacy & Security."
         } else {
-            return "Place and move 3D models in your physical environment. The system maintains their placement across app launches."
+            return """
+Place and move 3D models in your physical environment. The system maintains their placement across app launches.
+"""
         }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 public struct DragState {
     var draggedObject: PlacedObject
     var initialPosition: SIMD3<Float>
-    
+
     @MainActor
     init(objectToDrag: PlacedObject) {
         draggedObject = objectToDrag

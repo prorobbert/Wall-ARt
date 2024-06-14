@@ -13,22 +13,22 @@ struct HomeView: View {
     let appState: AppState
     let modelLoader: ModelLoader
     let immersiveSpaceIdentifier: String
-    
+
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
-    
+
     var body: some View {
         VStack {
             VStack(spacing: 20) {
                 Text("Object Placement")
                     .font(.title)
-                
+
                 InfoLabel(appState: appState)
                     .padding(.horizontal, 30)
                     .frame(width: 400)
                     .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                
+
                 Group {
                     if !modelLoader.didFinishLoading {
                         VStack(spacing: 10) {
@@ -58,7 +58,7 @@ struct HomeView: View {
             }
             .padding(.vertical, 24)
             .glassBackgroundEffect()
-            
+
             if appState.immersiveSpaceOpened {
                 ObjectPlacementMenuView(appState: appState)
                     .padding(20)
@@ -67,7 +67,6 @@ struct HomeView: View {
         }
         .fixedSize()
         .onChange(of: scenePhase, initial: true) {
-            print("HomeView scene phase: \(scenePhase)")
             if scenePhase == .active {
                 Task {
                     // Check whether authorization has changed when the user brings the app to the foreground.
@@ -93,7 +92,7 @@ struct HomeView: View {
                         appState.didLeaveImmersiveSpace()
                     }
                 }
-                
+
                 appState.providersStoppedWithError = false
             }
         })

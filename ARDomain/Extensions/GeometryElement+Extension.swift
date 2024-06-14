@@ -26,21 +26,23 @@ This GeometryElement has bytesPerIndex == \(bytesPerIndex)
         }
         return data
     }
-    
+
     func asInt32Array() -> [Int32] {
         var data = [Int32]()
         let totalNumberofInt32 = count * primitive.indexCount
         data.reserveCapacity(totalNumberofInt32)
         for indexOffset in 0 ..< totalNumberofInt32 {
-            data.append(buffer.contents().advanced(by: indexOffset * MemoryLayout<Int32>.size).assumingMemoryBound(to: Int32.self).pointee)
+            data.append(buffer.contents()
+                .advanced(by: indexOffset * MemoryLayout<Int32>.size)
+                .assumingMemoryBound(to: Int32.self).pointee)
         }
         return data
     }
-    
+
     func asUInt16Array() -> [UInt16] {
         asInt32Array().map { UInt16($0) }
     }
-    
+
     public func asUInt32Array() -> [UInt32] {
         asInt32Array().map { UInt32($0) }
     }

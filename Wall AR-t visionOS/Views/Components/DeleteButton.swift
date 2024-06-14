@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeleteButton: View {
     var deletionHandler: (() -> Void)?
-    
+
     var body: some View {
         Button {
             if let deletionHandler {

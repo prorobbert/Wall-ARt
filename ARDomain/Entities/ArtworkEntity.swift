@@ -11,12 +11,12 @@ import Domain
 
 public final class ArtworkEntity: Entity {
     public var artwork: Artwork?
-    
+
     public init(artwork: Artwork) {
         self.artwork = artwork
     }
-    
+
     required init() {
-        
+
     }
 }

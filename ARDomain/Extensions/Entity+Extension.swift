@@ -16,9 +16,9 @@ extension Entity {
             child.applyMaterial(material)
         }
     }
-    
+
     var extents: SIMD3<Float> { visualBounds(relativeTo: self).extents }
-    
+
     func look(at target: SIMD3<Float>) {
         look(at: target,
             from: position(relativeTo: nil),

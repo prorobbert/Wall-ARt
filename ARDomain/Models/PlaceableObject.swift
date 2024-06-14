@@ -16,19 +16,19 @@ private enum PreviewMaterials {
 @MainActor
 public class PlaceableObject {
     public let descriptor: ModelDescriptor
-    
+
     var previewEntity: Entity
     private var renderContent: ModelEntity
-    
+
     public static let previewCollisionGroup = CollisionGroup(rawValue: 1 << 15)
-    
+
     init(descriptor: ModelDescriptor, previewEntity: Entity, renderContent: ModelEntity) {
         self.descriptor = descriptor
         self.previewEntity = previewEntity
         self.previewEntity.applyMaterial(PreviewMaterials.active)
         self.renderContent = renderContent
     }
-    
+
     public var isPreviewActive: Bool = true {
         didSet {
             if oldValue != isPreviewActive {
@@ -38,20 +38,20 @@ public class PlaceableObject {
             }
         }
     }
-    
+
     func materialize() -> PlacedObject {
         let shapes = previewEntity.components[CollisionComponent.self]!.shapes
         return PlacedObject(descriptor: descriptor, renderContentToClone: renderContent, shapes: shapes)
     }
-    
+
     func matchesCollisionEvent(event: CollisionEvents.Began) -> Bool {
         event.entityA == previewEntity || event.entityB == previewEntity
     }
-    
+
     func matchesCollisionEvent(event: CollisionEvents.Ended) -> Bool {
         event.entityA == previewEntity || event.entityB == previewEntity
     }
-    
+
     func attachPreviewEntity(to entity: Entity) {
         entity.addChild(previewEntity)
     }

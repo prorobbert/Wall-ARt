@@ -10,7 +10,7 @@ import ARDomain
 
 struct PlaneSelectionView: View {
     var appState: AppState
-    
+
     var body: some View {
         VStack(spacing: 20) {
             Text("Select which plane to place objects on.")
@@ -41,6 +41,4 @@ struct PlaneSelectionView: View {
         }
     }
     return Preview()
-        
 }
-

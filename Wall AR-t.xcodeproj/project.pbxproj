@@ -65,22 +65,22 @@
 		527EE93F2C185D5F00314E94 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93E2C185D5F00314E94 /* ImmersiveView.swift */; };
 		527EE9412C185D6000314E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9402C185D6000314E94 /* Assets.xcassets */; };
 		527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9432C185D6100314E94 /* Preview Assets.xcassets */; };
-		52A66D732C1C1FBE0004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D6F2C1C1FBE0004BDD9 /* retrotv.usdz */; };
-		52A66D742C1C1FBE0004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D702C1C1FBE0004BDD9 /* KingFisherSplash.usdz */; };
-		52A66D752C1C1FBE0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D712C1C1FBE0004BDD9 /* pancakes.usdz */; };
-		52A66D762C1C1FBE0004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D722C1C1FBE0004BDD9 /* Statues.usdz */; };
-		52A66D772C1C26230004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D702C1C1FBE0004BDD9 /* KingFisherSplash.usdz */; };
-		52A66D782C1C26240004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D702C1C1FBE0004BDD9 /* KingFisherSplash.usdz */; };
-		52A66D792C1C26290004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D712C1C1FBE0004BDD9 /* pancakes.usdz */; };
-		52A66D7A2C1C262A0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D712C1C1FBE0004BDD9 /* pancakes.usdz */; };
-		52A66D7B2C1C262D0004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D6F2C1C1FBE0004BDD9 /* retrotv.usdz */; };
-		52A66D7C2C1C262E0004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D6F2C1C1FBE0004BDD9 /* retrotv.usdz */; };
-		52A66D7D2C1C26310004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D722C1C1FBE0004BDD9 /* Statues.usdz */; };
-		52A66D7E2C1C26310004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D722C1C1FBE0004BDD9 /* Statues.usdz */; };
 		52A66D7F2C1C2CB70004BDD9 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		52A66D802C1C2CB70004BDD9 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52A66D812C1C2CB90004BDD9 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
 		52A66D822C1C2CB90004BDD9 /* ARDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
+		52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
+		52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */; };
+		52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
+		52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */; };
+		52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */; };
+		52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
+		52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
+		52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
+		52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
+		52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
+		52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
 		52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */; };
 		52BA5C402C185A70009734F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3F2C185A70009734F2 /* ContentView.swift */; };
 		52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C412C185A72009734F2 /* Assets.xcassets */; };
@@ -254,10 +254,10 @@
 		527EE9402C185D6000314E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527EE9432C185D6100314E94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		527EE9452C185D6100314E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52A66D6F2C1C1FBE0004BDD9 /* retrotv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = retrotv.usdz; path = ../../../../../Downloads/retrotv.usdz; sourceTree = "<group>"; };
-		52A66D702C1C1FBE0004BDD9 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = KingFisherSplash.usdz; path = ../../../../Models/KingFisherSplash.usdz; sourceTree = "<group>"; };
-		52A66D712C1C1FBE0004BDD9 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pancakes.usdz; path = ../../../../../Downloads/pancakes.usdz; sourceTree = "<group>"; };
-		52A66D722C1C1FBE0004BDD9 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Statues.usdz; path = ../../../../Models/Statues.usdz; sourceTree = "<group>"; };
+		52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pancakes.usdz; sourceTree = "<group>"; };
+		52A66D862C1C4D1D0004BDD9 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Statues.usdz; sourceTree = "<group>"; };
+		52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
+		52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = retrotv.usdz; sourceTree = "<group>"; };
 		52BA5C3A2C185A70009734F2 /* Wall AR-t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall AR-t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_AR_tApp.swift; sourceTree = "<group>"; };
 		52BA5C3F2C185A70009734F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 		52067C342C19C86D00E80F0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				52A66D6D2C1C1FA20004BDD9 /* 3D Models */,
+				52A66D832C1C4C620004BDD9 /* 3D Models */,
 				52067C352C19C86D00E80F0A /* Models.h */,
 				52067C362C19C86D00E80F0A /* Models.docc */,
 			);
@@ -504,16 +504,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		52A66D6D2C1C1FA20004BDD9 /* 3D Models */ = {
+		52A66D832C1C4C620004BDD9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
-				52A66D702C1C1FBE0004BDD9 /* KingFisherSplash.usdz */,
-				52A66D712C1C1FBE0004BDD9 /* pancakes.usdz */,
-				52A66D6F2C1C1FBE0004BDD9 /* retrotv.usdz */,
-				52A66D722C1C1FBE0004BDD9 /* Statues.usdz */,
+				52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */,
+				52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */,
+				52A66D862C1C4D1D0004BDD9 /* Statues.usdz */,
+				52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */,
 			);
-			name = "3D Models";
-			path = "../../RealityKitDemo/RealityKitDemoVisionOS/3D Models";
+			path = "3D Models";
 			sourceTree = "<group>";
 		};
 		52BA5C312C185A70009734F2 = {
@@ -797,10 +796,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52A66D742C1C1FBE0004BDD9 /* KingFisherSplash.usdz in Resources */,
-				52A66D732C1C1FBE0004BDD9 /* retrotv.usdz in Resources */,
-				52A66D762C1C1FBE0004BDD9 /* Statues.usdz in Resources */,
-				52A66D752C1C1FBE0004BDD9 /* pancakes.usdz in Resources */,
+				52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */,
+				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
+				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
+				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,12 +835,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52A66D772C1C26230004BDD9 /* KingFisherSplash.usdz in Resources */,
-				52A66D7B2C1C262D0004BDD9 /* retrotv.usdz in Resources */,
+				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
-				52A66D7D2C1C26310004BDD9 /* Statues.usdz in Resources */,
+				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
+				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
+				52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				527EE9412C185D6000314E94 /* Assets.xcassets in Resources */,
-				52A66D792C1C26290004BDD9 /* pancakes.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,12 +848,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52A66D782C1C26240004BDD9 /* KingFisherSplash.usdz in Resources */,
-				52A66D7C2C1C262E0004BDD9 /* retrotv.usdz in Resources */,
+				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
-				52A66D7E2C1C26310004BDD9 /* Statues.usdz in Resources */,
+				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
+				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
+				52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */,
-				52A66D7A2C1C262A0004BDD9 /* pancakes.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1555,6 +1554,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1588,6 +1588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

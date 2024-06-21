@@ -13,7 +13,7 @@ public class PlacementState {
     public init() {}
 
     public var selectedObject: PlaceableObject?
-    var highlightedObject: PlacedObject?
+    public var highlightedObject: PlacedObject?
     var objectToPlace: PlaceableObject? { isPlacementPossible ? selectedObject : nil }
     public var userDraggedAnObject = false
 

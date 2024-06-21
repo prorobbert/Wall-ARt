@@ -44,6 +44,7 @@ public final class PlacementManager {
 
     // Place objects on planes with a small gap.
     static private let placedObjectsOffsetOnPlanes: Float = 0.01
+    static private let placedObjectsOffsetOnVerticalPlanes: Float = 0.03
 
     // Snap dragged objects to a nearby horizontal plane with +/- 4 centimeters.
     static private let snapToPlaneDistanceForDraggedObjects: Float = 0.04
@@ -215,26 +216,48 @@ public final class PlacementManager {
         // Only raycast against horizontal planes.
         let collisionMask = PlaneAnchor.allPlanesCollisionGroup
 
-        var originFromPointOnPlaneTransform: float4x4?
-        if let result = rootEntity.scene?.raycast(origin: origin, direction: direction, length: maxDistance, query: .nearest, mask: collisionMask)
-                                                  .first, result.distance > minDistance {
+        var originFromPointOnPlaneTransform: Transform?
+        if let result = rootEntity.scene?.raycast(origin: origin, direction: direction, length: maxDistance, query: .nearest, mask: collisionMask).first, result.distance > minDistance {
             if appState?.detectVerticalPlanes != nil && appState?.detectVerticalPlanes == true {
                 if result.entity.components[CollisionComponent.self]?.filter.group == PlaneAnchor.verticalCollisionGroup {
                     // If the raycast hit a vertical plane, use that result with a small, fixed offset.
-                    originFromPointOnPlaneTransform = originFromUprightDeviceAnchorTransform
-                    originFromPointOnPlaneTransform?.translation = result.position + [0.0, 0.0, PlacementManager.placedObjectsOffsetOnPlanes]
+                    originFromPointOnPlaneTransform = Transform(matrix: originFromUprightDeviceAnchorTransform)
+                    originFromPointOnPlaneTransform?.translation = result.position + [PlacementManager.placedObjectsOffsetOnVerticalPlanes, 0.0, 0.0]
+
+                    // Calculate the plane axes
+                    let planeTransform = result.entity.transformMatrix(relativeTo: nil)
+                    // let planeXAxis = planeTransform.columns.0.xyz // Plane's X axis points to the right
+                    let planeYAxis = planeTransform.columns.1.xyz // Plane's Y axis points towards you
+                    let planeZAxis = -planeTransform.columns.2.xyz // Plane's Z axis points down
+
+                    // Define the target forward and up directions
+                    let targetForward = planeYAxis  // Target forward direction is plane's Y axis (towards you)
+                    let targetUp = planeZAxis       // Target up direction is plane's X axis (right)
+
+                    // Calculate the quaternion for rotation
+                    let currentForward = SIMD3<Float>(0, 0, 1) // Object's current forward direction (Z axis)
+                    let currentUp = SIMD3<Float>(0, 1, 0)      // Object's current up direction (Y axis)
+
+                    // Create rotation quaternions to align the object
+                    let rotationToAlignForward = simd_quatf(from: currentForward, to: targetForward)
+                    let rotatedUp = simd_act(rotationToAlignForward, currentUp)
+                    let rotationToAlignUp = simd_quatf(from: rotatedUp, to: targetUp)
+                    let finalRotation = rotationToAlignUp * rotationToAlignForward
+
+                    // Update the transform's rotation
+                    originFromPointOnPlaneTransform?.rotation = finalRotation
                 }
             } else {
                 if result.entity.components[CollisionComponent.self]?.filter.group != PlaneAnchor.verticalCollisionGroup {
                     // If the raycast hit a horizontal plane, use that result with a small, fixed offset.
-                    originFromPointOnPlaneTransform = originFromUprightDeviceAnchorTransform
+                    originFromPointOnPlaneTransform = Transform(matrix: originFromUprightDeviceAnchorTransform)
                     originFromPointOnPlaneTransform?.translation = result.position + [0.0, PlacementManager.placedObjectsOffsetOnPlanes, 0.0]
                 }
             }
         }
 
         if let originFromPointOnPlaneTransform {
-            placementLocation.transform = Transform(matrix: originFromPointOnPlaneTransform)
+            placementLocation.transform = originFromPointOnPlaneTransform
             placementState.planeToProjectOnFound = true
         } else {
             // If no placement location can be determined, position the preview 50 centimeters in front of the deivce.
@@ -358,12 +381,22 @@ public final class PlacementManager {
 
             // If possible, snap the dragged object to a nearby horizontal plane.
             let maxDistance = PlacementManager.snapToPlaneDistanceForDraggedObjects
-            if let projectedTransform = PlaneProjector.project(
-                point: currentDrag.draggedObject.transform.matrix,
-                ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors,
-                withMaxDistance: maxDistance
-            ) {
-                currentDrag.draggedObject.position = projectedTransform.translation
+            if let appState, appState.detectVerticalPlanes {
+                if let projectedTransform = PlaneProjector.project(
+                    point: currentDrag.draggedObject.transform.matrix,
+                    ontoVerticalPlaneIn: planeAnchorHandler.planeAnchors,
+                    withMaxDistance: maxDistance
+                ) {
+                    currentDrag.draggedObject.position = projectedTransform.translation
+                }
+            } else {
+                if let projectedTransform = PlaneProjector.project(
+                    point: currentDrag.draggedObject.transform.matrix,
+                    ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors,
+                    withMaxDistance: maxDistance
+                ) {
+                    currentDrag.draggedObject.position = projectedTransform.translation
+                }
             }
         }
     }

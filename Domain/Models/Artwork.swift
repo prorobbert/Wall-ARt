@@ -9,7 +9,7 @@ import Foundation
 
 public struct Artwork {
     public let title: String
-    
+
     public init(title: String) {
         self.title = title
     }

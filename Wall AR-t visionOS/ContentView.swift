@@ -21,7 +21,7 @@ struct ContentView: View {
             Model3D(named: "Scene", bundle: realityKitContentBundle)
                 .padding(.bottom, 50)
 
-            Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
+            Toggle("show_immersive_space", isOn: $showImmersiveSpace)
                 .font(.title)
                 .frame(width: 360)
                 .padding(24)

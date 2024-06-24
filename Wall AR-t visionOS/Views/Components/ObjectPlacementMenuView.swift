@@ -27,20 +27,20 @@ struct ObjectPlacementMenuView: View {
                 }
             }
 
-            Button("Remove all objects", systemImage: "trash") {
+            Button("remove_all_objects", systemImage: "trash") {
                 presentConfirmationDialog = true
             }
             .font(.subheadline)
             .buttonStyle(.borderless)
-            .confirmationDialog("\(String(localized: "Remove all objects"))?", isPresented: $presentConfirmationDialog) {
-                Button("Remove all", role: .destructive) {
+            .confirmationDialog("\(String(localized: "remove_all_objects"))?", isPresented: $presentConfirmationDialog) {
+                Button("remove_all", role: .destructive) {
                     Task {
                         await appState.placementManager?.removeAllPlacedObjects()
                     }
                 }
             }
 
-            Button("Leave", systemImage: "xmark.circle") {
+            Button("leave", systemImage: "xmark.circle") {
                 Task {
                     await dismissImmersiveSpace()
                     appState.didLeaveImmersiveSpace()

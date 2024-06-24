@@ -18,11 +18,11 @@ struct InfoLabel: View {
     }
     var infoMessage: String {
         if !appState.allRequiredProvidersAreSupported {
-            return String(localized: "Functionality not supported in simulator")
+            return String(localized: "functionality_not_supported_in_simulator")
         } else if !appState.allRequiredAuthorizationsAreGranted {
-            return String(localized: "Missing necessary authorisations")
+            return String(localized: "missing_necessary_authorisations")
         } else {
-            return String(localized: "Infolabel success message")
+            return String(localized: "infolabel_success_message")
         }
     }
 }

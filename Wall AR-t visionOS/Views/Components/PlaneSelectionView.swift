@@ -13,7 +13,7 @@ struct PlaneSelectionView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Select placeable plane")
+            Text("select_placeable_plane")
             HStack {
                 Button {
                     appState.detectVerticalPlanes.toggle()
@@ -21,10 +21,10 @@ struct PlaneSelectionView: View {
                         await appState.updateSelectedFileNameAfterPlaneSwitch()
                     }
                 } label: {
-                    Text("Switch")
+                    Text("switch")
                 }
                 Spacer()
-                Text(appState.detectVerticalPlanes ? "Vertical planes" : "Horizontal planes")
+                Text(appState.detectVerticalPlanes ? "vertical_planes" : "horizontal_planes")
             }
         }
     }

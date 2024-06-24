@@ -22,15 +22,15 @@ struct PlacementTooltip: View {
         // Decide on a message to display, in order of importance.
         if !placementState.planeToProjectOnFound {
             if detectVerticalPlanes {
-                return String(localized: "Point device vertical surface")
+                return String(localized: "point_device_vertical_surface")
             }
-            return String(localized: "Point device horizontal surface")
+            return String(localized: "point_device_horizontal_surface")
         }
         if placementState.collisionDetected {
-            return String(localized: "Space occupied")
+            return String(localized: "space_occupied")
         }
         if !placementState.userPlacedAnObject {
-            return String(localized: "Tap to place objects")
+            return String(localized: "tap_to_place_objects")
         }
         return nil
     }

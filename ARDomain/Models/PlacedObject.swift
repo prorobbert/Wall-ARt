@@ -11,6 +11,7 @@ import RealityKit
 public class PlacedObject: Entity {
 
     let fileName: String
+    let attachedPlane: PlaceablePlane
 
     // The 3D model displayed for this object.
     private let renderContent: ModelEntity
@@ -24,8 +25,12 @@ public class PlacedObject: Entity {
     var affectedByPhysics = false {
         didSet {
             guard affectedByPhysics != oldValue else { return }
-            if affectedByPhysics {
-                components[PhysicsBodyComponent.self]!.mode = .dynamic
+            if attachedPlane == .horizontal {
+                if affectedByPhysics {
+                    components[PhysicsBodyComponent.self]!.mode = .dynamic
+                } else {
+                    components[PhysicsBodyComponent.self]!.mode = .static
+                }
             } else {
                 components[PhysicsBodyComponent.self]!.mode = .static
             }
@@ -45,6 +50,7 @@ public class PlacedObject: Entity {
     init(descriptor: ModelDescriptor, renderContentToClone: ModelEntity, shapes: [ShapeResource]) {
         fileName = descriptor.fileName
         renderContent = renderContentToClone.clone(recursive: true)
+        attachedPlane = descriptor.placeableOnPlane
         super.init()
         name = renderContent.name
 

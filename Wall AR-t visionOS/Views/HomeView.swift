@@ -32,7 +32,7 @@ struct HomeView: View {
                 Group {
                     if !modelLoader.didFinishLoading {
                         VStack(spacing: 10) {
-                            Text("Loading models...")
+                            Text("Loading models")
                             ProgressView(value: modelLoader.progress)
                                 .frame(maxWidth: 200)
                         }

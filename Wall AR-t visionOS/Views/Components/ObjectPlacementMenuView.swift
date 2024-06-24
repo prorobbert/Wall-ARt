@@ -23,7 +23,6 @@ struct ObjectPlacementMenuView: View {
                 selectedFileName: appState.selectedFileName
             ) { descriptor in
                 if let model = appState.placeableObjectByFileName[descriptor.fileName] {
-                    print("selecting new model: \(model.descriptor)")
                     appState.placementManager?.select(model)
                 }
             }
@@ -33,7 +32,7 @@ struct ObjectPlacementMenuView: View {
             }
             .font(.subheadline)
             .buttonStyle(.borderless)
-            .confirmationDialog("Remove all objects?", isPresented: $presentConfirmationDialog) {
+            .confirmationDialog("\(String(localized: "Remove all objects"))?", isPresented: $presentConfirmationDialog) {
                 Button("Remove all", role: .destructive) {
                     Task {
                         await appState.placementManager?.removeAllPlacedObjects()

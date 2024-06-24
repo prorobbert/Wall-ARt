@@ -84,6 +84,9 @@
 		52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */; };
 		52A66DA12C1C69D00004BDD9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */; };
 		52A66DA22C1C69D00004BDD9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */; };
+		52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
+		52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
+		52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
 		52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */; };
 		52BA5C402C185A70009734F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3F2C185A70009734F2 /* ContentView.swift */; };
 		52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C412C185A72009734F2 /* Assets.xcassets */; };
@@ -261,6 +264,7 @@
 		52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
 		52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = retrotv.usdz; sourceTree = "<group>"; };
 		52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		52A66DB32C2956360004BDD9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		52BA5C3A2C185A70009734F2 /* Wall AR-t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall AR-t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_AR_tApp.swift; sourceTree = "<group>"; };
 		52BA5C3F2C185A70009734F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -520,6 +524,7 @@
 		52BA5C312C185A70009734F2 = {
 			isa = PBXGroup;
 			children = (
+				52A66DB32C2956360004BDD9 /* Localizable.xcstrings */,
 				52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */,
 				52BA5C3C2C185A70009734F2 /* Wall AR-t */,
 				527EE9352C185D5F00314E94 /* Wall AR-t visionOS */,
@@ -781,6 +786,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = 52BA5C312C185A70009734F2;
 			packageReferences = (
@@ -807,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */,
+				52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
 				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
@@ -849,6 +856,7 @@
 			files = (
 				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
+				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
@@ -863,6 +871,7 @@
 			files = (
 				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
+				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,

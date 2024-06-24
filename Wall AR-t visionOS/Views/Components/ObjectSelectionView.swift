@@ -26,7 +26,7 @@ struct ObjectSelectionView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Choose an object to place:")
+            Text("Choose placeable object")
                 .padding(10)
 
             Grid {

@@ -13,7 +13,7 @@ struct PlaneSelectionView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Select which plane to place objects on.")
+            Text("Select placeable plane")
             HStack {
                 Button {
                     appState.detectVerticalPlanes.toggle()

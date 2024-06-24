@@ -52,9 +52,9 @@ enum PlaneProjector {
 
         // 4. Of all matching planes, pick the closest one.
         if let closestPlane = matchingPlanes.closestPlane(to: originFromPointTransform) {
-            // Return the given point's transform with the position on y-axis changed to the Y value of the closest horizontal plane.
+            // Return the given point's transform with the position on x and z axes changed to the X and Z values of the closest vertical plane.
             var result = originFromPointTransform
-            result.translation = [originFromPointTransform.translation.x, closestPlane.originFromAnchorTransform.translation.y, originFromPointTransform.translation.z]
+            result.translation = [originFromPointTransform.translation.x, closestPlane.originFromAnchorTransform.translation.y, closestPlane.originFromAnchorTransform.translation.z]
             return result
         }
         return nil

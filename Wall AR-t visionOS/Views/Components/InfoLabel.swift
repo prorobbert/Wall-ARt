@@ -18,13 +18,11 @@ struct InfoLabel: View {
     }
     var infoMessage: String {
         if !appState.allRequiredProvidersAreSupported {
-            return "This app requires functionality that isn't supported in Simulator."
+            return String(localized: "Functionality not supported in simulator")
         } else if !appState.allRequiredAuthorizationsAreGranted {
-            return "This app is missing necessary authorizations, You can change this in Settings > Privacy & Security."
+            return String(localized: "Missing necessary authorisations")
         } else {
-            return """
-Place and move 3D models in your physical environment. The system maintains their placement across app launches.
-"""
+            return String(localized: "Infolabel success message")
         }
     }
 }

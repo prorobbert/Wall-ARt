@@ -48,6 +48,7 @@ public final class PlacementManager {
 
     // Snap dragged objects to a nearby horizontal plane with +/- 4 centimeters.
     static private let snapToPlaneDistanceForDraggedObjects: Float = 0.04
+    static private let snapToVerticalPlaneDistanceForDraggedObjects: Float = 0.03
 
     @MainActor
     public init() {
@@ -209,9 +210,9 @@ public final class PlacementManager {
         // (The downward angle is configurable using the `raycastOrigin` orientation.)
         let direction: SIMD3<Float> = -raycastOrigin.transformMatrix(relativeTo: nil).zAxis
 
-        // Only consider raycast results that are within 0.2 to 3 meters from the device.
+        // Only consider raycast results that are within 0.2 to 5 meters from the device.
         let minDistance: Float = 0.2
-        let maxDistance: Float = 3
+        let maxDistance: Float = 5
 
         // Only raycast against horizontal planes.
         let collisionMask = PlaneAnchor.allPlanesCollisionGroup
@@ -377,19 +378,28 @@ public final class PlacementManager {
 
         // Update the dragged object's position.
         if let currentDrag {
-            currentDrag.draggedObject.position = currentDrag.initialPosition + value.convert(value.translation3D, from: .local, to: rootEntity)
+            let initialPosition = currentDrag.initialPosition
+            let translation = value.convert(value.translation3D, from: .local, to: rootEntity)
 
-            // If possible, snap the dragged object to a nearby horizontal plane.
-            let maxDistance = PlacementManager.snapToPlaneDistanceForDraggedObjects
+            // Update the dragged object's position with the translation along X and Z axes
+            let newPosition = initialPosition + translation
+            currentDrag.draggedObject.position = [initialPosition.x, newPosition.y, newPosition.z]
+
             if let appState, appState.detectVerticalPlanes {
+                // If possible, snap the dragged object to a nearby vertical plane.
+                let maxDistance = PlacementManager.snapToVerticalPlaneDistanceForDraggedObjects
                 if let projectedTransform = PlaneProjector.project(
                     point: currentDrag.draggedObject.transform.matrix,
                     ontoVerticalPlaneIn: planeAnchorHandler.planeAnchors,
                     withMaxDistance: maxDistance
                 ) {
-                    currentDrag.draggedObject.position = projectedTransform.translation
+                    // Constrain the movement to the plane by fixing the Y coordinate
+                    let fixedX = projectedTransform.translation.x
+                    currentDrag.draggedObject.position = [fixedX, projectedTransform.translation.y, projectedTransform.translation.z]
                 }
             } else {
+                // If possible, snap the dragged object to a nearby horizontal plane.
+                let maxDistance = PlacementManager.snapToPlaneDistanceForDraggedObjects
                 if let projectedTransform = PlaneProjector.project(
                     point: currentDrag.draggedObject.transform.matrix,
                     ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors,

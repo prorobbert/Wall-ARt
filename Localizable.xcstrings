@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@?" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@?"
-          }
-        }
-      }
-    },
     "%lld Artwork" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -85,12 +75,6 @@
         }
       }
     },
-    "Dit is maar een test" : {
-
-    },
-    "Drag to reposition" : {
-
-    },
     "drag_to_reposition" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -141,8 +125,21 @@
         }
       }
     },
-    "Hallo testing" : {
-
+    "hello_world" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, world!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo, wereld!"
+          }
+        }
+      }
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -242,9 +239,6 @@
         }
       }
     },
-    "object_lacement" : {
-
-    },
     "object_placement" : {
       "localizations" : {
         "en" : {
@@ -326,8 +320,21 @@
         }
       }
     },
-    "remove_all_objects testing" : {
-
+    "remove_all_objects_question" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove all objects?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wilt u alle objecten verwijderderen?"
+          }
+        }
+      }
     },
     "select_placeable_plane" : {
       "extractionState" : "manual",
@@ -342,6 +349,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecteer op welk vlak u objecten wilt plaatsen."
+          }
+        }
+      }
+    },
+    "show_ar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show AR"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon AR"
           }
         }
       }

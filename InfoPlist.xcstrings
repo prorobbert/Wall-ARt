@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Wall AR-t"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Wall AR-t visionOS"
+          }
+        }
+      }
+    },
+    "NSWorldSensingUsageDescription" : {
+      "comment" : "Message that is shown when asking the user for world tracking permission",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detect and track surfaces in your surrounding."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detect and track surfaces in your surrounding."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

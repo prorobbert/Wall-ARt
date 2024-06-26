@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Wall_AR_tApp: App {
+struct WallARtApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

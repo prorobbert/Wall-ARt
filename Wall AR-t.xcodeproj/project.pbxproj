@@ -53,8 +53,6 @@
 		527EE9122C185BC700314E94 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
 		527EE9192C185BC700314E94 /* ARDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE9182C185BC700314E94 /* ARDomainTests.swift */; };
 		527EE91A2C185BC700314E94 /* ARDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 527EE90A2C185BC600314E94 /* ARDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		527EE91D2C185BC700314E94 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
-		527EE91E2C185BC700314E94 /* ARDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		527EE9282C185BF300314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		527EE9292C185BF300314E94 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		527EE92F2C185C1E00314E94 /* ArtworkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE92E2C185C1E00314E94 /* ArtworkEntity.swift */; };
@@ -64,6 +62,8 @@
 		527EE93F2C185D5F00314E94 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93E2C185D5F00314E94 /* ImmersiveView.swift */; };
 		527EE9412C185D6000314E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9402C185D6000314E94 /* Assets.xcassets */; };
 		527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9432C185D6100314E94 /* Preview Assets.xcassets */; };
+		528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */; };
+		528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */; };
 		52A66D7F2C1C2CB70004BDD9 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		52A66D802C1C2CB70004BDD9 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52A66D812C1C2CB90004BDD9 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
@@ -143,13 +143,6 @@
 			remoteGlobalIDString = 52BA5C392C185A70009734F2;
 			remoteInfo = "Wall AR-t";
 		};
-		527EE91B2C185BC700314E94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 527EE9072C185BC600314E94;
-			remoteInfo = ARDomain;
-		};
 		527EE9252C185BD900314E94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
@@ -187,7 +180,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				527EE8F82C185B0D00314E94 /* Domain.framework in Embed Frameworks */,
-				527EE91E2C185BC700314E94 /* ARDomain.framework in Embed Frameworks */,
 				52067C422C19C87F00E80F0A /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -259,6 +251,7 @@
 		527EE9402C185D6000314E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527EE9432C185D6100314E94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		527EE9452C185D6100314E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pancakes.usdz; sourceTree = "<group>"; };
 		52A66D862C1C4D1D0004BDD9 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Statues.usdz; sourceTree = "<group>"; };
 		52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
@@ -327,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				527EE8F72C185B0D00314E94 /* Domain.framework in Frameworks */,
-				527EE91D2C185BC700314E94 /* ARDomain.framework in Frameworks */,
 				52067C412C19C87F00E80F0A /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +516,7 @@
 		52BA5C312C185A70009734F2 = {
 			isa = PBXGroup;
 			children = (
+				528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */,
 				52A66DB32C2956360004BDD9 /* Localizable.xcstrings */,
 				52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */,
 				52BA5C3C2C185A70009734F2 /* Wall AR-t */,
@@ -556,6 +549,8 @@
 		52BA5C3C2C185A70009734F2 /* Wall AR-t */ = {
 			isa = PBXGroup;
 			children = (
+				52BB03912C29B9810009DE62 /* Extensions */,
+				52BB03902C29B9790009DE62 /* Views */,
 				52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */,
 				52BA5C3F2C185A70009734F2 /* ContentView.swift */,
 				52BA5C412C185A72009734F2 /* Assets.xcassets */,
@@ -570,6 +565,20 @@
 				52BA5C442C185A72009734F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52BB03902C29B9790009DE62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		52BB03912C29B9810009DE62 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -736,7 +745,6 @@
 			dependencies = (
 				52A66D992C1C5D6D0004BDD9 /* PBXTargetDependency */,
 				527EE8F62C185B0D00314E94 /* PBXTargetDependency */,
-				527EE91C2C185BC700314E94 /* PBXTargetDependency */,
 				52067C442C19C87F00E80F0A /* PBXTargetDependency */,
 			);
 			name = "Wall AR-t";
@@ -857,6 +865,7 @@
 				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
 				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
@@ -872,6 +881,7 @@
 				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
 				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
@@ -1010,11 +1020,6 @@
 			isa = PBXTargetDependency;
 			target = 52BA5C392C185A70009734F2 /* Wall AR-t */;
 			targetProxy = 527EE9152C185BC700314E94 /* PBXContainerItemProxy */;
-		};
-		527EE91C2C185BC700314E94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 527EE9072C185BC600314E94 /* ARDomain */;
-			targetProxy = 527EE91B2C185BC700314E94 /* PBXContainerItemProxy */;
 		};
 		527EE9262C185BD900314E94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1583,6 +1588,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1617,6 +1623,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

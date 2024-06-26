@@ -418,6 +418,9 @@
         }
       }
     },
+    "tap_a_plane_to_place_models" : {
+
+    },
     "tap_to_place_objects" : {
       "extractionState" : "manual",
       "localizations" : {

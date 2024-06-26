@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAR = false
 
     var body: some View {
         VStack {
@@ -15,7 +16,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("hello_world")
-            Button(action: {  }, label: {
+            Button(action: { showingAR = true }, label: {
                 Text("show_ar")
                     .font(.title2)
                     .padding(.horizontal, 40)
@@ -23,6 +24,9 @@ struct ContentView: View {
             })
         }
         .padding()
+        .fullScreenCover(isPresented: $showingAR) {
+            ARContentView()
+        }
     }
 }
 

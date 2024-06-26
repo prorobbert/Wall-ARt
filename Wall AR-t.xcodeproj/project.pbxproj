@@ -64,6 +64,11 @@
 		527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527EE9432C185D6100314E94 /* Preview Assets.xcassets */; };
 		528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */; };
 		528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */; };
+		528AB5612C2C0ED200CD7561 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AB5602C2C0ED200CD7561 /* ARContentView.swift */; };
+		528AB5632C2C0F7300CD7561 /* ARContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AB5622C2C0F7300CD7561 /* ARContainerView.swift */; };
+		528AB5652C2C11A700CD7561 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AB5642C2C11A700CD7561 /* ARViewController.swift */; };
+		528AB5682C2C151F00CD7561 /* ARScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AB5672C2C151F00CD7561 /* ARScene.swift */; };
+		528AB56C2C2C160C00CD7561 /* ARSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528AB56B2C2C160C00CD7561 /* ARSceneSpec.swift */; };
 		52A66D7F2C1C2CB70004BDD9 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		52A66D802C1C2CB70004BDD9 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52A66D812C1C2CB90004BDD9 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
@@ -252,6 +257,11 @@
 		527EE9432C185D6100314E94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		527EE9452C185D6100314E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528AB55C2C2AEE6900CD7561 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		528AB5602C2C0ED200CD7561 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentView.swift; sourceTree = "<group>"; };
+		528AB5622C2C0F7300CD7561 /* ARContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContainerView.swift; sourceTree = "<group>"; };
+		528AB5642C2C11A700CD7561 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		528AB5672C2C151F00CD7561 /* ARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScene.swift; sourceTree = "<group>"; };
+		528AB56B2C2C160C00CD7561 /* ARSceneSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneSpec.swift; sourceTree = "<group>"; };
 		52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pancakes.usdz; sourceTree = "<group>"; };
 		52A66D862C1C4D1D0004BDD9 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Statues.usdz; sourceTree = "<group>"; };
 		52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
@@ -502,6 +512,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		528AB55F2C2C0EB600CD7561 /* AR Views */ = {
+			isa = PBXGroup;
+			children = (
+				528AB5602C2C0ED200CD7561 /* ARContentView.swift */,
+				528AB5622C2C0F7300CD7561 /* ARContainerView.swift */,
+				528AB5642C2C11A700CD7561 /* ARViewController.swift */,
+			);
+			path = "AR Views";
+			sourceTree = "<group>";
+		};
+		528AB5662C2C14FE00CD7561 /* AR Scene */ = {
+			isa = PBXGroup;
+			children = (
+				528AB5672C2C151F00CD7561 /* ARScene.swift */,
+				528AB56B2C2C160C00CD7561 /* ARSceneSpec.swift */,
+			);
+			path = "AR Scene";
+			sourceTree = "<group>";
+		};
 		52A66D832C1C4C620004BDD9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +578,7 @@
 		52BA5C3C2C185A70009734F2 /* Wall AR-t */ = {
 			isa = PBXGroup;
 			children = (
+				528AB5662C2C14FE00CD7561 /* AR Scene */,
 				52BB03912C29B9810009DE62 /* Extensions */,
 				52BB03902C29B9790009DE62 /* Views */,
 				52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */,
@@ -570,6 +600,7 @@
 		52BB03902C29B9790009DE62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				528AB55F2C2C0EB600CD7561 /* AR Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -978,8 +1009,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528AB5612C2C0ED200CD7561 /* ARContentView.swift in Sources */,
+				528AB5632C2C0F7300CD7561 /* ARContainerView.swift in Sources */,
 				52BA5C402C185A70009734F2 /* ContentView.swift in Sources */,
 				52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */,
+				528AB5652C2C11A700CD7561 /* ARViewController.swift in Sources */,
+				528AB5682C2C151F00CD7561 /* ARScene.swift in Sources */,
+				528AB56C2C2C160C00CD7561 /* ARSceneSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,6 +1619,7 @@
 				DEVELOPMENT_TEAM = 4LSFFV29GY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Detect your surroundings to place the artworks on";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1618,6 +1655,7 @@
 				DEVELOPMENT_TEAM = 4LSFFV29GY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Detect your surroundings to place the artworks on";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

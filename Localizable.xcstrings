@@ -418,22 +418,59 @@
         }
       }
     },
-    "tap_a_plane_to_place_models" : {
-
-    },
-    "tap_to_place_objects" : {
-      "extractionState" : "manual",
+    "tap_a_plane_to_place_model" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tap to place objects."
+            "value" : "Tap a plane to place the model"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tik om objecten te plaatsen."
+            "value" : "Tik op een oppervlak om het object te plaatsen"
+          }
+        }
+      }
+    },
+    "tap_to_place_objects" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "device" : {
+              "applevision" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tap to place objects."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tap the screen to place an object."
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "device" : {
+              "applevision" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tik om objecten te plaatsen."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tik op het scherm om een object te plaatsen."
+                }
+              }
+            }
           }
         }
       }

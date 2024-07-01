@@ -25,7 +25,7 @@ struct ContentView: View {
         }
         .padding()
         .fullScreenCover(isPresented: $showingAR) {
-            ARContentView()
+            ArArtworkView(isPresented: $showingAR)
         }
     }
 }

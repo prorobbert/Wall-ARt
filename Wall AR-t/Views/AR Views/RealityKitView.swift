@@ -109,18 +109,38 @@ struct RealityKitView: UIViewRepresentable {
             let position = simd_make_float3(firstResult.worldTransform.columns.3)
             print("This would be the following on the plane: \(position)")
             do {
-//                let canvas = try ModelEntity.loadModel(named: "Statues")
-//                canvas.scale = [0.002, 0.002, 0.002]
-//                model.look(at: view.cameraTransform.translation, from: position, relativeTo: nil)
+//                let model = try ModelEntity.loadModel(named: "Statues")
+//
+//                // Define desired width and height
+//                let desiredWidth: Float = 0.05
+//                let desiredHeight: Float = 0.07
+//
+//                // Get the original size of the model
+//                let originalSize = model.visualBounds(relativeTo: nil).extents
+//
+//                // Calculate the scale factors for width and height
+//                let widthScale = desiredWidth / originalSize.x
+//                let heightScale = desiredHeight / originalSize.z
+//
+//                // Choose the smaller scale factor to maintain aspect ration
+//                let scaleFactor = min(widthScale, heightScale)
+//
+//                // Apply the scale transformation
+//                print("Current model size: \(model.visualBounds(relativeTo: nil).extents)")
+//                print("desired width: \(desiredWidth)")
+//                print("actual width: \(originalSize.x)")
+//                print("desired height: \(desiredHeight)")
+//                print("actual height: \(originalSize.z)")
+//                print("scale factor: \(scaleFactor)")
+////                model.scale = [scaleFactor, scaleFactor, scaleFactor]
+//                model.scale = .init(repeating: scaleFactor)
+//                print("New model size: \(model.visualBounds(relativeTo: nil).extents)")
 
                 guard let artTexture = getArtMaterial(name: "Senna") else { return }
                 let mesh = MeshResource.generateBox(width: 1, height: 1.5, depth: 0.1)
                 let canvas = ModelEntity(mesh: mesh, materials: [artTexture])
-//                canvas.look(at: view.cameraTransform.translation, from: position, relativeTo: nil)
                 var transform = Transform(matrix: firstResult.worldTransform)
 
-//                transform.rotation = simd_quatf(angle: .pi / 2, axis: [0, 1, 0])
-//                canvas.transform = transform
                 let targetRotation = simd_quatf(angle: .pi / 2, axis: [1, 0, 0]) * simd_quatf(angle: .pi, axis: [0, 0, 1])
                 transform.rotation *= targetRotation
 

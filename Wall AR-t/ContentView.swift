@@ -6,20 +6,27 @@
 //
 
 import SwiftUI
-import Domain
-import ARDomain
 
 struct ContentView: View {
-    let artItem = Artwork(title: "Hello mom")
-    let artEntity = ArtworkEntity(artwork: Artwork(title: "Hi dad"))
+    @State private var showingAR = false
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("hello_world")
+            Button(action: { showingAR = true }, label: {
+                Text("show_ar")
+                    .font(.title2)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 12)
+            })
         }
         .padding()
+        .fullScreenCover(isPresented: $showingAR) {
+            ArArtworkView(isPresented: $showingAR)
+        }
     }
 }
 

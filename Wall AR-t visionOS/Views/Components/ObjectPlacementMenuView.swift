@@ -32,7 +32,7 @@ struct ObjectPlacementMenuView: View {
             }
             .font(.subheadline)
             .buttonStyle(.borderless)
-            .confirmationDialog("\(String(localized: "remove_all_objects"))?", isPresented: $presentConfirmationDialog) {
+            .confirmationDialog(String(localized: "remove_all_objects_question"), isPresented: $presentConfirmationDialog) {
                 Button("remove_all", role: .destructive) {
                     Task {
                         await appState.placementManager?.removeAllPlacedObjects()

@@ -76,7 +76,7 @@ struct ObjectPlacementRealityView: View {
                 )
             }
             Attachment(id: Attachments.dragTooltip) {
-                TooltipView(text: String(localized: "Drag to reposition"))
+                TooltipView(text: String(localized: "drag_to_reposition"))
             }
             Attachment(id: Attachments.deleteButton) {
                 DeleteButton {

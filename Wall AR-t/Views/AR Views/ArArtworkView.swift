@@ -15,6 +15,7 @@ struct ArArtworkView: View {
         ZStack {
             RealityKitView(isCoachingComplete: $isCoachingComplete)
                 .ignoresSafeArea()
+
             VStack {
                 Button(action: {
                     isPresented.toggle()

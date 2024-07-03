@@ -20,9 +20,11 @@ struct RealityKitView: UIViewRepresentable {
         let session = arView.session
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.vertical]
+
         if enableEnvironmentTexturing {
             config.environmentTexturing = .automatic
         }
+
         // Object occlusion
         if enableObjectOcclusion {
             arView.environment.sceneUnderstanding.options = [
@@ -31,17 +33,18 @@ struct RealityKitView: UIViewRepresentable {
                 .receivesLighting
             ]
         }
+
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification) {
             config.sceneReconstruction = .meshWithClassification
         } else if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
             config.sceneReconstruction = .mesh
         }
+
         // People occlusion
-        if enablePeopleOcclusion {
-            if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
-                config.frameSemantics.insert(.personSegmentationWithDepth)
-            }
+        if enablePeopleOcclusion && ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+            config.frameSemantics.insert(.personSegmentationWithDepth)
         }
+        
         // Run the AR session
         session.run(config, options: [.removeExistingAnchors, .resetTracking])
 
@@ -52,6 +55,7 @@ struct RealityKitView: UIViewRepresentable {
         coachingOverlay.activatesAutomatically = true
         coachingOverlay.goal = .verticalPlane
         coachingOverlay.delegate = context.coordinator.coachingCoordinator
+
         arView.addSubview(coachingOverlay)
 
         context.coordinator.view = arView
@@ -102,39 +106,41 @@ struct RealityKitView: UIViewRepresentable {
         @objc func handleTap(_ sender: UITapGestureRecognizer) {
             guard let view = sender.view as? ARView else { return }
             if !coachingCoordinator.isCoachingComplete { return }
+
             let location = sender.location(in: view)
             print("You tapped the screen at location: \(location)")
             let raycastResults = view.raycast(from: location, allowing: .estimatedPlane, alignment: .vertical)
             guard let firstResult = raycastResults.first else { return }
+
             let position = simd_make_float3(firstResult.worldTransform.columns.3)
             print("This would be the following on the plane: \(position)")
             do {
-//                let model = try ModelEntity.loadModel(named: "Statues")
-//
-//                // Define desired width and height
-//                let desiredWidth: Float = 0.05
-//                let desiredHeight: Float = 0.07
-//
-//                // Get the original size of the model
-//                let originalSize = model.visualBounds(relativeTo: nil).extents
-//
-//                // Calculate the scale factors for width and height
-//                let widthScale = desiredWidth / originalSize.x
-//                let heightScale = desiredHeight / originalSize.z
-//
-//                // Choose the smaller scale factor to maintain aspect ration
-//                let scaleFactor = min(widthScale, heightScale)
-//
-//                // Apply the scale transformation
-//                print("Current model size: \(model.visualBounds(relativeTo: nil).extents)")
-//                print("desired width: \(desiredWidth)")
-//                print("actual width: \(originalSize.x)")
-//                print("desired height: \(desiredHeight)")
-//                print("actual height: \(originalSize.z)")
-//                print("scale factor: \(scaleFactor)")
-////                model.scale = [scaleFactor, scaleFactor, scaleFactor]
-//                model.scale = .init(repeating: scaleFactor)
-//                print("New model size: \(model.visualBounds(relativeTo: nil).extents)")
+                /* Code for when I will continue using 3D models
+                let model = try ModelEntity.loadModel(named: "Statues")
+
+                // Define desired width and height
+                let desiredWidth: Float = 0.05
+                let desiredHeight: Float = 0.07
+
+                // Get the original size of the model
+                let originalSize = model.visualBounds(relativeTo: nil).extents
+
+                // Calculate the scale factors for width and height
+                let widthScale = desiredWidth / originalSize.x
+                let heightScale = desiredHeight / originalSize.z
+
+                // Choose the smaller scale factor to maintain aspect ration
+                let scaleFactor = min(widthScale, heightScale)
+
+                // Apply the scale transformation
+                print("Current model size: \(model.visualBounds(relativeTo: nil).extents)")
+                print("desired width: \(desiredWidth)")
+                print("actual width: \(originalSize.x)")
+                print("desired height: \(desiredHeight)")
+                print("actual height: \(originalSize.z)")
+                print("scale factor: \(scaleFactor)")
+                print("New model size: \(model.visualBounds(relativeTo: nil).extents)")
+                model.scale = .init(repeating: scaleFactor)*/
 
                 guard let artTexture = getArtMaterial(name: "Senna") else { return }
                 let mesh = MeshResource.generateBox(width: 1, height: 1.5, depth: 0.1)

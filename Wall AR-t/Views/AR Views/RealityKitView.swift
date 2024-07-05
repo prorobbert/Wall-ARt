@@ -8,6 +8,7 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import ARDomainiOS
 
 struct RealityKitView: UIViewRepresentable {
     @Binding var isCoachingComplete: Bool
@@ -44,9 +45,11 @@ struct RealityKitView: UIViewRepresentable {
         if enablePeopleOcclusion && ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
             config.frameSemantics.insert(.personSegmentationWithDepth)
         }
-        
+
         // Run the AR session
         session.run(config, options: [.removeExistingAnchors, .resetTracking])
+        let focusEntity = FocusEntity(on: arView, style: .classic(color: MaterialColorParameter.color(.yellow)))
+        print("test: \(focusEntity)")
 
         // Add coaching overlay
         let coachingOverlay = ARCoachingOverlayView()

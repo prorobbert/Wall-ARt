@@ -42,6 +42,16 @@
 		52067C852C1B126E00E80F0A /* PlaneSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C842C1B126E00E80F0A /* PlaneSelectionView.swift */; };
 		52067C872C1B1E7300E80F0A /* ObjectPlacementRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */; };
 		52067C892C1B1F6100E80F0A /* PlacementTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */; };
+		5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3122C37E504004FA94F /* Float+Extension.swift */; };
+		5274E31F2C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */; };
+		5274E3202C37E504004FA94F /* FocusEntity+Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */; };
+		5274E3212C37E504004FA94F /* FocusEntity+Classic+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */; };
+		5274E3222C37E504004FA94F /* FocusEntity+Colored+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */; };
+		5274E3232C37E504004FA94F /* FocusEntityDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */; };
+		5274E3242C37E504004FA94F /* HasFocusEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */; };
+		5274E3252C37E504004FA94F /* FocusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31A2C37E504004FA94F /* FocusEntity.swift */; };
+		5274E3262C37E504004FA94F /* FocusEntityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */; };
+		5274E3272C37E504004FA94F /* FocusEntityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */; };
 		527EE8E62C185B0D00314E94 /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8E52C185B0D00314E94 /* Domain.docc */; };
 		527EE8EC2C185B0D00314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		527EE8F32C185B0D00314E94 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8F22C185B0D00314E94 /* DomainTests.swift */; };
@@ -53,8 +63,8 @@
 		527EE9122C185BC700314E94 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
 		527EE9192C185BC700314E94 /* ARDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE9182C185BC700314E94 /* ARDomainTests.swift */; };
 		527EE91A2C185BC700314E94 /* ARDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 527EE90A2C185BC600314E94 /* ARDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		527EE9282C185BF300314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
-		527EE9292C185BF300314E94 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		527EE9282C185BF300314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; platformFilters = (ios, xros, ); };
+		527EE9292C185BF300314E94 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; platformFilters = (ios, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		527EE92F2C185C1E00314E94 /* ArtworkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE92E2C185C1E00314E94 /* ArtworkEntity.swift */; };
 		527EE9392C185D5F00314E94 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 527EE9382C185D5F00314E94 /* RealityKitContent */; };
 		527EE93B2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE93A2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift */; };
@@ -95,6 +105,9 @@
 		52BA5C402C185A70009734F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3F2C185A70009734F2 /* ContentView.swift */; };
 		52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C412C185A72009734F2 /* Assets.xcassets */; };
 		52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C442C185A72009734F2 /* Preview Assets.xcassets */; };
+		52CFD7D72C37E46400E28FA3 /* ARDomainiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52CFD7DA2C37E46400E28FA3 /* ARDomainiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */; };
+		52CFD7DB2C37E46400E28FA3 /* ARDomainiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +174,13 @@
 			remoteGlobalIDString = 527EE8E12C185B0D00314E94;
 			remoteInfo = Domain;
 		};
+		52CFD7D82C37E46400E28FA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52BA5C322C185A70009734F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52CFD7D32C37E46400E28FA3;
+			remoteInfo = ARDomainiOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +205,7 @@
 			files = (
 				527EE8F82C185B0D00314E94 /* Domain.framework in Embed Frameworks */,
 				52067C422C19C87F00E80F0A /* Models.framework in Embed Frameworks */,
+				52CFD7DB2C37E46400E28FA3 /* ARDomainiOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +256,16 @@
 		52067C842C1B126E00E80F0A /* PlaneSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneSelectionView.swift; sourceTree = "<group>"; };
 		52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPlacementRealityView.swift; sourceTree = "<group>"; };
 		52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementTooltip.swift; sourceTree = "<group>"; };
+		5274E3122C37E504004FA94F /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+		5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEnitiy+Extension+Segment.swift"; sourceTree = "<group>"; };
+		5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Alignment+Extension.swift"; sourceTree = "<group>"; };
+		5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Classic+Extension.swift"; sourceTree = "<group>"; };
+		5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Colored+Extension.swift"; sourceTree = "<group>"; };
+		5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntityDelegate+Extension.swift"; sourceTree = "<group>"; };
+		5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HasFocusEntity+Extension.swift"; sourceTree = "<group>"; };
+		5274E31A2C37E504004FA94F /* FocusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntity.swift; sourceTree = "<group>"; };
+		5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntityComponent.swift; sourceTree = "<group>"; };
+		5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntityDelegate.swift; sourceTree = "<group>"; };
 		527EE8E22C185B0D00314E94 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		527EE8E42C185B0D00314E94 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		527EE8E52C185B0D00314E94 /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
@@ -271,6 +302,8 @@
 		52BA5C3F2C185A70009734F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52BA5C412C185A72009734F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52BA5C442C185A72009734F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARDomainiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARDomainiOS.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +362,14 @@
 			files = (
 				527EE8F72C185B0D00314E94 /* Domain.framework in Frameworks */,
 				52067C412C19C87F00E80F0A /* Models.framework in Frameworks */,
+				52CFD7DA2C37E46400E28FA3 /* ARDomainiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52CFD7D12C37E46400E28FA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +457,31 @@
 				52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5274E3192C37E504004FA94F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5274E3122C37E504004FA94F /* Float+Extension.swift */,
+				5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */,
+				5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */,
+				5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */,
+				5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */,
+				5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */,
+				5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5274E31D2C37E504004FA94F /* FocusEntity */ = {
+			isa = PBXGroup;
+			children = (
+				5274E3192C37E504004FA94F /* Extensions */,
+				5274E31A2C37E504004FA94F /* FocusEntity.swift */,
+				5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */,
+				5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */,
+			);
+			path = FocusEntity;
 			sourceTree = "<group>";
 		};
 		527EE8E32C185B0D00314E94 /* Domain */ = {
@@ -553,6 +619,7 @@
 				527EE9172C185BC700314E94 /* ARDomainTests */,
 				527EE9362C185D5F00314E94 /* Packages */,
 				52067C342C19C86D00E80F0A /* Models */,
+				52CFD7D52C37E46400E28FA3 /* ARDomainiOS */,
 				52BA5C3B2C185A70009734F2 /* Products */,
 				527EE9272C185BF300314E94 /* Frameworks */,
 			);
@@ -568,6 +635,7 @@
 				527EE9112C185BC700314E94 /* ARDomainTests.xctest */,
 				527EE9342C185D5F00314E94 /* Wall AR-t visionOS.app */,
 				52067C332C19C86D00E80F0A /* Models.framework */,
+				52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -609,6 +677,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		52CFD7D52C37E46400E28FA3 /* ARDomainiOS */ = {
+			isa = PBXGroup;
+			children = (
+				5274E31D2C37E504004FA94F /* FocusEntity */,
+				52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */,
+			);
+			path = ARDomainiOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -633,6 +710,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				527EE91A2C185BC700314E94 /* ARDomain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52CFD7CF2C37E46400E28FA3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52CFD7D72C37E46400E28FA3 /* ARDomainiOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,11 +859,30 @@
 				52A66D992C1C5D6D0004BDD9 /* PBXTargetDependency */,
 				527EE8F62C185B0D00314E94 /* PBXTargetDependency */,
 				52067C442C19C87F00E80F0A /* PBXTargetDependency */,
+				52CFD7D92C37E46400E28FA3 /* PBXTargetDependency */,
 			);
 			name = "Wall AR-t";
 			productName = "Wall AR-t";
 			productReference = 52BA5C3A2C185A70009734F2 /* Wall AR-t.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52CFD7D32C37E46400E28FA3 /* ARDomainiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52CFD7DC2C37E46400E28FA3 /* Build configuration list for PBXNativeTarget "ARDomainiOS" */;
+			buildPhases = (
+				52CFD7CF2C37E46400E28FA3 /* Headers */,
+				52CFD7D02C37E46400E28FA3 /* Sources */,
+				52CFD7D12C37E46400E28FA3 /* Frameworks */,
+				52CFD7D22C37E46400E28FA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARDomainiOS;
+			productName = ARDomainiOS;
+			productReference = 52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -813,6 +917,9 @@
 					52BA5C392C185A70009734F2 = {
 						CreatedOnToolsVersion = 15.3;
 					};
+					52CFD7D32C37E46400E28FA3 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 				};
 			};
 			buildConfigurationList = 52BA5C352C185A70009734F2 /* Build configuration list for PBXProject "Wall AR-t" */;
@@ -839,6 +946,7 @@
 				527EE9072C185BC600314E94 /* ARDomain */,
 				527EE9102C185BC700314E94 /* ARDomainTests */,
 				52067C322C19C86D00E80F0A /* Models */,
+				52CFD7D32C37E46400E28FA3 /* ARDomainiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -915,6 +1023,13 @@
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52CFD7D22C37E46400E28FA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,6 +1130,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52CFD7D02C37E46400E28FA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5274E3212C37E504004FA94F /* FocusEntity+Classic+Extension.swift in Sources */,
+				5274E3252C37E504004FA94F /* FocusEntity.swift in Sources */,
+				5274E31F2C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift in Sources */,
+				5274E3202C37E504004FA94F /* FocusEntity+Alignment+Extension.swift in Sources */,
+				5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */,
+				5274E3232C37E504004FA94F /* FocusEntityDelegate+Extension.swift in Sources */,
+				5274E3272C37E504004FA94F /* FocusEntityDelegate.swift in Sources */,
+				5274E3262C37E504004FA94F /* FocusEntityComponent.swift in Sources */,
+				5274E3242C37E504004FA94F /* HasFocusEntity+Extension.swift in Sources */,
+				5274E3222C37E504004FA94F /* FocusEntity+Colored+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1055,11 +1187,19 @@
 		};
 		527EE9262C185BD900314E94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				xros,
+			);
 			target = 527EE8E12C185B0D00314E94 /* Domain */;
 			targetProxy = 527EE9252C185BD900314E94 /* PBXContainerItemProxy */;
 		};
 		527EE92B2C185BF300314E94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				xros,
+			);
 			target = 527EE8E12C185B0D00314E94 /* Domain */;
 			targetProxy = 527EE92A2C185BF300314E94 /* PBXContainerItemProxy */;
 		};
@@ -1079,6 +1219,11 @@
 			isa = PBXTargetDependency;
 			productRef = 52A66D9C2C1C5D790004BDD9 /* SwiftLintBuildToolPlugin */;
 		};
+		52CFD7D92C37E46400E28FA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52CFD7D32C37E46400E28FA3 /* ARDomainiOS */;
+			targetProxy = 52CFD7D82C37E46400E28FA3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1097,6 +1242,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1136,6 +1282,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1675,6 +1822,86 @@
 			};
 			name = Release;
 		};
+		52CFD7DD2C37E46400E28FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomainiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52CFD7DE2C37E46400E28FA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4LSFFV29GY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.robbertruiter.ARDomainiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1746,6 +1973,15 @@
 			buildConfigurations = (
 				52BA5C492C185A72009734F2 /* Debug */,
 				52BA5C4A2C185A72009734F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52CFD7DC2C37E46400E28FA3 /* Build configuration list for PBXNativeTarget "ARDomainiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52CFD7DD2C37E46400E28FA3 /* Debug */,
+				52CFD7DE2C37E46400E28FA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

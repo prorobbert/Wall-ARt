@@ -13,14 +13,14 @@ final class ARScene {
     private var accumulatedTime: Double = 0.0
     private var loadingSubscriptions: Set<AnyCancellable> = []
 //    private var animatingModels: [AnimatingModel] = []
-    
+
     init(anchorEntity: AnchorEntity) {
         self.anchorEntity = anchorEntity
     }
-    
+
     func loadModels() {
         anchorEntity.transform.translation = ARSceneSpec.position
-        
+
         ARSceneSpec.models.forEach { modelSpec in
             Entity.loadAsync(named: modelSpec.fileName)
                 .sink(receiveCompletion: { _ in

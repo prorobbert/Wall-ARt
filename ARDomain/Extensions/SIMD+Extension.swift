@@ -16,14 +16,14 @@ extension simd_float4x4 {
                   SIMD4<Float>(vector.x, vector.y, vector.z, 1))
     }
 
-    var translation: SIMD3<Float> {
-        get {
-            columns.3.xyz
-        }
-        set {
-            self.columns.3 = [newValue.x, newValue.y, newValue.z, 1]
-        }
-    }
+//    var translation: SIMD3<Float> {
+//        get {
+//            columns.3.xyz
+//        }
+//        set {
+//            self.columns.3 = [newValue.x, newValue.y, newValue.z, 1]
+//        }
+//    }
 
     var rotation: simd_quatf {
         simd_quatf(rotationMatrix)

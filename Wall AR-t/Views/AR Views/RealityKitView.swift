@@ -59,7 +59,7 @@ struct RealityKitView: UIViewRepresentable {
 
         arView.addSubview(coachingOverlay)
 
-        _ = FocusSquare(on: arView, style: .classic(color: MaterialColorParameter.color(.orange)))
+//        _ = FocusSquare(on: arView, style: .classic(color: MaterialColorParameter.color(.orange)))
         context.coordinator.view = arView
         session.delegate = context.coordinator
 
@@ -99,6 +99,7 @@ struct RealityKitView: UIViewRepresentable {
     class Coordinator: NSObject, ARSessionDelegate {
         weak var view: ARView?
         var coachingCoordinator: CoachingCoordinator
+        var focusSquare: FocusSquare?
 
         init(coachingCoordinator: CoachingCoordinator) {
             print("coordinator init")
@@ -107,11 +108,13 @@ struct RealityKitView: UIViewRepresentable {
 
         func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
             guard let view = self.view else { return }
-//            self.focusSquare = FocusSquare(on: view, style: .classic(color: MaterialColorParameter.color(.yellow)))
+            if focusSquare == nil {
+                self.focusSquare = FocusSquare(on: view, style: .classic(color: MaterialColorParameter.color(.orange)))
+            }
         }
 
         @objc func handleTap(_ sender: UITapGestureRecognizer) {
-            guard let view = sender.view as? ARView else { return }
+            guard let view = sender.view as? ARView, let focusSquare = self.focusSquare else { return }
             if !coachingCoordinator.isCoachingComplete { return }
 
             let location = sender.location(in: view)
@@ -159,7 +162,7 @@ struct RealityKitView: UIViewRepresentable {
 
                 canvas.transform = transform
 
-                let anchorEntity = AnchorEntity(world: position)
+                let anchorEntity = AnchorEntity(world: focusSquare.position)
                 anchorEntity.addChild(canvas)
                 view.scene.addAnchor(anchorEntity)
             } catch {

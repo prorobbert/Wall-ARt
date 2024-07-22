@@ -1,13 +1,13 @@
 //
-//  FocusEnitiy+Extension+Segment.swift
-//  ARDomain
+//  FocusSquare+Extension+Segment.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 03/07/2024.
 //
 
 import RealityKit
 
-internal extension FocusEntity {
+internal extension FocusSquare {
     /*
      The focus square consists of eight segments as follows, which can be individually animated.
 
@@ -102,6 +102,7 @@ internal extension FocusEntity {
 
             self.name = name
             model = plane
+            print("Hello model: \(model)")
         }
 
         required init() {
@@ -136,6 +137,16 @@ internal extension FocusEntity {
         
         func close() {
             let oldLength: Float
+            if alignment == .horizontal {
+                oldLength = self.scale[0]
+                self.scale[0] = Segment.length
+            } else {
+                oldLength = self.scale[2]
+                self.scale[2] = Segment.length
+            }
+
+            let offset = Segment.length / 2 - oldLength / 2
+            updatePosition(withOffset: offset, for: openDirection.reversed)
         }
         
         private func updatePosition(withOffset offset: Float, for direction: Direction) {

@@ -1,13 +1,13 @@
 //
-//  FocusEntity+Classic+Extension.swift
-//  ARDomain
+//  FocusSquare+Classic+Extension.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 04/07/2024.
 //
 
 import RealityKit
 
-internal extension FocusEntity {
+internal extension FocusSquare {
     // MARK: Configuration properties
 
     /// Original size of the focus square in meters.
@@ -50,7 +50,7 @@ internal extension FocusEntity {
         }
         
         let segmentLength: Float = 0.5
-        let correction: Float = FocusEntity.thickness / 2
+        let correction: Float = FocusSquare.thickness / 2
         segments[0].position += [-(segmentLength / 2 - correction), 0, -(segmentLength - correction)]
         segments[1].position += [segmentLength / 2 - correction, 0, -(segmentLength - correction)]
         segments[2].position += [-segmentLength, 0, -segmentLength / 2]
@@ -65,7 +65,7 @@ internal extension FocusEntity {
             segment.open()
         }
         
-        self.positioningEntity.scale = SIMD3<Float>(repeating: FocusEntity.size * FocusEntity.scaleForClosedSquare)
+        self.positioningEntity.scale = SIMD3<Float>(repeating: FocusSquare.size * FocusSquare.scaleForClosedSquare)
     }
 
     func offPlaneAnimation() {
@@ -77,7 +77,7 @@ internal extension FocusEntity {
             segment.open()
         }
 
-        positioningEntity.scale = .init(repeating: FocusEntity.size)
+        positioningEntity.scale = .init(repeating: FocusSquare.size)
     }
     
     func onPlaneAnimation(newPlane: Bool = false) {

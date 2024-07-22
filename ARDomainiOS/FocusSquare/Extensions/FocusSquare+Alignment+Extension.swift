@@ -1,6 +1,6 @@
 //
-//  FocusEntity+Alignment+Extension.swift
-//  ARDomain
+//  FocusSquare+Alignment+Extension.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 04/07/2024.
 //
@@ -11,18 +11,18 @@ import Combine
 import ARKit
 #endif
 
-extension FocusEntity {
+extension FocusSquare {
     // MARK: Helper methods
 
     /// Update the position of the focus square.
     internal func updatePosition() {
         // Average using several most recent positions.
-        recentFocusEntityPositions = Array(recentFocusEntityPositions.suffix(10))
+        recentFocusSquarePositions = Array(recentFocusSquarePositions.suffix(10))
 
         // Move the average of recent positions to avoid jitter.
-        let average = recentFocusEntityPositions.reduce(
+        let average = recentFocusSquarePositions.reduce(
             SIMD3<Float>.zero, { $0 + $1 }
-        ) / Float(recentFocusEntityPositions.count)
+        ) / Float(recentFocusSquarePositions.count)
         self.position = average
     }
 
@@ -75,15 +75,15 @@ extension FocusEntity {
 
         // Add to list of recent alignments.
         if alignment != nil {
-            self.recentFocusEntityAlignments.append(alignment!)
+            self.recentFocusSquareAlignments.append(alignment!)
         }
 
         // Average using several most recent alignments.
-        self.recentFocusEntityAlignments = Array(self.recentFocusEntityAlignments.suffix(20))
+        self.recentFocusSquareAlignments = Array(self.recentFocusSquareAlignments.suffix(20))
 
-        let alignmentCount = self.recentFocusEntityAlignments.count
-        let horizontalHistory = recentFocusEntityAlignments.filter({ $0 == .horizontal }).count
-        let verticalHistory = recentFocusEntityAlignments.filter({ $0 == .vertical }).count
+        let alignmentCount = self.recentFocusSquareAlignments.count
+        let horizontalHistory = recentFocusSquareAlignments.filter({ $0 == .horizontal }).count
+        let verticalHistory = recentFocusSquareAlignments.filter({ $0 == .vertical }).count
 
         // If the alignment is the same as most of the history, change it
         if alignment == .horizontal && horizontalHistory > alignmentCount * 3/4 ||

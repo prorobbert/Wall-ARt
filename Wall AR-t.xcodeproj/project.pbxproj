@@ -43,15 +43,15 @@
 		52067C872C1B1E7300E80F0A /* ObjectPlacementRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */; };
 		52067C892C1B1F6100E80F0A /* PlacementTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */; };
 		5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3122C37E504004FA94F /* Float+Extension.swift */; };
-		5274E31F2C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */; };
-		5274E3202C37E504004FA94F /* FocusEntity+Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */; };
-		5274E3212C37E504004FA94F /* FocusEntity+Classic+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */; };
-		5274E3222C37E504004FA94F /* FocusEntity+Colored+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */; };
-		5274E3232C37E504004FA94F /* FocusEntityDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */; };
-		5274E3242C37E504004FA94F /* HasFocusEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */; };
-		5274E3252C37E504004FA94F /* FocusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31A2C37E504004FA94F /* FocusEntity.swift */; };
-		5274E3262C37E504004FA94F /* FocusEntityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */; };
-		5274E3272C37E504004FA94F /* FocusEntityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */; };
+		5274E31F2C37E504004FA94F /* FocusSquare+Extension+Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */; };
+		5274E3202C37E504004FA94F /* FocusSquare+Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */; };
+		5274E3212C37E504004FA94F /* FocusSquare+Classic+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3152C37E504004FA94F /* FocusSquare+Classic+Extension.swift */; };
+		5274E3222C37E504004FA94F /* FocusSquare+Colored+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3162C37E504004FA94F /* FocusSquare+Colored+Extension.swift */; };
+		5274E3232C37E504004FA94F /* FocusSquareDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3172C37E504004FA94F /* FocusSquareDelegate+Extension.swift */; };
+		5274E3242C37E504004FA94F /* HasFocusSquare+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3182C37E504004FA94F /* HasFocusSquare+Extension.swift */; };
+		5274E3252C37E504004FA94F /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31A2C37E504004FA94F /* FocusSquare.swift */; };
+		5274E3262C37E504004FA94F /* FocusSquareComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31B2C37E504004FA94F /* FocusSquareComponent.swift */; };
+		5274E3272C37E504004FA94F /* FocusSquareDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E31C2C37E504004FA94F /* FocusSquareDelegate.swift */; };
 		527EE8E62C185B0D00314E94 /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8E52C185B0D00314E94 /* Domain.docc */; };
 		527EE8EC2C185B0D00314E94 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE8E22C185B0D00314E94 /* Domain.framework */; };
 		527EE8F32C185B0D00314E94 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EE8F22C185B0D00314E94 /* DomainTests.swift */; };
@@ -257,15 +257,15 @@
 		52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPlacementRealityView.swift; sourceTree = "<group>"; };
 		52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementTooltip.swift; sourceTree = "<group>"; };
 		5274E3122C37E504004FA94F /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
-		5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEnitiy+Extension+Segment.swift"; sourceTree = "<group>"; };
-		5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Alignment+Extension.swift"; sourceTree = "<group>"; };
-		5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Classic+Extension.swift"; sourceTree = "<group>"; };
-		5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntity+Colored+Extension.swift"; sourceTree = "<group>"; };
-		5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusEntityDelegate+Extension.swift"; sourceTree = "<group>"; };
-		5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HasFocusEntity+Extension.swift"; sourceTree = "<group>"; };
-		5274E31A2C37E504004FA94F /* FocusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntity.swift; sourceTree = "<group>"; };
-		5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntityComponent.swift; sourceTree = "<group>"; };
-		5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusEntityDelegate.swift; sourceTree = "<group>"; };
+		5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Extension+Segment.swift"; sourceTree = "<group>"; };
+		5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Alignment+Extension.swift"; sourceTree = "<group>"; };
+		5274E3152C37E504004FA94F /* FocusSquare+Classic+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Classic+Extension.swift"; sourceTree = "<group>"; };
+		5274E3162C37E504004FA94F /* FocusSquare+Colored+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Colored+Extension.swift"; sourceTree = "<group>"; };
+		5274E3172C37E504004FA94F /* FocusSquareDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquareDelegate+Extension.swift"; sourceTree = "<group>"; };
+		5274E3182C37E504004FA94F /* HasFocusSquare+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HasFocusSquare+Extension.swift"; sourceTree = "<group>"; };
+		5274E31A2C37E504004FA94F /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		5274E31B2C37E504004FA94F /* FocusSquareComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareComponent.swift; sourceTree = "<group>"; };
+		5274E31C2C37E504004FA94F /* FocusSquareDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareDelegate.swift; sourceTree = "<group>"; };
 		527EE8E22C185B0D00314E94 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		527EE8E42C185B0D00314E94 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		527EE8E52C185B0D00314E94 /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
@@ -463,25 +463,25 @@
 			isa = PBXGroup;
 			children = (
 				5274E3122C37E504004FA94F /* Float+Extension.swift */,
-				5274E3132C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift */,
-				5274E3142C37E504004FA94F /* FocusEntity+Alignment+Extension.swift */,
-				5274E3152C37E504004FA94F /* FocusEntity+Classic+Extension.swift */,
-				5274E3162C37E504004FA94F /* FocusEntity+Colored+Extension.swift */,
-				5274E3172C37E504004FA94F /* FocusEntityDelegate+Extension.swift */,
-				5274E3182C37E504004FA94F /* HasFocusEntity+Extension.swift */,
+				5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */,
+				5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */,
+				5274E3152C37E504004FA94F /* FocusSquare+Classic+Extension.swift */,
+				5274E3162C37E504004FA94F /* FocusSquare+Colored+Extension.swift */,
+				5274E3172C37E504004FA94F /* FocusSquareDelegate+Extension.swift */,
+				5274E3182C37E504004FA94F /* HasFocusSquare+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5274E31D2C37E504004FA94F /* FocusEntity */ = {
+		5274E31D2C37E504004FA94F /* FocusSquare */ = {
 			isa = PBXGroup;
 			children = (
 				5274E3192C37E504004FA94F /* Extensions */,
-				5274E31A2C37E504004FA94F /* FocusEntity.swift */,
-				5274E31B2C37E504004FA94F /* FocusEntityComponent.swift */,
-				5274E31C2C37E504004FA94F /* FocusEntityDelegate.swift */,
+				5274E31A2C37E504004FA94F /* FocusSquare.swift */,
+				5274E31B2C37E504004FA94F /* FocusSquareComponent.swift */,
+				5274E31C2C37E504004FA94F /* FocusSquareDelegate.swift */,
 			);
-			path = FocusEntity;
+			path = FocusSquare;
 			sourceTree = "<group>";
 		};
 		527EE8E32C185B0D00314E94 /* Domain */ = {
@@ -680,7 +680,7 @@
 		52CFD7D52C37E46400E28FA3 /* ARDomainiOS */ = {
 			isa = PBXGroup;
 			children = (
-				5274E31D2C37E504004FA94F /* FocusEntity */,
+				5274E31D2C37E504004FA94F /* FocusSquare */,
 				52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */,
 			);
 			path = ARDomainiOS;
@@ -862,6 +862,8 @@
 				52CFD7D92C37E46400E28FA3 /* PBXTargetDependency */,
 			);
 			name = "Wall AR-t";
+			packageProductDependencies = (
+			);
 			productName = "Wall AR-t";
 			productReference = 52BA5C3A2C185A70009734F2 /* Wall AR-t.app */;
 			productType = "com.apple.product-type.application";
@@ -1134,16 +1136,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5274E3212C37E504004FA94F /* FocusEntity+Classic+Extension.swift in Sources */,
-				5274E3252C37E504004FA94F /* FocusEntity.swift in Sources */,
-				5274E31F2C37E504004FA94F /* FocusEnitiy+Extension+Segment.swift in Sources */,
-				5274E3202C37E504004FA94F /* FocusEntity+Alignment+Extension.swift in Sources */,
+				5274E3212C37E504004FA94F /* FocusSquare+Classic+Extension.swift in Sources */,
+				5274E3252C37E504004FA94F /* FocusSquare.swift in Sources */,
+				5274E31F2C37E504004FA94F /* FocusSquare+Extension+Segment.swift in Sources */,
+				5274E3202C37E504004FA94F /* FocusSquare+Alignment+Extension.swift in Sources */,
 				5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */,
-				5274E3232C37E504004FA94F /* FocusEntityDelegate+Extension.swift in Sources */,
-				5274E3272C37E504004FA94F /* FocusEntityDelegate.swift in Sources */,
-				5274E3262C37E504004FA94F /* FocusEntityComponent.swift in Sources */,
-				5274E3242C37E504004FA94F /* HasFocusEntity+Extension.swift in Sources */,
-				5274E3222C37E504004FA94F /* FocusEntity+Colored+Extension.swift in Sources */,
+				5274E3232C37E504004FA94F /* FocusSquareDelegate+Extension.swift in Sources */,
+				5274E3272C37E504004FA94F /* FocusSquareDelegate.swift in Sources */,
+				5274E3262C37E504004FA94F /* FocusSquareComponent.swift in Sources */,
+				5274E3242C37E504004FA94F /* HasFocusSquare+Extension.swift in Sources */,
+				5274E3222C37E504004FA94F /* FocusSquare+Colored+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,8 +48,6 @@ struct RealityKitView: UIViewRepresentable {
 
         // Run the AR session
         session.run(config, options: [.removeExistingAnchors, .resetTracking])
-        let focusEntity = FocusEntity(on: arView, style: .classic(color: MaterialColorParameter.color(.yellow)))
-        print("test: \(focusEntity)")
 
         // Add coaching overlay
         let coachingOverlay = ARCoachingOverlayView()
@@ -61,6 +59,7 @@ struct RealityKitView: UIViewRepresentable {
 
         arView.addSubview(coachingOverlay)
 
+        _ = FocusSquare(on: arView, style: .classic(color: MaterialColorParameter.color(.orange)))
         context.coordinator.view = arView
         session.delegate = context.coordinator
 
@@ -104,6 +103,11 @@ struct RealityKitView: UIViewRepresentable {
         init(coachingCoordinator: CoachingCoordinator) {
             print("coordinator init")
             self.coachingCoordinator = coachingCoordinator
+        }
+
+        func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+            guard let view = self.view else { return }
+//            self.focusSquare = FocusSquare(on: view, style: .classic(color: MaterialColorParameter.color(.yellow)))
         }
 
         @objc func handleTap(_ sender: UITapGestureRecognizer) {

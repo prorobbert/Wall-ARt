@@ -1,13 +1,13 @@
 //
-//  FocusEntity+Colored+Extension.swift
-//  ARDomain
+//  FocusSquare+Colored+Extension.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 04/07/2024.
 //
 
 import RealityKit
 
-public extension FocusEntity {
+public extension FocusSquare {
 
     internal func coloredStateChanged() {
         guard let coloredStyle = self.focus.coloredStyle else { return }

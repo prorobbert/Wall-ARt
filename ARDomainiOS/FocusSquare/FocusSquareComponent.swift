@@ -1,6 +1,6 @@
 //
-//  FocusEntityComponent.swift
-//  ARDomain
+//  FocusSquareComponent.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 03/07/2024.
 //
@@ -25,17 +25,17 @@ internal struct ColoredStyle {
     var mesh: MeshResource
 }
 
-public struct FocusEntityComponent: Component {
-    /// FocusEntityComponent Style, dictating how the FocusEntity will appear in different states
+public struct FocusSquareComponent: Component {
+    /// FocusSquareComponent Style, dictating how the FocusSquare will appear in different states
     public enum Style {
-        /// Default style of FocusEntity. Box that's open when not on a plane, closed when on one.
-        /// - color: Color of the FocusEntity lines, default: `FocusEntityComponent.defaultColor`
-        case classic(color: MaterialColorParameter = FocusEntityComponent.defaultColor)
-        /// Style that changes based on state of the FocusEntity
-        /// - onColor: Color when FocusEntity is tracking on a known surface.
-        /// - offColor: Color when FocusEntity is tracking, but the exact surface isn't known.
-        /// - nonTrackingColor: Color when FocusEntity is unable to find a plane or estimate a plane.
-        /// - mesh: Optional mesh for FocusEntity, default is a 0.1m square plane.
+        /// Default style of FocusSquare. Box that's open when not on a plane, closed when on one.
+        /// - color: Color of the FocusSquare lines, default: `FocusSquareComponent.defaultColor`
+        case classic(color: MaterialColorParameter = FocusSquareComponent.defaultColor)
+        /// Style that changes based on state of the FocusSquare
+        /// - onColor: Color when FocusSquare is tracking on a known surface.
+        /// - offColor: Color when FocusSquare is tracking, but the exact surface isn't known.
+        /// - nonTrackingColor: Color when FocusSquare is unable to find a plane or estimate a plane.
+        /// - mesh: Optional mesh for FocusSquare, default is a 0.1m square plane.
         case colored(
             onColor: MaterialColorParameter,
             offColor: MaterialColorParameter,
@@ -66,22 +66,22 @@ public struct FocusEntityComponent: Component {
         }
     }
 
-    /// Default color of FocusEntity
+    /// Default color of FocusSquare
     public static let defaultColor: MaterialColorParameter = .color(.init(red: 1, green: 0.8, blue: 0, alpha: 1))
-    /// Default style of FocusEntity, using the FocusEntityComponent.Style.classic with the color FocusEntityComponent.defaultColor.
-    public static let classic = FocusEntityComponent(style: .classic(color: FocusEntityComponent.defaultColor))
-    /// Alternative preset for FocusEntity, using FocusEntityComponent.Style.classic.colored,
+    /// Default style of FocusSquare, using the FocusSquareComponent.Style.classic with the color FocusSquareComponent.defaultColor.
+    public static let classic = FocusSquareComponent(style: .classic(color: FocusSquareComponent.defaultColor))
+    /// Alternative preset for FocusSquare, using FocusSquareComponent.Style.classic.colored,
     /// with green, orange and red for the onColor, offColor and nonTrackingColor respectively
-    public static let plane = FocusEntityComponent(
+    public static let plane = FocusSquareComponent(
         style: .colored(
             onColor: .color(.green),
             offColor: .color(.orange),
             nonTrackingColor: .color(.init(red: 1, green: 0, blue: 0, alpha: 0.2)),
-            mesh: FocusEntityComponent.defaultPlane
+            mesh: FocusSquareComponent.defaultPlane
         )
     )
     public internal(set) var isOpen = true
-    internal var segments: [FocusEntity.Segment] = []
+    internal var segments: [FocusSquare.Segment] = []
     #if !os(macOS)
     public var allowedRaycasts: [ARRaycastQuery.Target] = [.existingPlaneGeometry, .estimatedPlane]
     #endif
@@ -90,8 +90,8 @@ public struct FocusEntityComponent: Component {
         width: 0.1, depth: 0.1
     )
 
-    /// Create FocusEntityComponent with a given FocusEntityComponent.Style.
-    /// - Parameter style: FocusEntityComponent Style, dictating how the FocusEntity will appear in different states.
+    /// Create FocusSquareComponent with a given FocusSquareComponent.Style.
+    /// - Parameter style: FocusSquareComponent Style, dictating how the FocusSquare will appear in different states.
     public init(style: Style) {
         self.style = style
     }

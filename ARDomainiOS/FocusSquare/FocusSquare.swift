@@ -1,6 +1,6 @@
 //
-//  FocusEntity.swift
-//  ARDomain
+//  FocusSquare.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 03/07/2024.
 //
@@ -10,11 +10,11 @@ import RealityKit
 import ARKit
 import Combine
 
-open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
+open class FocusSquare: Entity, HasAnchoring, HasFocusSquare {
 
     internal weak var arView: ARView?
 
-    /// For moving the FocusEntity to a whole new ARView
+    /// For moving the FocusSquare to a whole new ARView
     /// - Parameter view: The destication `ARView`
     public func moveTo(view: ARView) {
         let wasUpdating = self.isAutoUpdating
@@ -26,7 +26,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
         }
     }
 
-    /// Destroy this FocusEntity and it references to any ARViews.
+    /// Destroy this FocusSquare and it references to any ARViews.
     /// Without calling this, your ARView could stay in memory.
     public func destroy() {
         self.setAutoUpdate(to: false)
@@ -44,18 +44,20 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
     /// Auto update the focus entity using `SceneEvents.Update`
     /// - Parameter autoUpdate: Boolean indicating to update the entity or not.
     public func setAutoUpdate(to autoUpdate: Bool) {
-        guard autoUpdate != self.isAutoUpdating, !(autoUpdate && self.arView == nil) else { return }
+        guard autoUpdate != self.isAutoUpdating,
+                !(autoUpdate && self.arView == nil)
+        else { return }
 
         self.updateCancellable?.cancel()
         if autoUpdate {
             #if canImport(ARKit)
-            self.updateCancellable = self.arView?.scene.subscribe(to: SceneEvents.Update.self, self.updateFocusEntity)
+            self.updateCancellable = self.arView?.scene.subscribe(to: SceneEvents.Update.self, self.updateFocusSquare)
             #endif
         }
         self.isAutoUpdating = autoUpdate
     }
 
-    public weak var delegate: FocusEntityDelegate?
+    public weak var delegate: FocusSquareDelegate?
 
     public enum State: Equatable {
         case initializing
@@ -81,7 +83,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
     }
     #endif
 
-    /// Current state of ``FocusEntity``
+    /// Current state of ``FocusSquare``
     public var state: State = .initializing {
         didSet {
             guard state != oldValue else { return }
@@ -90,7 +92,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
             case .initializing:
                 if oldValue != .initializing {
                     displayAsBillboard()
-                    self.delegate?.focusEntity(self, trackingUpdated: state, oldState: oldValue)
+                    self.delegate?.focusSquare(self, trackingUpdated: state, oldState: oldValue)
                 }
             #if canImport(ARKit)
             case let .tracking(raycastResult, camera):
@@ -106,13 +108,14 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
                     entityOffPlane(raycastResult, camera)
                 }
 
-                if self.scaleEntityBasedOnDistance, let cameraTransform = self.arView?.cameraTransform {
+                if self.scaleEntityBasedOnDistance,
+                   let cameraTransform = self.arView?.cameraTransform {
                     self.scale = .one * scaleBasedOnDistance(cameraTransform: cameraTransform)
                 }
 
                 defer { currentPlaneAnchor = planeAnchor }
                 if stateChanged {
-                    self.delegate?.focusEntity(self, trackingUpdated: state, oldState: oldValue)
+                    self.delegate?.focusSquare(self, trackingUpdated: state, oldState: oldValue)
                 }
             #endif
             }
@@ -135,7 +138,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
         }
     }
 
-    /// Whether FocusEntity is on a plane or not.
+    /// Whether FocusSquare is on a plane or not.
     public internal(set) var onPlane: Bool = false
     /// Indicate if the square is currently being animated.
     public internal(set) var isAnimating = false
@@ -155,42 +158,42 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
             if (oldValue == nil && self.currentPlaneAnchor == nil) || (currentPlaneAnchor == oldValue) {
                 return
             }
-            self.delegate?.focusEntity(self, planeChanged: currentPlaneAnchor, oldPlane: oldValue)
+            self.delegate?.focusSquare(self, planeChanged: currentPlaneAnchor, oldPlane: oldValue)
         }
     }
     
     /// The focus square's most recent alignments.
-    internal var recentFocusEntityAlignments: [ARPlaneAnchor.Alignment] = []
+    internal var recentFocusSquareAlignments: [ARPlaneAnchor.Alignment] = []
     /// Previously visited plane anchors.
     internal var anchorsOfVisitedPlanes: Set<ARAnchor> = []
     #endif
 
     /// The focus square's most recent position.
-    internal var recentFocusEntityPositions: [SIMD3<Float>] = []
-    /// The primary node that controls the position of other `FocusEntity` nodes.
+    internal var recentFocusSquarePositions: [SIMD3<Float>] = []
+    /// The primary node that controls the position of other `FocusSquare` nodes.
     internal let positioningEntity = Entity()
     internal var fillPlane: ModelEntity?
 
-    /// Modify the scale of the focusEntity to make it slightly bigger when furher away.
+    /// Modify the scale of the focusSquare to make it slightly bigger when furher away.
     public var scaleEntityBasedOnDistance = true
 
-    /// Create a new ``FocusEntity`` instance.
+    /// Create a new ``FocusSquare`` instance.
     /// - Parameters:
-    ///   - arView: ARView containing the scene where the FocusEntity should be added.
-    ///   - style: Style of the `FocusEntity`.
-    public convenience init(on arView: ARView, style: FocusEntityComponent.Style) {
-        self.init(on: arView, focus: FocusEntityComponent(style: style))
+    ///   - arView: ARView containing the scene where the FocusSquare should be added.
+    ///   - style: Style of the `FocusSquare`.
+    public convenience init(on arView: ARView, style: FocusSquareComponent.Style) {
+        self.init(on: arView, focus: FocusSquareComponent(style: style))
     }
 
-    /// Create a new ``FocusEntity`` instance using the full ``FocusEntityComponent`` object.
+    /// Create a new ``FocusSquare`` instance using the full ``FocusSquareComponent`` object.
     /// - Parameters:
-    ///   - arView: ARView containing the scene where the FocusEntity should be added.
-    ///   - focus: Main component for the `FocusEntity`
-    public required init(on arView: ARView, focus: FocusEntityComponent) {
+    ///   - arView: ARView containing the scene where the FocusSquare should be added.
+    ///   - focus: Main component for the `FocusSquare`
+    public required init(on arView: ARView, focus: FocusSquareComponent) {
         self.arView = arView
         super.init()
         self.focus = focus
-        self.name = "FocusEntity"
+        self.name = "FocusSquare"
         self.orientation = simd_quatf(angle: .pi / 2, axis: [1, 0, 0])
         self.addChild(self.positioningEntity)
 
@@ -199,7 +202,8 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
 
         // Start the focus swuare as a billboard.
         displayAsBillboard()
-        self.delegate?.focusEntity(self, trackingUpdated: .initializing, oldState: nil)
+        self.delegate?.focusSquare(self, trackingUpdated: .initializing, oldState: nil)
+        arView.scene.addAnchor(self)
         self.setAutoUpdate(to: true)
         switch self.focus.style {
         case .classic:
@@ -228,7 +232,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
     /// Places the focus entity in front of the camera instead of on a plane.
     private func putInFrontOfCamera() {
         let newPosition = cameraAnchor.convert(position: [0, 0, -1], to: nil)
-        recentFocusEntityPositions.append(newPosition)
+        recentFocusSquarePositions.append(newPosition)
         updatePosition()
         // Make focus entity face the camera with a smooth animation.
         var newRotation = arView?.cameraTransform.rotation ?? simd_quatf()
@@ -242,7 +246,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
         self.stateChangedSetup()
         let position = raycastResult.worldTransform.translation
         if self.currentAlignment != .none {
-            recentFocusEntityPositions.append(position)
+            recentFocusSquarePositions.append(position)
             performAlignmentAnimation(to: raycastResult.worldTransform.orientation)
         } else {
             putInFrontOfCamera()
@@ -258,7 +262,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
         anchorsOfVisitedPlanes.insert(planeAnchor)
         let position = raycastResult.worldTransform.translation
         if self.currentAlignment != .none {
-            recentFocusEntityPositions.append(position)
+            recentFocusSquarePositions.append(position)
         } else {
             putInFrontOfCamera()
         }
@@ -266,7 +270,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
         updateTransform(raycastResult: raycastResult)
     }
     
-    public func updateFocusEntity(event: SceneEvents.Update? = nil) {
+    public func updateFocusSquare(event: SceneEvents.Update? = nil) {
         // Perform hit testing only when ARKit tracking is in a good state.
         guard let camera = self.arView?.session.currentFrame?.camera,
               case .normal = camera.trackingState,

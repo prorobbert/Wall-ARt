@@ -1,6 +1,6 @@
 //
-//  HasFocusEntity+Extension.swift
-//  ARDomain
+//  HasFocusSquare+Extension.swift
+//  ARDomainiOS
 //
 //  Created by Robbert Ruiter on 03/07/2024.
 //
@@ -17,18 +17,18 @@ import ARKit
 import RealityFoundation
 #endif
 
-public protocol HasFocusEntity: Entity {}
+public protocol HasFocusSquare: Entity {}
 
-public extension HasFocusEntity {
-    var focus: FocusEntityComponent {
-        get { self.components[FocusEntityComponent.self] ?? .classic }
-        set { self.components[FocusEntityComponent.self] = newValue }
+public extension HasFocusSquare {
+    var focus: FocusSquareComponent {
+        get { self.components[FocusSquareComponent.self] ?? .classic }
+        set { self.components[FocusSquareComponent.self] = newValue }
     }
     var isOpen: Bool {
         get { self.focus.isOpen }
         set { self.focus.isOpen = newValue }
     }
-    internal var segments: [FocusEntity.Segment] {
+    internal var segments: [FocusSquare.Segment] {
         get { self.focus.segments }
         set { self.focus.segments = newValue }
     }

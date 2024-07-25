@@ -19,13 +19,13 @@ struct ArArtworkView: View {
             VStack {
                 Button(action: {
                     isPresented.toggle()
-                }) {
+                }, label: {
                     Image(systemName: "xmark.circle")
                         .font(.largeTitle)
                         .foregroundColor(.black)
                         .background(.ultraThinMaterial)
                         .clipShape(Circle())
-                }
+                })
                 .padding(24)
                 .frame(maxWidth: .infinity, alignment: .trailing)
 

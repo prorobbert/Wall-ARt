@@ -42,6 +42,12 @@
         }
       }
     },
+    "Add" : {
+
+    },
+    "Artworks" : {
+
+    },
     "choose_placeable_object" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -58,6 +64,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "delete_object" : {
       "localizations" : {
@@ -140,6 +149,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -490,6 +502,9 @@
           }
         }
       }
+    },
+    "Whoops" : {
+
     }
   },
   "version" : "1.0"

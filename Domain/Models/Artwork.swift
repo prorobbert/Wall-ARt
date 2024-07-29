@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import SwiftData
 
-public struct Artwork {
-    public let title: String
-
+@Model
+public class Artwork: ArtworkEntry {
+    public var id: UUID
+    public var title: String
+    
     public init(title: String) {
+        self.id = UUID()
         self.title = title
     }
 }

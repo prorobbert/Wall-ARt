@@ -7,9 +7,10 @@
 
 import SwiftData
 import Foundation
+import Combine
 
 @Observable
-public class ArtworksStore: ArtworksRepository {
+public class ArtworksStore: ArtworksRepository, ObservableObject {
     private let modelContext: ModelContext
     private let fetchedResultsController: FetchedResultsController<Artwork>
 

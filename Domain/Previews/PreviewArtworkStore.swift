@@ -6,17 +6,30 @@
 //
 
 import Foundation
+import Combine
 
-public final class PreviewArtworkStore: ArtworksRepository {
-    public let artworks: [Artwork]
+public final class PreviewArtworkStore: ArtworksRepository, ObservableObject {
+    @Published public var artworks: [Artwork]
 
-    public init(artworks: [Artwork] = []) {
+    public init(artworks: [Artwork]) {
         self.artworks = artworks
+        print("Initialized PreviewArtworkStore with artworks: \(artworks.map { $0.title })")
     }
-
-    public func addArtwork() {}
-
-    public func deleteArtwork(_ artwork: Artwork) {}
-
-    public func fetchArtworks() {}
+    
+    public func addArtwork() {
+        let artwork = Artwork(title: "Preview Artwork")
+        artworks.append(artwork)
+        print("Added artwork: \(artwork.title)")
+    }
+    
+    public func deleteArtwork(_ artwork: Artwork) {
+        if let index = artworks.firstIndex(of: artwork) {
+            artworks.remove(at: index)
+            print("Deleted artwork: \(artwork.title)")
+        }
+    }
+    
+    public func fetchArtworks() throws {
+        // No-op for preview
+    }
 }

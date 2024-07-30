@@ -10,19 +10,17 @@ import SwiftUI
 
 @main
 struct WallARtApp: App {
-    private let artworkDB: ArtworkDatabase
+    @StateObject private var artworkStore: ArtworksStore
     
     init() {
-        artworkDB = ArtworkDatabase()
+        let artworkDB = ArtworkDatabase()
+        _artworkStore = StateObject(wrappedValue: ArtworksStore(modelContext: artworkDB.modelContainer.mainContext))
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                artworkStore: ArtworksStore(
-                    modelContext: artworkDB.modelContainer.mainContext
-                )
-            )
+            ContentView()
+                .environment(artworkStore)
         }
     }
 }

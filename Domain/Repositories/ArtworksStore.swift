@@ -5,8 +5,9 @@
 //  Created by Robbert Ruiter on 26/07/2024.
 //
 import Foundation
+import Combine
 
-public protocol ArtworksRepository: AnyObject, Observable {
+public protocol ArtworksStore: AnyObject, Observable, ObservableObject {
     associatedtype EntryType: ArtworkEntry
     var artworks: [EntryType] { get }
     func addArtwork()

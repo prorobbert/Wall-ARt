@@ -101,8 +101,8 @@
 		52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
 		52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
 		52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 52A66DB32C2956360004BDD9 /* Localizable.xcstrings */; };
-		52B658732C539349001AC90A /* ArtworksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B658722C539349001AC90A /* ArtworksStore.swift */; };
-		52B6587B2C53EFF0001AC90A /* ArtworksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6587A2C53EFF0001AC90A /* ArtworksRepository.swift */; };
+		52B658732C539349001AC90A /* RealArtworksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B658722C539349001AC90A /* RealArtworksStore.swift */; };
+		52B6587B2C53EFF0001AC90A /* ArtworksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6587A2C53EFF0001AC90A /* ArtworksStore.swift */; };
 		52B658832C53F23F001AC90A /* ArtworkDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B658822C53F23F001AC90A /* ArtworkDatabase.swift */; };
 		52B6588A2C579A56001AC90A /* ArtworkEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B658892C579A56001AC90A /* ArtworkEntry.swift */; };
 		52B6588D2C579BAD001AC90A /* FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6588C2C579BAD001AC90A /* FetchedResultsController.swift */; };
@@ -303,8 +303,8 @@
 		52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = retrotv.usdz; sourceTree = "<group>"; };
 		52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		52A66DB32C2956360004BDD9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		52B658722C539349001AC90A /* ArtworksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksStore.swift; sourceTree = "<group>"; };
-		52B6587A2C53EFF0001AC90A /* ArtworksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepository.swift; sourceTree = "<group>"; };
+		52B658722C539349001AC90A /* RealArtworksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealArtworksStore.swift; sourceTree = "<group>"; };
+		52B6587A2C53EFF0001AC90A /* ArtworksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksStore.swift; sourceTree = "<group>"; };
 		52B658822C53F23F001AC90A /* ArtworkDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDatabase.swift; sourceTree = "<group>"; };
 		52B658892C579A56001AC90A /* ArtworkEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkEntry.swift; sourceTree = "<group>"; };
 		52B6588C2C579BAD001AC90A /* FetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsController.swift; sourceTree = "<group>"; };
@@ -626,7 +626,7 @@
 		52B658712C538B5C001AC90A /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				52B658722C539349001AC90A /* ArtworksStore.swift */,
+				52B658722C539349001AC90A /* RealArtworksStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -641,7 +641,7 @@
 		52B658792C53EFDC001AC90A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				52B6587A2C53EFF0001AC90A /* ArtworksRepository.swift */,
+				52B6587A2C53EFF0001AC90A /* ArtworksStore.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1124,8 +1124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B6587B2C53EFF0001AC90A /* ArtworksRepository.swift in Sources */,
-				52B658732C539349001AC90A /* ArtworksStore.swift in Sources */,
+				52B6587B2C53EFF0001AC90A /* ArtworksStore.swift in Sources */,
+				52B658732C539349001AC90A /* RealArtworksStore.swift in Sources */,
 				52B658902C57D24A001AC90A /* PreviewArtworkStore.swift in Sources */,
 				527EE9022C185B3800314E94 /* Artwork.swift in Sources */,
 				527EE8E62C185B0D00314E94 /* Domain.docc in Sources */,

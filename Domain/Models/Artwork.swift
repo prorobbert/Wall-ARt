@@ -18,3 +18,14 @@ public class Artwork: ArtworkEntry {
         self.title = title
     }
 }
+
+
+public extension Array where Element == Artwork {
+    static var mockedPreview: Self {
+        return [
+            Artwork(title: "Ethereal Whispers"),
+            Artwork(title: "Solitude's Embrace"),
+            Artwork(title: "Infinite Horizons"),
+        ]
+    }
+}

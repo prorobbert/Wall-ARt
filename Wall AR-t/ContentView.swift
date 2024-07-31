@@ -9,8 +9,8 @@ import Domain
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
-    @EnvironmentObject var artworkStore: ArtworksStore
+struct ContentView<Store: ArtworksStore>: View {
+    @EnvironmentObject var artworkStore: Store
     @State private var showingAR = false
 
     var body: some View {
@@ -54,12 +54,7 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//    ContentView()
-//        .environmentObject(PreviewArtworkStore(artworks: [
-//            Artwork(title: "Hi"),
-//            Artwork(title: "Hello"),
-//            Artwork(title: "Greetings"),
-//        ])
-//        )
-//}
+#Preview {
+    return ContentView<PreviewArtworkStore>()
+        .environmentObject(PreviewArtworkStore())
+}

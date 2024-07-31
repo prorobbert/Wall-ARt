@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 @Observable
-public class ArtworksStore: ArtworksRepository, ObservableObject {
+public class RealArtworksStore: ArtworksStore, ObservableObject {
     private let modelContext: ModelContext
     private let fetchedResultsController: FetchedResultsController<Artwork>
 

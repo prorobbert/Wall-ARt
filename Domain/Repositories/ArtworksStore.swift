@@ -8,9 +8,9 @@ import Foundation
 import Combine
 
 public protocol ArtworksStore: AnyObject, Observable, ObservableObject {
-    associatedtype EntryType: ArtworkEntry
+    associatedtype EntryType: Artwork
     var artworks: [EntryType] { get }
-    func addArtwork()
+    func addArtwork(for artist: Artist)
     func deleteArtwork(_ artwork: EntryType)
     func fetchArtworks() throws
 }

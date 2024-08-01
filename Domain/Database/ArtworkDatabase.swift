@@ -9,14 +9,20 @@ import SwiftData
 
 public struct ArtworkDatabase {
     public let modelContainer: ModelContainer
-    
+
     public init(isStoredInMemoryOnly: Bool = false) {
         let modelConfiguration = ModelConfiguration(
             isStoredInMemoryOnly: isStoredInMemoryOnly
         )
-        self.modelContainer = try! ModelContainer(
-            for: Artwork.self,
-            configurations: modelConfiguration
-        )
+        do {
+            self.modelContainer = try ModelContainer(
+                for: Artwork.self,
+                configurations: modelConfiguration
+            )
+        } catch {
+            print(error)
+            fatalError()
+        }
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }

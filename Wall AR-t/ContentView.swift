@@ -11,12 +11,20 @@ import SwiftUI
 
 struct ContentView<Store: ArtworksStore>: View {
     @EnvironmentObject var artworkStore: Store
+    @EnvironmentObject var artistStore: RealArtistsStore
     @State private var showingAR = false
+    @State private var artist: Artist?
+
+//    init() {
+//        do {
+//            self.artist = try artistStore.getRandomArtist()
+//        } catch {}
+//    }
 
     var body: some View {
         NavigationStack {
             List(artworkStore.artworks) { artwork in
-                Text(artwork.title)
+                Text("\(artwork.title) - \(artwork.dimensions(.centimeters))")
                     .swipeActions {
                         Button("Delete", systemImage: "trash", role: .destructive) {
                             artworkStore.deleteArtwork(artwork)
@@ -25,12 +33,16 @@ struct ContentView<Store: ArtworksStore>: View {
             }
             .toolbar {
                 Button("Add") {
-                    artworkStore.addArtwork()
+                    artworkStore.addArtwork(for: artist!)
                 }
             }
             .onAppear {
                 do {
                     try artworkStore.fetchArtworks()
+                    try artistStore.fetchArtists()
+                    if artist == nil {
+                        self.artist = try? artistStore.getRandomArtist()
+                    }
                 } catch {}
             }
 
@@ -55,6 +67,6 @@ struct ContentView<Store: ArtworksStore>: View {
 }
 
 #Preview {
-    return ContentView<PreviewArtworkStore>()
-        .environmentObject(PreviewArtworkStore())
+    return ContentView<PreviewArtworksStore>()
+        .environmentObject(PreviewArtworksStore())
 }

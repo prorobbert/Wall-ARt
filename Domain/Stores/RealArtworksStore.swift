@@ -5,9 +5,9 @@
 //  Created by Robbert Ruiter on 26/07/2024.
 //
 
-import SwiftData
-import Foundation
 import Combine
+import Foundation
+import SwiftData
 
 @Observable
 public class RealArtworksStore: ArtworksStore, ObservableObject {
@@ -17,7 +17,7 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
     public var artworks: [Artwork] {
         fetchedResultsController.models
     }
-    
+
     public init(modelContext: ModelContext) {
         self.modelContext = modelContext
         self.fetchedResultsController = FetchedResultsController(
@@ -25,8 +25,8 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             sortDescriptors: [SortDescriptor(\.title, order: .reverse)]
         )
     }
-    
-    public func addArtwork() {
+
+    public func addArtwork(for artist: Artist) {
         let artworkTitles = [
             "Ethereal Whispers",
             "Solitude's Embrace",
@@ -40,14 +40,28 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             "Ephemeral Beauty"
         ]
         let chosenTitle = artworkTitles.randomElement()!
-        let artwork = Artwork(title: chosenTitle)
+        print("Trying to add \(chosenTitle)")
+
+        print("Is this a valid artist? \(artist.user.name)")
+        let artwork = Artwork(
+            title: chosenTitle,
+            story: "",
+            medium: Medium.allCases.randomElement()!,
+            price: 123.0,
+            width: 300,
+            height: 500,
+            depth: 20,
+            artist: artist
+        )
+        print("The new artwork:")
+        print("\(artwork.title) - \(artwork.medium.rawValue)")
         modelContext.insert(artwork)
     }
-    
+
     public func deleteArtwork(_ artwork: Artwork) {
         modelContext.delete(artwork)
     }
-    
+
     public func fetchArtworks() throws {
         try fetchedResultsController.fetch()
     }

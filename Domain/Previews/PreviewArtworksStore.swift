@@ -5,11 +5,11 @@
 //  Created by Robbert Ruiter on 29/07/2024.
 //
 
-import Foundation
 import Combine
+import Foundation
 import SwiftData
 
-public final class PreviewArtworkStore: ArtworksStore, ObservableObject {
+public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
     private let modelContext: ModelContext
     @Published public var artworks: [Artwork]
 
@@ -23,18 +23,27 @@ public final class PreviewArtworkStore: ArtworksStore, ObservableObject {
         }
         self.artworks = artworks
     }
-    
-    public func addArtwork() {
-        let artwork = Artwork(title: "Preview Artwork")
+
+    public func addArtwork(for artist: Artist) {
+        let artwork = Artwork(
+            title: "Ethereal Whispers",
+            story: "",
+            medium: Medium.allCases.randomElement()!,
+            price: 123.0,
+            width: 300,
+            height: 500,
+            depth: 20,
+            artist: Artist.mockedPreview
+        )
         artworks.append(artwork)
     }
-    
+
     public func deleteArtwork(_ artwork: Artwork) {
         if let index = artworks.firstIndex(of: artwork) {
             artworks.remove(at: index)
         }
     }
-    
+
     public func fetchArtworks() throws {
         // No-op for preview
     }

@@ -24,6 +24,9 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             modelContext: modelContext,
             sortDescriptors: [SortDescriptor(\.title)]
         )
+        do {
+            try fetchedResultsController.fetch()
+        } catch {}
     }
 
     public func setSortOrder(_ sortOrder: ArtworkSortOrder) {
@@ -91,9 +94,5 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
 
     public func deleteArtwork(_ artwork: Artwork) {
         modelContext.delete(artwork)
-    }
-
-    public func fetchArtworks() throws {
-        try fetchedResultsController.fetch()
     }
 }

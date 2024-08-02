@@ -47,8 +47,4 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
             artworks.remove(at: index)
         }
     }
-
-    public func fetchArtworks() throws {
-        // No-op for preview
-    }
 }

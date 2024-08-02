@@ -53,9 +53,7 @@ struct ContentView<Store: ArtworksStore>: View {
             }
             .onAppear {
                 do {
-                    try artworkStore.fetchArtworks()
-                    try artistStore.fetchArtists()
-                    try usersStore.fetchUsers()
+                    // Make sure that there is an artist because of debug reasons
                     if artist == nil {
                         let user = usersStore.getSingleUser()
                         if artistStore.artists.isEmpty {

@@ -22,8 +22,11 @@ public class RealUsersStore: UsersStore, ObservableObject {
         self.modelContext = modelContext
         self.fetchedResultsController = FetchedResultsController(
             modelContext: modelContext,
-            sortDescriptors: [SortDescriptor(\.firstName)]
+            sortDescriptors: [SortDescriptor(\.firstName), SortDescriptor(\.lastName)]
         )
+        do {
+            try fetchedResultsController.fetch()
+        } catch {}
     }
 
     public func addUser() {
@@ -34,15 +37,11 @@ public class RealUsersStore: UsersStore, ObservableObject {
         modelContext.delete(user)
     }
 
-    public func fetchUsers() throws {
-        try fetchedResultsController.fetch()
-    }
-
     public func getSingleUser() -> User {
         if users.isEmpty {
             addUser()
             do {
-                try fetchUsers()
+                try fetchedResultsController.fetch()
             } catch {}
         }
         return users.randomElement()!

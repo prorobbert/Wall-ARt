@@ -22,9 +22,11 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
         self.modelContext = modelContext
         self.fetchedResultsController = FetchedResultsController(
             modelContext: modelContext,
-//            sortDescriptors: []
             sortDescriptors: [SortDescriptor(\.user.firstName), SortDescriptor(\.user.lastName)]
         )
+        do {
+            try fetchedResultsController.fetch()
+        } catch {}
     }
 
     public func addArtist(for user: User) {
@@ -50,10 +52,6 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
             return artists.randomElement()!
         } else {
             fatalError()
-//            modelContext.insert(User.mockedPreview)
-//            modelContext.insert(Artist(personalInfo: "Hiiii", user: .mockedPreview))
-//            try fetchArtists()
-//            return artists.randomElement()!
         }
     }
 }

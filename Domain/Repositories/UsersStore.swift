@@ -13,6 +13,5 @@ public protocol UsersStore: AnyObject, ObservableObject {
     var users: [EntryType] { get }
     func addUser()
     func deleteUser(_ user: EntryType)
-    func fetchUsers() throws
     func getSingleUser() -> EntryType
 }

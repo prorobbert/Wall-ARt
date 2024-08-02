@@ -9,10 +9,10 @@ import Domain
 import SwiftData
 import SwiftUI
 
-struct ContentView<Store: ArtworksStore>: View {
-    @EnvironmentObject var artworkStore: Store
-    @EnvironmentObject var artistStore: RealArtistsStore
-    @EnvironmentObject var usersStore: RealUsersStore
+struct ContentView<Store: ArtworksStore, Store2: ArtistsStore, Store3: UsersStore>: View {
+    @EnvironmentObject var artworksStore: Store
+    @EnvironmentObject var artistsStore: Store2
+    @EnvironmentObject var usersStore: Store3
     @State private var showingAR = false
     @State private var artist: Artist?
     @State private var artworkSortOrder = ArtworkSortOrder.title
@@ -28,9 +28,9 @@ struct ContentView<Store: ArtworksStore>: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             .onChange(of: artworkSortOrder) {
-                artworkStore.setSortOrder(artworkSortOrder)
+                artworksStore.setSortOrder(artworkSortOrder)
             }
-            List(artworkStore.artworks) { artwork in
+            List(artworksStore.artworks) { artwork in
                 VStack {
                     Text(artwork.title)
                     Text(artwork.dimensions(.centimeters))
@@ -38,17 +38,17 @@ struct ContentView<Store: ArtworksStore>: View {
                 }
                     .swipeActions {
                         Button("Delete", systemImage: "trash", role: .destructive) {
-                            artworkStore.deleteArtwork(artwork)
+                            artworksStore.deleteArtwork(artwork)
                         }
                     }
             }
             .searchable(text: $filter, prompt: Text("Filter on title"))
             .onChange(of: filter) {
-                artworkStore.setFilter(filter)
+                artworksStore.setFilter(filter)
             }
             .toolbar {
                 Button("Add") {
-                    artworkStore.addArtwork(for: artist!)
+                    artworksStore.addArtwork(for: artist!)
                 }
             }
             .onAppear {
@@ -56,11 +56,11 @@ struct ContentView<Store: ArtworksStore>: View {
                     // Make sure that there is an artist because of debug reasons
                     if artist == nil {
                         let user = usersStore.getSingleUser()
-                        if artistStore.artists.isEmpty {
-                            artistStore.addArtist(for: user)
+                        if artistsStore.artists.isEmpty {
+                            artistsStore.addArtist(for: user)
                         }
-                        try artistStore.fetchArtists()
-                        self.artist = try? artistStore.getRandomArtist()
+                        try artistsStore.fetchArtists()
+                        self.artist = try? artistsStore.getRandomArtist()
                     }
                 } catch {}
             }
@@ -86,6 +86,8 @@ struct ContentView<Store: ArtworksStore>: View {
 }
 
 #Preview {
-    return ContentView<PreviewArtworksStore>()
+    return ContentView<PreviewArtworksStore, PreviewArtistsStore, PreviewUsersStore>()
         .environmentObject(PreviewArtworksStore())
+        .environmentObject(PreviewArtistsStore())
+        .environmentObject(PreviewUsersStore())
 }

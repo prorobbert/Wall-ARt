@@ -35,7 +35,7 @@ struct WallARtApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView<RealArtworksStore>()
+            ContentView<RealArtworksStore, RealArtistsStore, RealUsersStore>()
                 .environmentObject(artworksStore)
                 .environmentObject(artistsStore)
                 .environmentObject(usersStore)

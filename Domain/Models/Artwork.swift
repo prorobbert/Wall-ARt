@@ -21,6 +21,9 @@ public class Artwork: Identifiable, Equatable {
     public var isAvailable: Bool
     public var artist: Artist
 
+    @Attribute(.externalStorage)
+    public var photos: [Data]?
+
     public init(
         title: String,
         story: String,

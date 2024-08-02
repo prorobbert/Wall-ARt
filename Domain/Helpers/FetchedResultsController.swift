@@ -14,8 +14,8 @@ final class FetchedResultsController<T: PersistentModel> {
     private(set) var models: [T] = []
 
     private let modelContext: ModelContext
-    private let predicate: Predicate<T>?
-    private let sortDescriptors: [SortDescriptor<T>]
+    private var predicate: Predicate<T>?
+    private var sortDescriptors: [SortDescriptor<T>]
 
     init(
         modelContext: ModelContext,
@@ -31,6 +31,14 @@ final class FetchedResultsController<T: PersistentModel> {
     func fetch() throws {
         let fetchDescriptor = FetchDescriptor<T>(predicate: predicate, sortBy: sortDescriptors)
         models = try modelContext.fetch(fetchDescriptor)
+    }
+
+    func updatePredicate(_ predicate: Predicate<T>? = nil) {
+        self.predicate = predicate
+    }
+
+    func updateSortDescriptors(_ sortDescriptors: [SortDescriptor<T>] = []) {
+        self.sortDescriptors = sortDescriptors
     }
 
     private func setupNotification() {

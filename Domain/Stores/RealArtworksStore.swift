@@ -12,7 +12,7 @@ import SwiftData
 @Observable
 public class RealArtworksStore: ArtworksStore, ObservableObject {
     private let modelContext: ModelContext
-    private let fetchedResultsController: FetchedResultsController<Artwork>
+    private var fetchedResultsController: FetchedResultsController<Artwork>
 
     public var artworks: [Artwork] {
         fetchedResultsController.models
@@ -22,8 +22,44 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
         self.modelContext = modelContext
         self.fetchedResultsController = FetchedResultsController(
             modelContext: modelContext,
-            sortDescriptors: [SortDescriptor(\.title, order: .reverse)]
+            sortDescriptors: [SortDescriptor(\.title)]
         )
+    }
+
+    public func setSortOrder(_ sortOrder: ArtworkSortOrder) {
+        let sortDescriptors: [SortDescriptor<Artwork>] = {
+            switch sortOrder {
+            case .title:
+                return [SortDescriptor(\Artwork.title)]
+            case .artist:
+                return [SortDescriptor(\Artwork.artist.user.firstName), SortDescriptor(\Artwork.title)]
+            case .medium:
+                return [SortDescriptor(\Artwork.medium), SortDescriptor(\Artwork.title)]
+            }
+        }()
+
+        fetchedResultsController.updateSortDescriptors(sortDescriptors)
+
+        do {
+            try fetchedResultsController.fetch()
+        } catch {
+            print("Failed to fetch artworks with new sort order: \(error)")
+        }
+    }
+
+    public func setFilter(_ filterString: String) {
+        let predicate = #Predicate<Artwork> { artwork in
+            artwork.title.localizedStandardContains(filterString)
+            || filterString.isEmpty
+        }
+
+        fetchedResultsController.updatePredicate(predicate)
+
+        do {
+            try fetchedResultsController.fetch()
+        } catch {
+            print("Failed to fetch artworks with filter: \(error)")
+        }
     }
 
     public func addArtwork(for artist: Artist) {
@@ -40,9 +76,6 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             "Ephemeral Beauty"
         ]
         let chosenTitle = artworkTitles.randomElement()!
-        print("Trying to add \(chosenTitle)")
-
-        print("Is this a valid artist? \(artist.user.name)")
         let artwork = Artwork(
             title: chosenTitle,
             story: "",
@@ -53,8 +86,6 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             depth: 20,
             artist: artist
         )
-        print("The new artwork:")
-        print("\(artwork.title) - \(artwork.medium.rawValue)")
         modelContext.insert(artwork)
     }
 

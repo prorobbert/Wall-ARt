@@ -24,6 +24,10 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
         self.artworks = artworks
     }
 
+    public func setSortOrder(_ sortOrder: ArtworkSortOrder) {}
+
+    public func setFilter(_ filterString: String) {}
+
     public func addArtwork(for artist: Artist) {
         let artwork = Artwork(
             title: "Ethereal Whispers",

@@ -11,7 +11,7 @@ import Combine
 public protocol ArtistsStore: AnyObject, ObservableObject {
     associatedtype EntryType: Artist
     var artists: [EntryType] { get }
-    func addArtist()
+    func addArtist(for user: User)
     func deleteArtist(_ artist: EntryType)
     func fetchArtists() throws
     func getRandomArtist() throws -> EntryType

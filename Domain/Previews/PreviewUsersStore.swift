@@ -37,4 +37,8 @@ public final class PreviewUsersStore: UsersStore, ObservableObject {
     public func fetchUsers() throws {
         // No-op for preview
     }
+
+    public func getSingleUser() -> User {
+        return .mockedPreview
+    }
 }

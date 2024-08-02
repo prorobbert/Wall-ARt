@@ -13,7 +13,7 @@ public class Artwork: Identifiable, Equatable {
     @Attribute(.unique) public var id: UUID
     public var title: String
     public var story: String // A stored property cannot be named 'description'. So renamed it to 'story'
-    public var medium: Medium
+    public var medium: Medium.RawValue
     public var price: Double
     public var width: Int // In millimeter
     public var height: Int // In millimeter
@@ -35,7 +35,7 @@ public class Artwork: Identifiable, Equatable {
         self.id = UUID()
         self.title = title
         self.story = story
-        self.medium = medium
+        self.medium = medium.rawValue
         self.price = price
         self.height = height
         self.width = width

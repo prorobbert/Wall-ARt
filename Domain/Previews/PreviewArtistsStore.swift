@@ -24,7 +24,7 @@ public final class PreviewArtistsStore: ArtistsStore, ObservableObject {
         self.artists = artists
     }
 
-    public func addArtist() {
+    public func addArtist(for user: User) {
         artists.append(.mockedPreview)
     }
 

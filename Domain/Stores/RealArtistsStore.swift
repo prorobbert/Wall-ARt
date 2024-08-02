@@ -22,18 +22,18 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
         self.modelContext = modelContext
         self.fetchedResultsController = FetchedResultsController(
             modelContext: modelContext,
-            sortDescriptors: []
-//            sortDescriptors: [SortDescriptor(\.user.name)]
+//            sortDescriptors: []
+            sortDescriptors: [SortDescriptor(\.user.firstName), SortDescriptor(\.user.lastName)]
         )
     }
 
-    public func addArtist() {
+    public func addArtist(for user: User) {
         let artistStories = [
             "I am the first artist there ever was",
             "I only pain using my toes",
             "Creating stuff with AI makes me an artist too, right?"
         ]
-        let artist = Artist(personalInfo: artistStories.randomElement()!, user: .mockedPreview)
+        let artist = Artist(personalInfo: artistStories.randomElement()!, user: user)
         modelContext.insert(artist)
     }
 
@@ -50,6 +50,10 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
             return artists.randomElement()!
         } else {
             fatalError()
+//            modelContext.insert(User.mockedPreview)
+//            modelContext.insert(Artist(personalInfo: "Hiiii", user: .mockedPreview))
+//            try fetchArtists()
+//            return artists.randomElement()!
         }
     }
 }

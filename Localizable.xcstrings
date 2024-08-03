@@ -1,6 +1,25 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "%@ - " : {
+
+    },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
     "%lld Artwork" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -42,6 +61,18 @@
         }
       }
     },
+    "Add" : {
+
+    },
+    "Add the first artwork" : {
+
+    },
+    "artist" : {
+
+    },
+    "Artworks" : {
+
+    },
     "choose_placeable_object" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -58,6 +89,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "delete_object" : {
       "localizations" : {
@@ -108,6 +142,9 @@
         }
       }
     },
+    "Filter on title" : {
+
+    },
     "functionality_not_supported_in_simulator" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -140,6 +177,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -205,6 +245,12 @@
           }
         }
       }
+    },
+    "medium" : {
+
+    },
+    "Medium" : {
+
     },
     "missing_authorisation" : {
       "localizations" : {
@@ -385,6 +431,9 @@
         }
       }
     },
+    "Sort by %@" : {
+
+    },
     "space_occupied" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -475,6 +524,12 @@
         }
       }
     },
+    "Test %@" : {
+
+    },
+    "title" : {
+
+    },
     "vertical_planes" : {
       "localizations" : {
         "en" : {
@@ -490,6 +545,9 @@
           }
         }
       }
+    },
+    "Whoops" : {
+
     }
   },
   "version" : "1.0"

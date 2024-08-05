@@ -125,6 +125,13 @@
 		52CFD7D72C37E46400E28FA3 /* ARDomainiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52CFD7DA2C37E46400E28FA3 /* ARDomainiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */; };
 		52CFD7DB2C37E46400E28FA3 /* ARDomainiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52F78CF22C60BFB800DFE571 /* NavigationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CF12C60BFB800DFE571 /* NavigationStore.swift */; };
+		52F78CF52C60C0CD00DFE571 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CF42C60C0CD00DFE571 /* TabBar.swift */; };
+		52F78CF72C60C0D500DFE571 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CF62C60C0D500DFE571 /* TabItem.swift */; };
+		52F78CFA2C60C10900DFE571 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CF92C60C10900DFE571 /* Tab.swift */; };
+		52F78CFD2C60D81600DFE571 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CFC2C60D81600DFE571 /* HomePage.swift */; };
+		52F78CFF2C610D3B00DFE571 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78CFE2C610D3B00DFE571 /* View+Extensions.swift */; };
+		52F78D022C610E3A00DFE571 /* PageLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D012C610E3A00DFE571 /* PageLink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +345,13 @@
 		52BA5C442C185A72009734F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52CFD7D42C37E46400E28FA3 /* ARDomainiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARDomainiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARDomainiOS.h; sourceTree = "<group>"; };
+		52F78CF12C60BFB800DFE571 /* NavigationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStore.swift; sourceTree = "<group>"; };
+		52F78CF42C60C0CD00DFE571 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		52F78CF62C60C0D500DFE571 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		52F78CF92C60C10900DFE571 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		52F78CFC2C60D81600DFE571 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		52F78CFE2C610D3B00DFE571 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		52F78D012C610E3A00DFE571 /* PageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,13 +763,14 @@
 		52BA5C3C2C185A70009734F2 /* Wall AR-t */ = {
 			isa = PBXGroup;
 			children = (
+				52F78D002C610E2600DFE571 /* Components */,
+				52F78CF82C60C0FE00DFE571 /* Enums */,
+				52BA5C412C185A72009734F2 /* Assets.xcassets */,
 				528AB5662C2C14FE00CD7561 /* AR Scene */,
 				52BB03912C29B9810009DE62 /* Extensions */,
-				52BB03902C29B9790009DE62 /* Views */,
-				52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */,
-				52BA5C3F2C185A70009734F2 /* ContentView.swift */,
-				52BA5C412C185A72009734F2 /* Assets.xcassets */,
 				52BA5C432C185A72009734F2 /* Preview Content */,
+				52F78CF02C60BFA800DFE571 /* Stores */,
+				52BB03902C29B9790009DE62 /* Views */,
 			);
 			path = "Wall AR-t";
 			sourceTree = "<group>";
@@ -771,8 +786,12 @@
 		52BB03902C29B9790009DE62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52F78CFB2C60D80800DFE571 /* Home */,
+				52F78CF32C60C0BD00DFE571 /* Tab */,
 				52B658742C53EEDF001AC90A /* Artworks */,
 				528AB55F2C2C0EB600CD7561 /* AR Views */,
+				52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */,
+				52BA5C3F2C185A70009734F2 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -780,6 +799,7 @@
 		52BB03912C29B9810009DE62 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				52F78CFE2C610D3B00DFE571 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -791,6 +811,47 @@
 				52CFD7D62C37E46400E28FA3 /* ARDomainiOS.h */,
 			);
 			path = ARDomainiOS;
+			sourceTree = "<group>";
+		};
+		52F78CF02C60BFA800DFE571 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				52F78CF12C60BFB800DFE571 /* NavigationStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		52F78CF32C60C0BD00DFE571 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				52F78CF42C60C0CD00DFE571 /* TabBar.swift */,
+				52F78CF62C60C0D500DFE571 /* TabItem.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		52F78CF82C60C0FE00DFE571 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				52F78CF92C60C10900DFE571 /* Tab.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		52F78CFB2C60D80800DFE571 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52F78CFC2C60D81600DFE571 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		52F78D002C610E2600DFE571 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				52F78D012C610E3A00DFE571 /* PageLink.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1248,11 +1309,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BA5C402C185A70009734F2 /* ContentView.swift in Sources */,
+				52F78CFD2C60D81600DFE571 /* HomePage.swift in Sources */,
 				528325A72C2DA8C900B1BBC2 /* RealityKitView.swift in Sources */,
 				528325AB2C2DABEE00B1BBC2 /* ArArtworkView.swift in Sources */,
+				52F78CF52C60C0CD00DFE571 /* TabBar.swift in Sources */,
 				52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */,
 				528AB5682C2C151F00CD7561 /* ARScene.swift in Sources */,
 				528AB56C2C2C160C00CD7561 /* ARSceneSpec.swift in Sources */,
+				52F78CFA2C60C10900DFE571 /* Tab.swift in Sources */,
+				52F78CF22C60BFB800DFE571 /* NavigationStore.swift in Sources */,
+				52F78CFF2C610D3B00DFE571 /* View+Extensions.swift in Sources */,
+				52F78D022C610E3A00DFE571 /* PageLink.swift in Sources */,
+				52F78CF72C60C0D500DFE571 /* TabItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

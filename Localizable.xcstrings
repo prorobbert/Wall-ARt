@@ -73,6 +73,9 @@
     "Artworks" : {
 
     },
+    "Cart page" : {
+
+    },
     "choose_placeable_object" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -161,6 +164,9 @@
           }
         }
       }
+    },
+    "greeting" : {
+
     },
     "hello_world" : {
       "localizations" : {
@@ -334,6 +340,9 @@
         }
       }
     },
+    "Profile page" : {
+
+    },
     "remove_all" : {
       "localizations" : {
         "en" : {
@@ -430,6 +439,9 @@
           }
         }
       }
+    },
+    "So much to discover" : {
+
     },
     "Sort by %@" : {
 

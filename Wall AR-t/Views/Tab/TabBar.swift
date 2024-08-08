@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 05/08/2024.
 //
 
+import Domain
 import SwiftUI
 
 struct TabBar: View {
@@ -13,27 +14,28 @@ struct TabBar: View {
 
     var body: some View {
         TabView(selection: $activeTab) {
-            HomePage(greeting: "Home")
+            HomePage<RealArtworksStore>()
                 .tabItem {
                     TabItem(identifier: .home, activeTab: activeTab)
                 }
                 .tag(Tab.home)
-            HomePage(greeting: "Discover")
+            DiscoverPage()
                 .tabItem {
                     TabItem(identifier: .discover, activeTab: activeTab)
                 }
                 .tag(Tab.discover)
-            HomePage(greeting: "Cart")
+            CartPage()
                 .tabItem {
                     TabItem(identifier: .cart, activeTab: activeTab)
                 }
                 .tag(Tab.cart)
-            HomePage(greeting: "Profile")
+            ProfilePage()
                 .tabItem {
                     TabItem(identifier: .profile, activeTab: activeTab)
                 }
                 .tag(Tab.profile)
         }
+        .tint(.wallARtPrimary)
     }
 }
 

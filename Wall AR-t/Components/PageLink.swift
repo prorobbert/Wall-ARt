@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 05/08/2024.
 //
 
+import Domain
 import SwiftUI
 
 struct PageLink<Content: View>: View {
@@ -26,5 +27,13 @@ struct PageLink<Content: View>: View {
                 content()
             }
         )
+        .simultaneousGesture(TapGesture().onEnded({
+            switch page {
+            case .artwork(let artwork):
+                trackEvent(.init(event: .artworkDetails, parameters: ["id": artwork.id]))
+            case .account:
+                trackEvent(.init(event: .settingsOpen, parameters: ["Settings page": "Account"]))
+            }
+        }))
     }
 }

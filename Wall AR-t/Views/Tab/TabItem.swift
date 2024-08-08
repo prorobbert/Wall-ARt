@@ -25,7 +25,3 @@ struct TabItem: View {
         }
     }
 }
-
-#Preview {
-    TabBar()
-}

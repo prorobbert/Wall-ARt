@@ -102,3 +102,18 @@ public extension Array where Element == Artwork {
         ]
     }
 }
+
+public extension Artwork {
+    static var mockedPreview: Artwork {
+        return Artwork(
+            title: "Ethereal Whispers",
+            story: "A beautiful piece of art.",
+            medium: .oilOnCanvas,
+            price: 123.0,
+            width: 300,
+            height: 500,
+            depth: 20,
+            artist: .mockedPreview
+        )
+    }
+}

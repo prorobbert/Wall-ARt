@@ -49,7 +49,7 @@ private extension AnalyticsService {
         currentScreen = screen
 
         logDebugEvent(
-            for: AnalyticsKey.Screen.screenName.rawValue,
+            for: AnalyticsKey.Screen.screenView.rawValue,
             parameters: analyticsMapper.parameters(
                 screen: screen,
                 parameters: parameters

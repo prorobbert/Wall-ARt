@@ -16,7 +16,7 @@ struct ArtworkPage: View {
             Rectangle()
                 .frame(width: 400, height: 400)
         }
-        .trackScreen(Analytics(screen: .artwork, parameters: ["artwork": artwork.title]))
+        .trackScreen(Analytics(screen: .artwork, parameters: ["selected artwork": artwork.title]))
         Text(artwork.title)
     }
 }

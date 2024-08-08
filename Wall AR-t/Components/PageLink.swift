@@ -30,7 +30,7 @@ struct PageLink<Content: View>: View {
         .simultaneousGesture(TapGesture().onEnded({
             switch page {
             case .artwork(let artwork):
-                trackEvent(.init(event: .artworkDetails, parameters: ["id": artwork.id]))
+                trackEvent(.init(event: .artworkDetails, parameters: ["id": artwork.id.uuidString]))
             case .account:
                 trackEvent(.init(event: .settingsOpen, parameters: ["Settings page": "Account"]))
             }

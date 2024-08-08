@@ -38,7 +38,6 @@ struct WallARtApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView<RealArtworksStore, RealArtistsStore, RealUsersStore>()
             TabBar()
                 .environmentObject(navigationStore)
                 .environmentObject(artworksStore)

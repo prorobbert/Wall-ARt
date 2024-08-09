@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ProfilePage: View {
+    @StateObject var navigationStore = NavigationStore()
+
     var body: some View {
-        Text("Profile page")
+        NavigationStack(path: $navigationStore.path) {
+            Text("Profile page")
+        }
     }
 }
 

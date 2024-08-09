@@ -22,9 +22,12 @@ struct HomePage<Store: ArtworksStore>: View {
                         ArtworkRow(artwork: artwork)
                     }
                 })
+                .padding(.horizontal, 20)
             }
+            .accessibilityIdentifier(AccessibilityIdentifiers.Keys.homePopulargridScrollview)
             .withPageDestination()
             .trackScreen(Analytics(screen: .home))
+            .environmentObject(navigationStore)
         }
     }
 }
@@ -32,8 +35,14 @@ struct HomePage<Store: ArtworksStore>: View {
 struct ArtworkRow: View {
     let artwork: Artwork
 
+    @EnvironmentObject var navigationStore: NavigationStore
+
     var body: some View {
-        PageLink(.artwork(artwork)) {
+        Button {
+            trackEvent(.init(event: .artworkDetails, parameters: ["id": artwork.id.uuidString]))
+
+            navigationStore.push(.artwork(artwork))
+        } label: {
             VStack(alignment: .leading, spacing: 8.0) {
                 VStack {
                     Text(artwork.title)
@@ -44,6 +53,7 @@ struct ArtworkRow: View {
                 Divider()
             }
         }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 

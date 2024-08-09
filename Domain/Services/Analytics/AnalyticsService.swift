@@ -64,7 +64,7 @@ private extension AnalyticsService {
     func logDebugEvent(for key: String, parameters: [String: Any]) {
 #if DEBUG
         let data = analyticsMapper.jsonStringify(parameters)
-        debugPrint("👨🏼‍💻 Analytics Event Triggered with key:", key, ", and parameters: ", data)
+        debugPrint("👨🏼‍💻 Analytics Event Triggered with key:", key, ", and data: ", data,", from parameters: ", parameters)
 #endif
     }
 }

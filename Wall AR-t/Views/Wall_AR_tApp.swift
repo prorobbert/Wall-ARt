@@ -6,6 +6,7 @@
 //
 
 import Domain
+import Infuse
 import SwiftUI
 
 @main
@@ -13,6 +14,7 @@ struct WallARtApp: App {
     @StateObject private var artworksStore: RealArtworksStore
     @StateObject private var artistsStore: RealArtistsStore
     @StateObject private var usersStore: RealUsersStore
+    @StateObject var navigationStore = NavigationStore()
 
     init() {
         let artworkDB = ArtworkDatabase()
@@ -31,11 +33,13 @@ struct WallARtApp: App {
                 modelContext: artworkDB.modelContainer.mainContext
             )
         )
+        Dependencies.shared.setup()
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView<RealArtworksStore, RealArtistsStore, RealUsersStore>()
+            TabBar()
+                .environmentObject(navigationStore)
                 .environmentObject(artworksStore)
                 .environmentObject(artistsStore)
                 .environmentObject(usersStore)

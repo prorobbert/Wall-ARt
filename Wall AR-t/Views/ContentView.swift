@@ -6,7 +6,6 @@
 //
 
 import Domain
-import SwiftData
 import SwiftUI
 
 struct ContentView<Store: ArtworksStore, Store2: ArtistsStore, Store3: UsersStore>: View {

@@ -26,6 +26,8 @@ extension View {
             case .artwork(let artwork):
                 ArtworkPage(artwork: artwork)
                     .toolbar(.hidden, for: .tabBar)
+            case .artworkList(let listTitle):
+                ArtworkListPage(title: listTitle)
             case .account:
                 HomePage<RealArtworksStore>()
                     .toolbar(.hidden, for: .tabBar)

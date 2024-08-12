@@ -9,6 +9,7 @@ import Foundation
 
 public enum AnalyticsEvent {
     case artworkDetails
+    case artworkList
     case discoverOpen
     case cartOpen
     case settingsOpen
@@ -18,6 +19,8 @@ public enum AnalyticsEvent {
         switch self {
         case .artworkDetails:
             return "artwork_detail"
+        case .artworkList:
+            return "artwork_list"
         case .discoverOpen:
             return "discover_open"
         case .cartOpen:
@@ -31,7 +34,7 @@ public enum AnalyticsEvent {
 
     var eventCategory: AnalyticsKey.EventCategory {
         switch self {
-        case .artworkDetails:
+        case .artworkDetails, .artworkList:
             return .artwork
         case .discoverOpen:
             return .discover

@@ -55,6 +55,10 @@
 		5227A0472C5CC89C00AF9ACE /* ArtworkSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0462C5CC89C00AF9ACE /* ArtworkSortOrder.swift */; };
 		522F97072C64B5320002B18E /* ScreenTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F97062C64B5320002B18E /* ScreenTracking.swift */; };
 		522F97092C650FCF0002B18E /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F97082C650FCF0002B18E /* AccessibilityIdentifiers.swift */; };
+		522F970C2C69EC540002B18E /* ArtworkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F970B2C69EC540002B18E /* ArtworkRow.swift */; };
+		522F970E2C69F0590002B18E /* ArtworkRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F970D2C69F0590002B18E /* ArtworkRowItem.swift */; };
+		522F97102C69F6120002B18E /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F970F2C69F6120002B18E /* CategoryList.swift */; };
+		522F97132C69F81F0002B18E /* ArtworkListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F97122C69F81F0002B18E /* ArtworkListPage.swift */; };
 		5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3122C37E504004FA94F /* Float+Extension.swift */; };
 		5274E31F2C37E504004FA94F /* FocusSquare+Extension+Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */; };
 		5274E3202C37E504004FA94F /* FocusSquare+Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */; };
@@ -312,6 +316,10 @@
 		5227A0462C5CC89C00AF9ACE /* ArtworkSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkSortOrder.swift; sourceTree = "<group>"; };
 		522F97062C64B5320002B18E /* ScreenTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTracking.swift; sourceTree = "<group>"; };
 		522F97082C650FCF0002B18E /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		522F970B2C69EC540002B18E /* ArtworkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkRow.swift; sourceTree = "<group>"; };
+		522F970D2C69F0590002B18E /* ArtworkRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkRowItem.swift; sourceTree = "<group>"; };
+		522F970F2C69F6120002B18E /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		522F97122C69F81F0002B18E /* ArtworkListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkListPage.swift; sourceTree = "<group>"; };
 		5274E3122C37E504004FA94F /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Extension+Segment.swift"; sourceTree = "<group>"; };
 		5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Alignment+Extension.swift"; sourceTree = "<group>"; };
@@ -543,6 +551,24 @@
 				52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		522F970A2C69EC3F0002B18E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				522F970B2C69EC540002B18E /* ArtworkRow.swift */,
+				522F970D2C69F0590002B18E /* ArtworkRowItem.swift */,
+				522F970F2C69F6120002B18E /* CategoryList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		522F97112C69F80E0002B18E /* ArtworkList */ = {
+			isa = PBXGroup;
+			children = (
+				522F97122C69F81F0002B18E /* ArtworkListPage.swift */,
+			);
+			path = ArtworkList;
 			sourceTree = "<group>";
 		};
 		5274E3192C37E504004FA94F /* Extensions */ = {
@@ -824,6 +850,7 @@
 		52BB03902C29B9790009DE62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				522F97112C69F80E0002B18E /* ArtworkList */,
 				52F78D412C63B62500DFE571 /* Profile */,
 				52F78D3E2C63B61600DFE571 /* Cart */,
 				52F78D3B2C63B5F800DFE571 /* Discover */,
@@ -883,6 +910,7 @@
 		52F78CFB2C60D80800DFE571 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				522F970A2C69EC3F0002B18E /* Components */,
 				52F78CFC2C60D81600DFE571 /* HomePage.swift */,
 			);
 			path = Home;
@@ -1485,9 +1513,13 @@
 				528325AB2C2DABEE00B1BBC2 /* ArArtworkView.swift in Sources */,
 				52F78CF52C60C0CD00DFE571 /* TabBar.swift in Sources */,
 				52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */,
+				522F97102C69F6120002B18E /* CategoryList.swift in Sources */,
 				528AB5682C2C151F00CD7561 /* ARScene.swift in Sources */,
+				522F97132C69F81F0002B18E /* ArtworkListPage.swift in Sources */,
 				528AB56C2C2C160C00CD7561 /* ARSceneSpec.swift in Sources */,
+				522F970C2C69EC540002B18E /* ArtworkRow.swift in Sources */,
 				52F78D3D2C63B60A00DFE571 /* DiscoverPage.swift in Sources */,
+				522F970E2C69F0590002B18E /* ArtworkRowItem.swift in Sources */,
 				52F78CFA2C60C10900DFE571 /* Tab.swift in Sources */,
 				52F78D3A2C63A51300DFE571 /* ArtworkPage.swift in Sources */,
 				52F78CF22C60BFB800DFE571 /* NavigationStore.swift in Sources */,

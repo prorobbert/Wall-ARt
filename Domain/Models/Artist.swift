@@ -26,6 +26,10 @@ public class Artist: Identifiable, Equatable {
         self.user = user
         self.artworks = artworks
     }
+
+    public var name: String {
+        return user.name
+    }
 }
 
 public extension Artist {

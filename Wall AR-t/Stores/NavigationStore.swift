@@ -12,6 +12,7 @@ import SwiftUI
 
 enum Page: Hashable {
     case artwork(Artwork)
+    case artworkList(listTitle: String)
     case account
 }
 

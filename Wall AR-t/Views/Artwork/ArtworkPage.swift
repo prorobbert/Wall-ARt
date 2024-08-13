@@ -13,14 +13,70 @@ struct ArtworkPage: View {
 
     var body: some View {
         ScrollView {
-            Rectangle()
-                .frame(width: 400, height: 400)
+            VStack(spacing: 24) {
+                VStack {
+                    Rectangle()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity)
+                        .foregroundStyle(Color.gray.opacity(0.3))
+                    VStack(alignment: .leading) {
+                        Text(artwork.title)
+                            .font(.title2)
+                        HStack {
+                            Text("by")
+                            Text(artwork.artist.name)
+                            Spacer()
+                            Text(String(format: "€%.2f", artwork.price))
+                                .fontWeight(.bold)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+
+                VStack(alignment: .leading) {
+                    Text("Description")
+                        .fontWeight(.semibold)
+                    Text(artwork.story)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                TabSelectionView(tabTitles: ["Details", "Tags", "Delivery"], content: { title in
+                    switch title {
+                    case "Details":
+                        Text("Details tab")
+                    case "Tags":
+                        Text("Tags tab")
+                    case "Delivery":
+                        Text("Delivery tab")
+                    default:
+                        Text("Invalid tab title")
+                    }
+                })
+            }
         }
         .trackScreen(Analytics(screen: .artwork, parameters: ["selected artwork": artwork.title]))
-        Text(artwork.title)
+        .safeAreaPadding(.bottom, 20)
+        .padding(.horizontal, 20)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    print("Pressed bookmark")
+                } label: {
+                    Image(systemName: "bookmark")
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    print("Pressed like")
+                } label: {
+                    Image(systemName: "heart")
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    ArtworkPage(artwork: Artwork.mockedPreview)
+    NavigationView {
+        ArtworkPage(artwork: Artwork.mockedPreview)
+    }
 }

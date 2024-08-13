@@ -115,6 +115,15 @@
         }
       }
     },
+    "Delivery tab" : {
+
+    },
+    "Description" : {
+
+    },
+    "Details tab" : {
+
+    },
     "drag_to_reposition" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -222,6 +231,9 @@
           }
         }
       }
+    },
+    "Invalid tab title" : {
+
     },
     "leave" : {
       "localizations" : {
@@ -484,6 +496,9 @@
           }
         }
       }
+    },
+    "Tags tab" : {
+
     },
     "tap_a_plane_to_place_model" : {
       "localizations" : {

@@ -87,6 +87,9 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             width: 300,
             height: 500,
             depth: 20,
+            subject: "Animals and birds",
+            style: "Photorealistic",
+            edition: .oneOfAkind,
             artist: artist
         )
         modelContext.insert(artwork)

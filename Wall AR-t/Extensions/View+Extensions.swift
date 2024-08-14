@@ -43,4 +43,52 @@ extension View {
             self
         }
     }
+
+    /// Updates an external binding with the view's size
+    func withSizeBinding(_ size: Binding<CGSize>) -> some View {
+        self.modifier(WithSizeBinding(size: size))
+    }
+
+    func onSizeChange(_ onSizeChange: @escaping (CGSize) -> Void) -> some View {
+        self.modifier(OnSizeChange(onSizeChange: onSizeChange))
+    }
+}
+
+private struct WithSizeBinding: ViewModifier {
+    @Binding var size: CGSize
+
+    func body(content: Content) -> some View {
+        content
+            .overlay(GeometryReader { geometry in
+                Color.clear.preference(key: SizePreferenceKey.self, value: geometry.size)
+            })
+            .onPreferenceChange(SizePreferenceKey.self) { newSize in
+                self.size = newSize
+            }
+    }
+}
+
+private struct OnSizeChange: ViewModifier {
+    let onSizeChange: (CGSize) -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .background(GeometryReader { geometry in
+                Color.clear
+                    .preference(key: SizePreferenceKey.self, value: geometry.size)
+            })
+            .onPreferenceChange(SizePreferenceKey.self) { newSize in
+                onSizeChange(newSize)
+            }
+    }
+}
+
+private struct SizePreferenceKey: PreferenceKey {
+    typealias Value = CGSize
+
+    static var defaultValue: Value = .zero
+
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value = nextValue()
+    }
 }

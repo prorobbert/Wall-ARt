@@ -26,7 +26,7 @@ struct ArtworkPage: View {
                             Text("by")
                             Text(artwork.artist.name)
                             Spacer()
-                            Text(String(format: "€%.2f", artwork.price))
+                            Text(formatPrice(artwork.price))
                                 .fontWeight(.bold)
                         }
                     }
@@ -42,11 +42,41 @@ struct ArtworkPage: View {
                 TabSelectionView(tabTitles: ["Details", "Tags", "Delivery"], content: { title in
                     switch title {
                     case "Details":
-                        Text("Details tab")
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("•")
+                                Text(ArtworkEdition(rawValue: artwork.edition)!.label)
+                            }
+                            HStack {
+                                Text("•")
+                                Text("")
+                            }
+                            HStack {
+                                Text("•")
+                                Text("Size: \(artwork.dimensions(.centimeters))")
+                            }
+                            HStack {
+                                Text("•")
+                                Text("Style: ")
+                            }
+                            HStack {
+                                Text("•")
+                                Text("Subject: ")
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     case "Tags":
-                        Text("Tags tab")
+                        if let tags = artwork.tags, !tags.isEmpty {
+                            ArtworkTags(tags: tags)
+                        } else {
+                            Text("No tags linked to this artwork")
+                        }
                     case "Delivery":
-                        Text("Delivery tab")
+                        if let deliveryDetails = artwork.deliveryDetails {
+                            DeliveryDetails(deliveryDetails: deliveryDetails)
+                        } else {
+                            Text("No delivery details found")
+                        }
                     default:
                         Text("Invalid tab title")
                     }
@@ -76,7 +106,9 @@ struct ArtworkPage: View {
 }
 
 #Preview {
-    NavigationView {
-        ArtworkPage(artwork: Artwork.mockedPreview)
-    }
+//    NavigationView {
+//        ArtworkPage(artwork: Artwork.mockedPreview)
+//    }
+    HomePage<PreviewArtworksStore>()
+        .environmentObject(PreviewArtworksStore())
 }

@@ -38,6 +38,9 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
             width: 300,
             height: 500,
             depth: 20,
+            subject: "Animals and birds",
+            style: "Photorealistic",
+            edition: .oneOfAkind,
             artist: Artist.mockedPreview
         )
         artworks.append(artwork)
@@ -63,6 +66,22 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
             artist = try modelContext.fetch(FetchDescriptor<Artist>(sortBy: [SortDescriptor(\.user.firstName)]))[0]
         } catch {}
 
+        var delivery = Delivery.mockedPreview
+        modelContext.insert(delivery)
+        do {
+            delivery = try modelContext.fetch(FetchDescriptor<Delivery>())[0]
+        } catch {}
+        
+        var tags: [Tag]? = [Tag(title: "Bird"), Tag(title: "Animal"), Tag(title: "Wildlife")]
+        for tag in tags! {
+            modelContext.insert(tag)
+        }
+        do {
+            tags = try modelContext.fetch(FetchDescriptor<Tag>())
+        } catch {
+            tags = nil
+        }
+
         for artwork in artworks {
             let newArtwork = Artwork(
                 title: artwork.title,
@@ -72,7 +91,12 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
                 width: artwork.width,
                 height: artwork.height,
                 depth: artwork.depth,
-                artist: artist
+                subject: "Animals and birds",
+                style: "Photorealistic",
+                edition: .oneOfAkind,
+                artist: artist,
+                deliveryDetails: delivery,
+                tags: tags
             )
             modelContext.insert(newArtwork)
         }

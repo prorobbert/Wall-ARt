@@ -31,7 +31,7 @@ struct TabSelectionView<Content: View>: View {
                     VStack {
                         Button(action: {
                             withAnimation {
-                                selectedTitle = title                                
+                                selectedTitle = title
                             }
                         }, label: {
                             Text(title)
@@ -51,7 +51,7 @@ struct TabSelectionView<Content: View>: View {
                 }
             }
             content(selectedTitle)
-                .padding(.top, 24)
+                .padding(.top, 10)
         }
     }
 }

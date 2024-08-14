@@ -61,6 +61,12 @@
         }
       }
     },
+    "%lld working days" : {
+
+    },
+    "•" : {
+
+    },
     "Add" : {
 
     },
@@ -115,6 +121,9 @@
         }
       }
     },
+    "Delivery" : {
+
+    },
     "Delivery tab" : {
 
     },
@@ -122,6 +131,9 @@
 
     },
     "Details tab" : {
+
+    },
+    "Dispatches from %@ within" : {
 
     },
     "drag_to_reposition" : {
@@ -306,6 +318,12 @@
         }
       }
     },
+    "No delivery details found" : {
+
+    },
+    "No tags linked to this artwork" : {
+
+    },
     "object_placement" : {
       "localizations" : {
         "en" : {
@@ -426,6 +444,9 @@
         }
       }
     },
+    "Shipping to the Netherlands" : {
+
+    },
     "show_ar" : {
       "localizations" : {
         "en" : {
@@ -458,6 +479,9 @@
         }
       }
     },
+    "Size: %@" : {
+
+    },
     "So much to discover" : {
 
     },
@@ -480,6 +504,12 @@
           }
         }
       }
+    },
+    "Style: " : {
+
+    },
+    "Subject: " : {
+
     },
     "switch" : {
       "localizations" : {

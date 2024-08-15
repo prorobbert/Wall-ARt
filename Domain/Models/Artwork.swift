@@ -24,7 +24,7 @@ public class Artwork: Identifiable, Equatable {
     public var isAvailable: Bool
     public var artist: Artist
     public var deliveryDetails: Delivery?
-    public var tags: [Tag]?
+    @Relationship(inverse: \Tag.artworks) public var tags: [Tag]?
 
     @Attribute(.externalStorage)
     public var photos: [Data]?
@@ -42,7 +42,7 @@ public class Artwork: Identifiable, Equatable {
         edition: ArtworkEdition,
         artist: Artist,
         deliveryDetails: Delivery? = nil,
-        tags: [Tag]? = [],
+        tags: [Tag] = [],
         isAvailable: Bool = false
     ) {
         self.id = UUID()

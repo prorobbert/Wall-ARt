@@ -14,6 +14,7 @@ struct WallARtApp: App {
     @StateObject private var artworksStore: RealArtworksStore
     @StateObject private var artistsStore: RealArtistsStore
     @StateObject private var usersStore: RealUsersStore
+    @StateObject private var tagsStore: RealTagsStore
     @StateObject var navigationStore = NavigationStore()
 
     init() {
@@ -33,6 +34,11 @@ struct WallARtApp: App {
                 modelContext: artworkDB.modelContainer.mainContext
             )
         )
+        _tagsStore = StateObject(
+            wrappedValue: RealTagsStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
         Dependencies.shared.setup()
     }
 
@@ -43,6 +49,7 @@ struct WallARtApp: App {
                 .environmentObject(artworksStore)
                 .environmentObject(artistsStore)
                 .environmentObject(usersStore)
+                .environmentObject(tagsStore)
         }
     }
 }

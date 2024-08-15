@@ -52,6 +52,8 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
         }
     }
 
+    public func reloadSampleData(artists: [Artist], tags: [Tag]) {}
+
     private func loadMockData() {
         var user = User.mockedPreview
         modelContext.insert(user)
@@ -71,15 +73,15 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
         do {
             delivery = try modelContext.fetch(FetchDescriptor<Delivery>())[0]
         } catch {}
-        
-        var tags: [Tag]? = [Tag(title: "Bird"), Tag(title: "Animal"), Tag(title: "Wildlife")]
-        for tag in tags! {
+
+        var tags: [Tag] = [Tag(title: "Bird"), Tag(title: "Animal"), Tag(title: "Wildlife")]
+        for tag in tags {
             modelContext.insert(tag)
         }
         do {
             tags = try modelContext.fetch(FetchDescriptor<Tag>())
         } catch {
-            tags = nil
+            tags = []
         }
 
         for artwork in artworks {

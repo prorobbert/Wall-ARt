@@ -49,7 +49,7 @@ struct ArtworkPage: View {
                             }
                             HStack {
                                 Text("•")
-                                Text("")
+                                Text(Medium(rawValue: artwork.medium)!.label)
                             }
                             HStack {
                                 Text("•")
@@ -57,11 +57,11 @@ struct ArtworkPage: View {
                             }
                             HStack {
                                 Text("•")
-                                Text("Style: ")
+                                Text("Style: \(artwork.style)")
                             }
                             HStack {
                                 Text("•")
-                                Text("Subject: ")
+                                Text("Subject: \(artwork.subject)")
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -69,13 +69,23 @@ struct ArtworkPage: View {
                         if let tags = artwork.tags, !tags.isEmpty {
                             ArtworkTags(tags: tags)
                         } else {
-                            Text("No tags linked to this artwork")
+                            ContentUnavailableView {
+                                Image(systemName: "tag.fill")
+                                    .font(.largeTitle)
+                            } description: {
+                                Text("No tags linked to this artwork")
+                            }
                         }
                     case "Delivery":
                         if let deliveryDetails = artwork.deliveryDetails {
                             DeliveryDetails(deliveryDetails: deliveryDetails)
                         } else {
-                            Text("No delivery details found")
+                            ContentUnavailableView {
+                                Image(systemName: "shippingbox.and.arrow.backward.fill")
+                                    .font(.largeTitle)
+                            } description: {
+                                Text("No delivery details found")
+                            }
                         }
                     default:
                         Text("Invalid tab title")

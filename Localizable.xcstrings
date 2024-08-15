@@ -376,6 +376,12 @@
     "Profile page" : {
 
     },
+    "Reload sample data" : {
+
+    },
+    "Reload sample data?" : {
+
+    },
     "remove_all" : {
       "localizations" : {
         "en" : {
@@ -508,7 +514,13 @@
     "Style: " : {
 
     },
+    "Style: %@" : {
+
+    },
     "Subject: " : {
+
+    },
+    "Subject: %@" : {
 
     },
     "switch" : {
@@ -616,6 +628,12 @@
 
     },
     "Whoops" : {
+
+    },
+    "Yes, but nothing will happen" : {
+
+    },
+    "Yes, reload sample data" : {
 
     }
   },

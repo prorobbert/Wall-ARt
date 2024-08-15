@@ -14,4 +14,5 @@ public protocol ArtworksStore: AnyObject, Observable, ObservableObject {
     func setFilter(_ filterString: String)
     func addArtwork(for artist: Artist)
     func deleteArtwork(_ artwork: EntryType)
+    func reloadSampleData(artists: [Artist], tags: [Tag])
 }

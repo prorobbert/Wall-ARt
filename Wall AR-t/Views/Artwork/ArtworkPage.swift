@@ -93,8 +93,24 @@ struct ArtworkPage: View {
                         Text("Invalid tab title")
                     }
                 })
+
+                VStack(alignment: .leading) {
+                    Text("More from \(artwork.artist.name)")
+                        .fontWeight(.semibold)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 12) {
+                            ForEach(artwork.artist.artworks ?? [], id: \.self) { otherArtwork in
+                                // TODO: artists.artworks is currently always empty
+                                if artwork.id != otherArtwork.id {
+                                    ArtworkRowItem(artwork: otherArtwork, smallVersion: true)
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+        .scrollIndicators(.hidden)
         .trackScreen(Analytics(screen: .artwork, parameters: ["selected artwork": artwork.title]))
         .safeAreaPadding(.bottom, 20)
         .padding(.horizontal, 20)

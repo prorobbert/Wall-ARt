@@ -10,8 +10,14 @@ import SwiftUI
 
 struct ArtworkRowItem: View {
     let artwork: Artwork
+    let smallVersion: Bool
 
     @EnvironmentObject var navigationStore: NavigationStore
+
+    init(artwork: Artwork, smallVersion: Bool = false) {
+        self.artwork = artwork
+        self.smallVersion = smallVersion
+    }
 
     var body: some View {
         Button {
@@ -21,15 +27,17 @@ struct ArtworkRowItem: View {
         } label: {
             VStack(alignment: .leading, spacing: 8.0) {
                 Rectangle()
-                    .frame(width: 220, height: 220)
+                    .frame(width: smallVersion ? 150 : 220, height: smallVersion ? 150 : 220)
                     .foregroundStyle(Color.gray)
                 VStack(alignment: .leading) {
                     Text(artwork.title)
                         .font(.title3)
                     HStack {
-                        Text("by")
-                        Text(artwork.artist.name)
-                        Spacer()
+                        if !smallVersion {
+                            Text("by")
+                            Text(artwork.artist.name)
+                            Spacer()
+                        }
                         Text(String(format: "€%.2f", artwork.price))
                     }
                 }

@@ -5,11 +5,13 @@
 //  Created by Robbert Ruiter on 07/08/2024.
 //
 
-import SwiftUI
 import Domain
+import SwiftUI
 
 struct ArtworkPage: View {
     var artwork: Artwork
+
+    @State private var showingAR = false
 
     var body: some View {
         ScrollView {
@@ -111,6 +113,26 @@ struct ArtworkPage: View {
                     Image(systemName: "heart")
                 }
             }
+            ToolbarItemGroup(placement: .bottomBar) {
+                HStack {
+                    Button {
+                        showingAR = true
+                    } label: {
+                        Text("View in AR")
+                        Image(systemName: "arkit")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    Button {
+                        print("Clicked: add to cart")
+                    } label: {
+                        Text("Add to cart")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                }
+            }
+        }
+        .fullScreenCover(isPresented: $showingAR) {
+            ArArtworkView(isPresented: $showingAR)
         }
     }
 }

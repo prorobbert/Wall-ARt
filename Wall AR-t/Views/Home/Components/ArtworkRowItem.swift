@@ -27,8 +27,13 @@ struct ArtworkRowItem: View {
         } label: {
             VStack(alignment: .leading, spacing: 8.0) {
                 Rectangle()
+                    .fill(Color.clear)
                     .frame(width: smallVersion ? 150 : 220, height: smallVersion ? 150 : 220)
-                    .foregroundStyle(Color.gray)
+                    .overlay {
+                        Image("KingFisher")
+                            .resizable()
+                            .scaledToFit()
+                    }
                 VStack(alignment: .leading) {
                     Text(artwork.title)
                         .font(.title3)

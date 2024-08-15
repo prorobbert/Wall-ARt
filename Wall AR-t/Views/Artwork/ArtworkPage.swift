@@ -18,9 +18,14 @@ struct ArtworkPage: View {
             VStack(spacing: 24) {
                 VStack {
                     Rectangle()
+                        .fill(Color.clear)
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: .infinity)
-                        .foregroundStyle(Color.gray.opacity(0.3))
+                        .overlay {
+                            Image("KingFisher")
+                                .resizable()
+                                .scaledToFit()
+                        }
                     VStack(alignment: .leading) {
                         Text(artwork.title)
                             .font(.title2)

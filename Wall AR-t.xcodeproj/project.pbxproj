@@ -70,6 +70,9 @@
 		522F972B2C6CDC410002B18E /* ArtworkEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F972A2C6CDC410002B18E /* ArtworkEdition.swift */; };
 		524E93AF2C6CFA2900AFEF51 /* TagsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E93AE2C6CFA2900AFEF51 /* TagsStore.swift */; };
 		524E93B12C6CFAA200AFEF51 /* RealTagsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E93B02C6CFAA200AFEF51 /* RealTagsStore.swift */; };
+		524E93B82C6E3FAB00AFEF51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524E93B72C6E3FAB00AFEF51 /* Images.xcassets */; };
+		524E93B92C6E3FAB00AFEF51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524E93B72C6E3FAB00AFEF51 /* Images.xcassets */; };
+		524E93BA2C6E3FAB00AFEF51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524E93B72C6E3FAB00AFEF51 /* Images.xcassets */; };
 		5274E31E2C37E504004FA94F /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3122C37E504004FA94F /* Float+Extension.swift */; };
 		5274E31F2C37E504004FA94F /* FocusSquare+Extension+Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */; };
 		5274E3202C37E504004FA94F /* FocusSquare+Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */; };
@@ -342,6 +345,7 @@
 		522F972A2C6CDC410002B18E /* ArtworkEdition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkEdition.swift; sourceTree = "<group>"; };
 		524E93AE2C6CFA2900AFEF51 /* TagsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsStore.swift; sourceTree = "<group>"; };
 		524E93B02C6CFAA200AFEF51 /* RealTagsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTagsStore.swift; sourceTree = "<group>"; };
+		524E93B72C6E3FAB00AFEF51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5274E3122C37E504004FA94F /* Float+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		5274E3132C37E504004FA94F /* FocusSquare+Extension+Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Extension+Segment.swift"; sourceTree = "<group>"; };
 		5274E3142C37E504004FA94F /* FocusSquare+Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusSquare+Alignment+Extension.swift"; sourceTree = "<group>"; };
@@ -495,6 +499,7 @@
 		52067C342C19C86D00E80F0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				524E93B72C6E3FAB00AFEF51 /* Images.xcassets */,
 				52A66D832C1C4C620004BDD9 /* 3D Models */,
 				52067C352C19C86D00E80F0A /* Models.h */,
 				52067C362C19C86D00E80F0A /* Models.docc */,
@@ -1362,6 +1367,7 @@
 			files = (
 				52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				524E93BA2C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
 				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
@@ -1405,6 +1411,7 @@
 				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
 				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				524E93B92C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
@@ -1421,6 +1428,7 @@
 				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
 				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				524E93B82C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,

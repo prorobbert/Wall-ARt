@@ -18,10 +18,8 @@ struct AppFont: ViewModifier {
     private var font: Font {
         let baseFont: Font
         if let name = fontName {
-            print("hi: \(name)")
             baseFont = .custom(name, size: size)
         } else {
-            print("doei")
             baseFont = .system(size: size, weight: weight)
         }
 

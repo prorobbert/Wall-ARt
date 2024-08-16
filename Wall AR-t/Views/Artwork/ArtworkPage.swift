@@ -28,13 +28,16 @@ struct ArtworkPage: View {
                         }
                     VStack(alignment: .leading) {
                         Text(artwork.title)
-                            .font(.title2)
+                            .appFont(.title1)
                         HStack {
                             Text("by")
+                                .appFont(.subHeadline)
+                                .foregroundStyle(Color.gray.opacity(0.5))
                             Text(artwork.artist.name)
+                                .appFont(.subHeadline)
                             Spacer()
                             Text(formatPrice(artwork.price))
-                                .fontWeight(.bold)
+                                .appFont(.headline)
                         }
                     }
                 }
@@ -42,8 +45,9 @@ struct ArtworkPage: View {
 
                 VStack(alignment: .leading) {
                     Text("Description")
-                        .fontWeight(.semibold)
+                        .appFont(.bodyEmpasized)
                     Text(artwork.story)
+                        .appFont(.body)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 TabSelectionView(tabTitles: ["Details", "Tags", "Delivery"], content: { title in
@@ -52,23 +56,33 @@ struct ArtworkPage: View {
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("•")
+                                    .appFont(.body)
                                 Text(ArtworkEdition(rawValue: artwork.edition)!.label)
+                                    .appFont(.body)
                             }
                             HStack {
                                 Text("•")
+                                    .appFont(.body)
                                 Text(Medium(rawValue: artwork.medium)!.label)
+                                    .appFont(.body)
                             }
                             HStack {
                                 Text("•")
+                                    .appFont(.body)
                                 Text("Size: \(artwork.dimensions(.centimeters))")
+                                    .appFont(.body)
                             }
                             HStack {
                                 Text("•")
+                                    .appFont(.body)
                                 Text("Style: \(artwork.style)")
+                                    .appFont(.body)
                             }
                             HStack {
                                 Text("•")
+                                    .appFont(.body)
                                 Text("Subject: \(artwork.subject)")
+                                    .appFont(.body)
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -101,7 +115,7 @@ struct ArtworkPage: View {
 
                 VStack(alignment: .leading) {
                     Text("More from \(artwork.artist.name)")
-                        .fontWeight(.semibold)
+                        .appFont(.bodyEmpasized)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
                             ForEach(artwork.artist.artworks ?? [], id: \.self) { otherArtwork in
@@ -140,13 +154,16 @@ struct ArtworkPage: View {
                         showingAR = true
                     } label: {
                         Text("View in AR")
+                            .appFont(.headline)
                         Image(systemName: "arkit")
+                            .appFont(.headline)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     Button {
                         print("Clicked: add to cart")
                     } label: {
                         Text("Add to cart")
+                            .appFont(.headline)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                 }

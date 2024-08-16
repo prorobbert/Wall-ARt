@@ -24,6 +24,7 @@ struct HomePage<Store: ArtworksStore>: View {
                     .clipShape(RoundedRectangle(cornerRadius: 4))
                 .frame(width: 32, height: 32)
                 Text("Wall AR-t")
+                    .appFont(.title2)
                 Spacer()
             }
             .padding(.horizontal, 20)

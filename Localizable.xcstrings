@@ -7,22 +7,6 @@
     "@username" : {
 
     },
-    "%@ - " : {
-
-    },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
-    "%lld" : {
-
-    },
     "%lld Artwork" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -76,16 +60,7 @@
     "Add" : {
 
     },
-    "Add the first artwork" : {
-
-    },
     "Add to cart" : {
-
-    },
-    "artist" : {
-
-    },
-    "Artworks" : {
 
     },
     "by" : {
@@ -201,9 +176,6 @@
         }
       }
     },
-    "greeting" : {
-
-    },
     "hello_world" : {
       "localizations" : {
         "en" : {
@@ -219,9 +191,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -291,13 +260,8 @@
         }
       }
     },
-    "medium" : {
-
-    },
-    "Medium" : {
-
-    },
     "missing_authorisation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -391,9 +355,6 @@
         }
       }
     },
-    "Profile page" : {
-
-    },
     "Reload sample data" : {
 
     },
@@ -447,9 +408,6 @@
           }
         }
       }
-    },
-    "Robbert" : {
-
     },
     "select_placeable_plane" : {
       "extractionState" : "manual",
@@ -532,13 +490,7 @@
         }
       }
     },
-    "Style: " : {
-
-    },
     "Style: %@" : {
-
-    },
-    "Subject: " : {
 
     },
     "Subject: %@" : {
@@ -564,6 +516,7 @@
 
     },
     "tap_a_plane_to_place_model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -620,9 +573,6 @@
         }
       }
     },
-    "title" : {
-
-    },
     "vertical_planes" : {
       "localizations" : {
         "en" : {
@@ -649,9 +599,6 @@
 
     },
     "Wall AR-t" : {
-
-    },
-    "Whoops" : {
 
     },
     "Yes, but nothing will happen" : {

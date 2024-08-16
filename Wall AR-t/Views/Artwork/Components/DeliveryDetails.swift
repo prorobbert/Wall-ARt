@@ -15,13 +15,15 @@ struct DeliveryDetails: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("Delivery")
-                .fontWeight(.semibold)
+                .appFont(.bodyEmpasized)
             Text("Shipping to the Netherlands")
+                .appFont(.body)
             Text(formatPrice(deliveryDetails.price))
-                .fontWeight(.semibold)
+                .appFont(.bodyEmpasized)
             Text("Dispatches from \(deliveryDetails.shippingFrom) within")
+                .appFont(.body)
             Text("\(deliveryDetails.shippingDuration) working days")
-                .fontWeight(.semibold)
+                .appFont(.bodyEmpasized)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

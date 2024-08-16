@@ -36,14 +36,18 @@ struct ArtworkRowItem: View {
                     }
                 VStack(alignment: .leading) {
                     Text(artwork.title)
-                        .font(.title3)
+                        .appFont(.title2)
                     HStack {
                         if !smallVersion {
                             Text("by")
+                                .appFont(.subHeadline)
+                                .foregroundStyle(Color.gray.opacity(0.5))
                             Text(artwork.artist.name)
+                                .appFont(.subHeadline)
                             Spacer()
                         }
-                        Text(String(format: "€%.2f", artwork.price))
+                        Text(formatPrice(artwork.price))
+                            .appFont(.subHeadlineEmpasized)
                     }
                 }
             }

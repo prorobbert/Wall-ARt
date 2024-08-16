@@ -23,7 +23,7 @@ struct ArtworkTags: View {
                         Capsule()
                             .fill(Color.gray.opacity(0.3))
                     )
-                    .foregroundColor(.black)
+                    .appFont(.body)
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)

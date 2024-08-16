@@ -10,6 +10,11 @@ import Domain
 
 extension View {
 
+    /// Style
+    func appFont(_ style: FontStyle) -> some View {
+        return self.modifier(AppFont(fontStyle: style))
+    }
+
     /// Analytics
     func trackEvent(_ analytics: Analytics) {
         EventModifier().track(analytics: analytics)

@@ -18,7 +18,7 @@ struct ArtworkRow: View {
         VStack(spacing: 8) {
             HStack(alignment: .bottom) {
                 Text(title)
-                    .font(.title2)
+                    .appFont(.body)
                 Spacer()
                 Button {
                     trackEvent(.init(event: .artworkList, parameters: ["List name": title]))
@@ -26,7 +26,7 @@ struct ArtworkRow: View {
                     navigationStore.push(.artworkList(listTitle: title))
                 } label: {
                     Text("View all")
-                        .font(.caption)
+                        .appFont(.caption1)
                 }
                 .buttonStyle(PlainButtonStyle())
             }

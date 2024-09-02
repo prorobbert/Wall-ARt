@@ -12,48 +12,35 @@ struct HomePage<Store: ArtworksStore>: View {
     @StateObject var navigationStore = NavigationStore()
 
     @EnvironmentObject var artworksStore: Store
+    @EnvironmentObject var usersStore: RealUsersStore
+    @EnvironmentObject var artistsStore: RealArtistsStore
+
+    @State private var isReloadPresented = false
 
     var body: some View {
         NavigationStack(path: $navigationStore.path) {
-            Text("greeting")
+            HStack(spacing: 8) {
+                Color.gray.opacity(0.2)
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                .frame(width: 32, height: 32)
+                Text("Wall AR-t")
+                    .appFont(.title2)
+                Spacer()
+            }
+            .padding(.horizontal, 20)
             ScrollView {
-                LazyVStack(alignment: .leading, content: {
-                    ForEach(artworksStore.artworks, id: \.self) { artwork in
-                        ArtworkRow(artwork: artwork)
-                    }
-                })
+                LazyVStack(alignment: .leading, spacing: 24) {
+                    ArtworkRow(title: "Popular artworks", artworks: artworksStore.artworks)
+                    CategoryList()
+                    ArtworkRow(title: "New artworks", artworks: artworksStore.artworks)
+                }
                 .padding(.horizontal, 20)
             }
-            .accessibilityIdentifier(AccessibilityIdentifiers.Keys.homePopulargridScrollview)
+            .accessibilityIdentifier(AccessibilityIdentifiers.Keys.homePage)
             .withPageDestination()
             .trackScreen(Analytics(screen: .home))
             .environmentObject(navigationStore)
         }
-    }
-}
-
-struct ArtworkRow: View {
-    let artwork: Artwork
-
-    @EnvironmentObject var navigationStore: NavigationStore
-
-    var body: some View {
-        Button {
-            trackEvent(.init(event: .artworkDetails, parameters: ["id": artwork.id.uuidString]))
-
-            navigationStore.push(.artwork(artwork))
-        } label: {
-            VStack(alignment: .leading, spacing: 8.0) {
-                VStack {
-                    Text(artwork.title)
-                    Text(Medium(rawValue: artwork.medium)!.label)
-                }
-                .padding(.vertical, 16.0)
-
-                Divider()
-            }
-        }
-        .buttonStyle(PlainButtonStyle())
     }
 }
 

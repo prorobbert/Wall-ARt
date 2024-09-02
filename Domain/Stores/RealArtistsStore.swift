@@ -54,4 +54,16 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
             fatalError()
         }
     }
+
+    public func reloadSampleData(users: [User]) {
+        do {
+            try modelContext.delete(model: Artist.self)
+            for user in users {
+                addArtist(for: user)
+            }
+            try fetchedResultsController.fetch()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

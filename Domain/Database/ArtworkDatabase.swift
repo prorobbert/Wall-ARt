@@ -6,6 +6,7 @@
 //
 
 import SwiftData
+import Foundation
 
 public struct ArtworkDatabase {
     public let modelContainer: ModelContainer

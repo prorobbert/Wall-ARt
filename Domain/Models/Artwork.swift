@@ -18,8 +18,13 @@ public class Artwork: Identifiable, Equatable {
     public var width: Int // In millimeter
     public var height: Int // In millimeter
     public var depth: Int // In millimeter
+    public var subject: String
+    public var style: String
+    public var edition: ArtworkEdition.RawValue
     public var isAvailable: Bool
     public var artist: Artist
+    public var deliveryDetails: Delivery?
+    @Relationship(inverse: \Tag.artworks) public var tags: [Tag]?
 
     @Attribute(.externalStorage)
     public var photos: [Data]?
@@ -32,7 +37,12 @@ public class Artwork: Identifiable, Equatable {
         width: Int,
         height: Int,
         depth: Int,
+        subject: String,
+        style: String,
+        edition: ArtworkEdition,
         artist: Artist,
+        deliveryDetails: Delivery? = nil,
+        tags: [Tag] = [],
         isAvailable: Bool = false
     ) {
         self.id = UUID()
@@ -43,7 +53,12 @@ public class Artwork: Identifiable, Equatable {
         self.height = height
         self.width = width
         self.depth = depth
+        self.subject = subject
+        self.style = style
+        self.edition = edition.rawValue
         self.artist = artist
+        self.deliveryDetails = deliveryDetails
+        self.tags = tags
         self.isAvailable = isAvailable
     }
 
@@ -76,7 +91,11 @@ public extension Array where Element == Artwork {
                 width: 300,
                 height: 500,
                 depth: 20,
-                artist: .mockedPreview
+                subject: "Animals and birds",
+                style: "Photorealistic",
+                edition: .oneOfAkind,
+                artist: .mockedPreview,
+                tags: .mockedPreview
             ),
             Artwork(
                 title: "Solitude's Embrace",
@@ -86,7 +105,11 @@ public extension Array where Element == Artwork {
                 width: 600,
                 height: 800,
                 depth: 25,
+                subject: "Animals and birds",
+                style: "Photorealistic",
+                edition: .limitedSeries,
                 artist: .mockedPreview,
+                tags: .mockedPreview,
                 isAvailable: true
             ),
             Artwork(
@@ -97,7 +120,11 @@ public extension Array where Element == Artwork {
                 width: 700,
                 height: 1050,
                 depth: 20,
-                artist: .mockedPreview
+                subject: "Animals and birds",
+                style: "Photorealistic",
+                edition: .oneOfAkind,
+                artist: .mockedPreview,
+                tags: .mockedPreview
             )
         ]
     }
@@ -113,7 +140,12 @@ public extension Artwork {
             width: 300,
             height: 500,
             depth: 20,
-            artist: .mockedPreview
+            subject: "Animals and birds",
+            style: "Photorealistic",
+            edition: .oneOfAkind,
+            artist: .mockedPreview,
+            deliveryDetails: .mockedPreview,
+            tags: .mockedPreview
         )
     }
 }

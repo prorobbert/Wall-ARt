@@ -10,6 +10,11 @@ import Domain
 
 extension View {
 
+    /// Style
+    func appFont(_ style: FontStyle) -> some View {
+        return self.modifier(AppFont(fontStyle: style))
+    }
+
     /// Analytics
     func trackEvent(_ analytics: Analytics) {
         EventModifier().track(analytics: analytics)
@@ -26,6 +31,8 @@ extension View {
             case .artwork(let artwork):
                 ArtworkPage(artwork: artwork)
                     .toolbar(.hidden, for: .tabBar)
+            case .artworkList(let listTitle):
+                ArtworkListPage(title: listTitle)
             case .account:
                 HomePage<RealArtworksStore>()
                     .toolbar(.hidden, for: .tabBar)
@@ -40,5 +47,53 @@ extension View {
         } else {
             self
         }
+    }
+
+    /// Updates an external binding with the view's size
+    func withSizeBinding(_ size: Binding<CGSize>) -> some View {
+        self.modifier(WithSizeBinding(size: size))
+    }
+
+    func onSizeChange(_ onSizeChange: @escaping (CGSize) -> Void) -> some View {
+        self.modifier(OnSizeChange(onSizeChange: onSizeChange))
+    }
+}
+
+private struct WithSizeBinding: ViewModifier {
+    @Binding var size: CGSize
+
+    func body(content: Content) -> some View {
+        content
+            .overlay(GeometryReader { geometry in
+                Color.clear.preference(key: SizePreferenceKey.self, value: geometry.size)
+            })
+            .onPreferenceChange(SizePreferenceKey.self) { newSize in
+                self.size = newSize
+            }
+    }
+}
+
+private struct OnSizeChange: ViewModifier {
+    let onSizeChange: (CGSize) -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .background(GeometryReader { geometry in
+                Color.clear
+                    .preference(key: SizePreferenceKey.self, value: geometry.size)
+            })
+            .onPreferenceChange(SizePreferenceKey.self) { newSize in
+                onSizeChange(newSize)
+            }
+    }
+}
+
+private struct SizePreferenceKey: PreferenceKey {
+    typealias Value = CGSize
+
+    static var defaultValue: Value = .zero
+
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value = nextValue()
     }
 }

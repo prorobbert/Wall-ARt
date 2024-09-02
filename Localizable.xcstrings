@@ -4,20 +4,7 @@
     "" : {
 
     },
-    "%@ - " : {
-
-    },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
-    "%lld" : {
+    "@username" : {
 
     },
     "%lld Artwork" : {
@@ -61,16 +48,22 @@
         }
       }
     },
+    "%lld working days" : {
+
+    },
+    "•" : {
+
+    },
+    "297 Followers   31 Following" : {
+
+    },
     "Add" : {
 
     },
-    "Add the first artwork" : {
+    "Add to cart" : {
 
     },
-    "artist" : {
-
-    },
-    "Artworks" : {
+    "by" : {
 
     },
     "Cart page" : {
@@ -112,6 +105,21 @@
         }
       }
     },
+    "Delivery" : {
+
+    },
+    "Delivery tab" : {
+
+    },
+    "Description" : {
+
+    },
+    "Details tab" : {
+
+    },
+    "Dispatches from %@ within" : {
+
+    },
     "drag_to_reposition" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -148,6 +156,9 @@
     "Filter on title" : {
 
     },
+    "Full name" : {
+
+    },
     "functionality_not_supported_in_simulator" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -165,9 +176,6 @@
         }
       }
     },
-    "greeting" : {
-
-    },
     "hello_world" : {
       "localizations" : {
         "en" : {
@@ -183,9 +191,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -220,6 +225,9 @@
         }
       }
     },
+    "Invalid tab title" : {
+
+    },
     "leave" : {
       "localizations" : {
         "en" : {
@@ -252,13 +260,8 @@
         }
       }
     },
-    "medium" : {
-
-    },
-    "Medium" : {
-
-    },
     "missing_authorisation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -290,6 +293,18 @@
           }
         }
       }
+    },
+    "More from %@" : {
+
+    },
+    "My profile" : {
+
+    },
+    "No delivery details found" : {
+
+    },
+    "No tags linked to this artwork" : {
+
     },
     "object_placement" : {
       "localizations" : {
@@ -340,7 +355,10 @@
         }
       }
     },
-    "Profile page" : {
+    "Reload sample data" : {
+
+    },
+    "Reload sample data?" : {
 
     },
     "remove_all" : {
@@ -408,6 +426,12 @@
         }
       }
     },
+    "Settings" : {
+
+    },
+    "Shipping to the Netherlands" : {
+
+    },
     "show_ar" : {
       "localizations" : {
         "en" : {
@@ -440,6 +464,9 @@
         }
       }
     },
+    "Size: %@" : {
+
+    },
     "So much to discover" : {
 
     },
@@ -463,6 +490,12 @@
         }
       }
     },
+    "Style: %@" : {
+
+    },
+    "Subject: %@" : {
+
+    },
     "switch" : {
       "localizations" : {
         "en" : {
@@ -479,7 +512,11 @@
         }
       }
     },
+    "Tags tab" : {
+
+    },
     "tap_a_plane_to_place_model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -536,12 +573,6 @@
         }
       }
     },
-    "Test %@" : {
-
-    },
-    "title" : {
-
-    },
     "vertical_planes" : {
       "localizations" : {
         "en" : {
@@ -558,7 +589,22 @@
         }
       }
     },
-    "Whoops" : {
+    "View all" : {
+
+    },
+    "View all categories" : {
+
+    },
+    "View in AR" : {
+
+    },
+    "Wall AR-t" : {
+
+    },
+    "Yes, but nothing will happen" : {
+
+    },
+    "Yes, reload sample data" : {
 
     }
   },

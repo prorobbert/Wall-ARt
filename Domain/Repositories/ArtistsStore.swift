@@ -15,4 +15,5 @@ public protocol ArtistsStore: AnyObject, ObservableObject {
     func deleteArtist(_ artist: EntryType)
     func fetchArtists() throws
     func getRandomArtist() throws -> EntryType
+    func reloadSampleData(users: [User])
 }

@@ -41,4 +41,8 @@ public final class PreviewArtistsStore: ArtistsStore, ObservableObject {
     public func getRandomArtist() throws -> Artist {
         return artists.randomElement()!
     }
+
+    public func reloadSampleData(users: [User]) {
+        
+    }
 }

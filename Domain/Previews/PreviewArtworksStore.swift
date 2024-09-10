@@ -41,7 +41,9 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
             subject: "Animals and birds",
             style: "Photorealistic",
             edition: .oneOfAkind,
-            artist: Artist.mockedPreview
+            artist: Artist.mockedPreview,
+            photoFileName: "Hand_Painting",
+            modelFileName: "Hand_Painting"
         )
         artworks.append(artwork)
     }
@@ -98,7 +100,9 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
                 edition: .oneOfAkind,
                 artist: artist,
                 deliveryDetails: delivery,
-                tags: tags
+                tags: tags,
+                photoFileName: "Hand_Painting",
+                modelFileName: "Hand_Painting"
             )
             modelContext.insert(newArtwork)
         }

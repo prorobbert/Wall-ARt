@@ -14,7 +14,7 @@ public class Artist: Identifiable, Equatable {
     public var personalInfo: String
     public var user: User
     @Relationship(deleteRule: .cascade)
-    public var artworks: [Artwork]?
+    public var artworks: [Artwork]
 
     public init(
         personalInfo: String,

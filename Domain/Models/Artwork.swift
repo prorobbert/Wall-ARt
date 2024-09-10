@@ -22,9 +22,12 @@ public class Artwork: Identifiable, Equatable {
     public var style: String
     public var edition: ArtworkEdition.RawValue
     public var isAvailable: Bool
+    @Relationship(inverse: \Artist.artworks)
     public var artist: Artist
     public var deliveryDetails: Delivery?
     @Relationship(inverse: \Tag.artworks) public var tags: [Tag]?
+    public var photoFileName: String
+    public var modelFileName: String
 
     @Attribute(.externalStorage)
     public var photos: [Data]?
@@ -43,7 +46,9 @@ public class Artwork: Identifiable, Equatable {
         artist: Artist,
         deliveryDetails: Delivery? = nil,
         tags: [Tag] = [],
-        isAvailable: Bool = false
+        isAvailable: Bool = false,
+        photoFileName: String,
+        modelFileName: String
     ) {
         self.id = UUID()
         self.title = title
@@ -60,6 +65,8 @@ public class Artwork: Identifiable, Equatable {
         self.deliveryDetails = deliveryDetails
         self.tags = tags
         self.isAvailable = isAvailable
+        self.photoFileName = photoFileName
+        self.modelFileName = modelFileName
     }
 
     public var dimensions: (DimensionUnit) -> String {
@@ -95,7 +102,9 @@ public extension Array where Element == Artwork {
                 style: "Photorealistic",
                 edition: .oneOfAkind,
                 artist: .mockedPreview,
-                tags: .mockedPreview
+                tags: .mockedPreview,
+                photoFileName: "Hand_Painting",
+                modelFileName: "Hand_Painting"
             ),
             Artwork(
                 title: "Solitude's Embrace",
@@ -110,7 +119,9 @@ public extension Array where Element == Artwork {
                 edition: .limitedSeries,
                 artist: .mockedPreview,
                 tags: .mockedPreview,
-                isAvailable: true
+                isAvailable: true,
+                photoFileName: "Monumental_Figure",
+                modelFileName: "Monumental_Figure"
             ),
             Artwork(
                 title: "Mystic Pathways",
@@ -124,7 +135,9 @@ public extension Array where Element == Artwork {
                 style: "Photorealistic",
                 edition: .oneOfAkind,
                 artist: .mockedPreview,
-                tags: .mockedPreview
+                tags: .mockedPreview,
+                photoFileName: "Trees_with_water",
+                modelFileName: "Trees_with_water"
             )
         ]
     }
@@ -145,7 +158,9 @@ public extension Artwork {
             edition: .oneOfAkind,
             artist: .mockedPreview,
             deliveryDetails: .mockedPreview,
-            tags: .mockedPreview
+            tags: .mockedPreview,
+            photoFileName: "Hand_Painting",
+            modelFileName: "Hand_Painting"
         )
     }
 }

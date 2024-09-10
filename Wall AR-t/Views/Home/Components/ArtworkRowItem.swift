@@ -30,7 +30,7 @@ struct ArtworkRowItem: View {
                     .fill(Color.clear)
                     .frame(width: smallVersion ? 150 : 220, height: smallVersion ? 150 : 220)
                     .overlay {
-                        Image("KingFisher")
+                        Image(artwork.photoFileName)
                             .resizable()
                             .scaledToFit()
                     }

@@ -22,7 +22,7 @@ struct ArtworkPage: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: .infinity)
                         .overlay {
-                            Image("KingFisher")
+                            Image(artwork.photoFileName)
                                 .resizable()
                                 .scaledToFit()
                         }

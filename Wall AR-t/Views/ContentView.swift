@@ -78,7 +78,7 @@ struct ContentView<Store: ArtworksStore, Store2: ArtistsStore, Store3: UsersStor
             }
             .padding()
             .fullScreenCover(isPresented: $showingAR) {
-                ArArtworkView(isPresented: $showingAR)
+                ArArtworkView(artwork: Artwork.mockedPreview, isPresented: $showingAR)
             }
         }
     }

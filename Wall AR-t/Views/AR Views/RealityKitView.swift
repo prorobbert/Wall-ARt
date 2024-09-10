@@ -5,12 +5,14 @@
 //  Created by Robbert Ruiter on 27/06/2024.
 //
 
+import Domain
 import SwiftUI
 import RealityKit
 import ARKit
 import ARDomainiOS
 
 struct RealityKitView: UIViewRepresentable {
+    var artwork: Artwork
     @Binding var isCoachingComplete: Bool
     private let enableEnvironmentTexturing = true
     private let enableObjectOcclusion = true
@@ -75,7 +77,10 @@ struct RealityKitView: UIViewRepresentable {
     func updateUIView(_ view: ARView, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(coachingCoordinator: CoachingCoordinator(isCoachingComplete: $isCoachingComplete))
+        Coordinator(
+            coachingCoordinator: CoachingCoordinator(isCoachingComplete: $isCoachingComplete),
+            artwork: artwork
+        )
     }
 
     class CoachingCoordinator: NSObject, ARCoachingOverlayViewDelegate {
@@ -99,11 +104,13 @@ struct RealityKitView: UIViewRepresentable {
     class Coordinator: NSObject, ARSessionDelegate {
         weak var view: ARView?
         var coachingCoordinator: CoachingCoordinator
+        var artwork: Artwork
         var focusSquare: FocusSquare?
 
-        init(coachingCoordinator: CoachingCoordinator) {
+        init(coachingCoordinator: CoachingCoordinator, artwork: Artwork) {
             print("coordinator init")
             self.coachingCoordinator = coachingCoordinator
+            self.artwork = artwork
         }
 
         func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
@@ -153,7 +160,11 @@ struct RealityKitView: UIViewRepresentable {
                 model.scale = .init(repeating: scaleFactor)*/
 
                 guard let artTexture = getArtMaterial(name: "Senna") else { return }
-                let mesh = MeshResource.generateBox(width: 1, height: 1.5, depth: 0.1)
+                let mesh = MeshResource.generateBox(
+                    width: convertMMToMeters(artwork.width),
+                    height: convertMMToMeters(artwork.height),
+                    depth: convertMMToMeters(artwork.depth)
+                )
                 let canvas = ModelEntity(mesh: mesh, materials: [artTexture])
                 var transform = Transform(matrix: firstResult.worldTransform)
 

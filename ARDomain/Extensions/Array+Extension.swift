@@ -12,9 +12,9 @@ extension Array where Element == PlaneAnchor {
     /// Filters this array of horizontal plane anchors for those planes that are within a given maximum distance in meters from a given point.
     func within(meters maxDistance: Float, of originFromGivenPointTransform: matrix_float4x4) -> [PlaneAnchor] {
         var matchingPlanes: [PlaneAnchor] = []
-        let originFromGivenPointY = originFromGivenPointTransform.translation.y
+        let originFromGivenPointY = originFromGivenPointTransform.domainTranslation.y
         for anchor in self {
-            let originFromPlaneY = anchor.originFromAnchorTransform.translation.y
+            let originFromPlaneY = anchor.originFromAnchorTransform.domainTranslation.y
             let distance = abs(originFromGivenPointY - originFromPlaneY)
             if distance <= maxDistance {
                 matchingPlanes.append(anchor)
@@ -27,9 +27,9 @@ extension Array where Element == PlaneAnchor {
     func closestPlane(to originFromGivenPointTransform: matrix_float4x4) -> PlaneAnchor? {
         var shortestDistance = Float.greatestFiniteMagnitude
         var closestPlane: PlaneAnchor?
-        let originFromGivenPointY = originFromGivenPointTransform.translation.y
+        let originFromGivenPointY = originFromGivenPointTransform.domainTranslation.y
         for anchor in self {
-            let originFromPlaneY = anchor.originFromAnchorTransform.translation.y
+            let originFromPlaneY = anchor.originFromAnchorTransform.domainTranslation.y
             let distance = abs(originFromGivenPointY - originFromPlaneY)
             if distance < shortestDistance {
                 shortestDistance = distance
@@ -46,7 +46,7 @@ extension Array where Element == PlaneAnchor {
             // 1. Project the given point into the plane's 2D coordinate system.
             let planeAnchorFromOriginTransform = simd_inverse(anchor.originFromAnchorTransform)
             let planeAnchorFromPointTransform = planeAnchorFromOriginTransform * originFromGivenPointTransform
-            let planeAnchorFromPoint2D: SIMD2<Float> = [planeAnchorFromPointTransform.translation.x, planeAnchorFromPointTransform.translation.z]
+            let planeAnchorFromPoint2D: SIMD2<Float> = [planeAnchorFromPointTransform.domainTranslation.x, planeAnchorFromPointTransform.domainTranslation.z]
 
             var insidePlaneGeometry = false
 

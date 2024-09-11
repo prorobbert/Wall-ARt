@@ -183,7 +183,7 @@ public final class PlacementManager {
         // 1. Orient the front side of the highlighted object's UI to face the user.
         if let uiOrigin = placementState.highlightedObject?.uiOrigin {
             // Set the UI to face the user (on the y-axis only).
-            uiOrigin.look(at: deviceAnchor.originFromAnchorTransform.translation)
+            uiOrigin.look(at: deviceAnchor.originFromAnchorTransform.domainTranslation)
             let uiRotationOnYAxis = uiOrigin.transformMatrix(relativeTo: nil).gravityAligned.rotation
             uiOrigin.setOrientation(uiRotationOnYAxis, relativeTo: nil)
         }
@@ -191,7 +191,7 @@ public final class PlacementManager {
         // 2. Orient each UI element to face the user.
         for entity in [placementTooltip, dragTooltip, deleteButton] {
             if let entity {
-                entity.look(at: deviceAnchor.originFromAnchorTransform.translation)
+                entity.look(at: deviceAnchor.originFromAnchorTransform.domainTranslation)
             }
         }
     }
@@ -204,7 +204,7 @@ public final class PlacementManager {
         // Determine a placement location on planes in front of the device by casting a ray.
 
         // Cast the ray from the device origin.
-        let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).translation
+        let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).domainTranslation
 
         // Cast the ray along the negatice z-axis of the device anchors, but with a slight downward angle.
         // (The downward angle is configurable using the `raycastOrigin` orientation.)
@@ -265,7 +265,7 @@ public final class PlacementManager {
             let distanceFromDeviceAnchor: Float = 2
             let downwardsOffset: Float = 0.3
             var uprightDeviceAnchorFromOffsetTransform = matrix_identity_float4x4
-            uprightDeviceAnchorFromOffsetTransform.translation = [0, -downwardsOffset, -distanceFromDeviceAnchor]
+            uprightDeviceAnchorFromOffsetTransform.domainTranslation = [0, -downwardsOffset, -distanceFromDeviceAnchor]
             let originFromOffsetTransform = originFromUprightDeviceAnchorTransform * uprightDeviceAnchorFromOffsetTransform
 
             placementLocation.transform = Transform(matrix: originFromOffsetTransform)
@@ -275,7 +275,7 @@ public final class PlacementManager {
 
     @MainActor
     private func checkWhichObjectDeviceIsPointingAt(_ deviceAnchor: DeviceAnchor) async {
-        let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).translation
+        let origin: SIMD3<Float> = raycastOrigin.transformMatrix(relativeTo: nil).domainTranslation
         let direction: SIMD3<Float> = -raycastOrigin.transformMatrix(relativeTo: nil).zAxis
         let collisionMask = PlacedObject.collisionGroup
 
@@ -394,8 +394,8 @@ public final class PlacementManager {
                     withMaxDistance: maxDistance
                 ) {
                     // Constrain the movement to the plane by fixing the Y coordinate
-                    let fixedX = projectedTransform.translation.x
-                    currentDrag.draggedObject.position = [fixedX, projectedTransform.translation.y, projectedTransform.translation.z]
+                    let fixedX = projectedTransform.domainTranslation.x
+                    currentDrag.draggedObject.position = [fixedX, projectedTransform.domainTranslation.y, projectedTransform.domainTranslation.z]
                 }
             } else {
                 // If possible, snap the dragged object to a nearby horizontal plane.
@@ -405,7 +405,7 @@ public final class PlacementManager {
                     ontoHorizontalPlaneIn: planeAnchorHandler.planeAnchors,
                     withMaxDistance: maxDistance
                 ) {
-                    currentDrag.draggedObject.position = projectedTransform.translation
+                    currentDrag.draggedObject.position = projectedTransform.domainTranslation
                 }
             }
         }

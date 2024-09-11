@@ -29,7 +29,7 @@ enum PlaneProjector {
         if let closestPlane = matchingPlanes.closestPlane(to: originFromPointTransform) {
             // Return the given point's transform with the position on y-axis changed to the Y value of the closest horizontal plane.
             var result = originFromPointTransform
-            result.translation = [originFromPointTransform.translation.x, closestPlane.originFromAnchorTransform.translation.y, originFromPointTransform.translation.z]
+            result.domainTranslation = [originFromPointTransform.domainTranslation.x, closestPlane.originFromAnchorTransform.domainTranslation.y, originFromPointTransform.domainTranslation.z]
             return result
         }
         return nil
@@ -54,7 +54,7 @@ enum PlaneProjector {
         if let closestPlane = matchingPlanes.closestPlane(to: originFromPointTransform) {
             // Return the given point's transform with the position on x and z axes changed to the X and Z values of the closest vertical plane.
             var result = originFromPointTransform
-            result.translation = [originFromPointTransform.translation.x, closestPlane.originFromAnchorTransform.translation.y, closestPlane.originFromAnchorTransform.translation.z]
+            result.domainTranslation = [originFromPointTransform.domainTranslation.x, closestPlane.originFromAnchorTransform.domainTranslation.y, closestPlane.originFromAnchorTransform.domainTranslation.z]
             return result
         }
         return nil

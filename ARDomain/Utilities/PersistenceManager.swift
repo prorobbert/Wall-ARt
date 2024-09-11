@@ -90,7 +90,7 @@ class PersistenceManager {
         }
 
         let object = placeableObject.materialize()
-        object.position = anchor.originFromAnchorTransform.translation
+        object.position = anchor.originFromAnchorTransform.domainTranslation
         object.orientation = anchor.originFromAnchorTransform.rotation
         object.isEnabled = anchor.isTracked
         rootEntity.addChild(object)
@@ -135,7 +135,7 @@ class PersistenceManager {
             // Keep the position of placed objects in sync with their corresponding world anchor, 
             // and hide the object if the anchor isn't tracked.
             let object = anchoredObjects[anchor.id]
-            object?.position = anchor.originFromAnchorTransform.translation
+            object?.position = anchor.originFromAnchorTransform.domainTranslation
             object?.orientation = anchor.originFromAnchorTransform.rotation
             object?.isEnabled = anchor.isTracked
         case .removed:
@@ -251,7 +251,7 @@ Remove old objects before placing new ones.
                 continue
             }
 
-            let distanceToAnchor = object.position(relativeTo: nil) - anchor.originFromAnchorTransform.translation
+            let distanceToAnchor = object.position(relativeTo: nil) - anchor.originFromAnchorTransform.domainTranslation
 
             if length(distanceToAnchor) >= objectAtRestThreshold {
                 object.atRest = false

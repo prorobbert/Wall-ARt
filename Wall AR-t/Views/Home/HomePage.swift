@@ -32,7 +32,7 @@ struct HomePage<Store: ArtworksStore>: View {
                 LazyVStack(alignment: .leading, spacing: 24) {
                     ArtworkRow(title: "Popular artworks", artworks: artworksStore.artworks)
                     CategoryList()
-                    ArtworkRow(title: "New artworks", artworks: artworksStore.artworks)
+                    ArtworkRow(title: "New artworks", artworks: artworksStore.artworks.reversed())
                 }
                 .padding(.horizontal, 20)
             }

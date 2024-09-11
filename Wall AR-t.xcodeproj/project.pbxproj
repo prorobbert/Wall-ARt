@@ -201,6 +201,22 @@
 		52F78D3D2C63B60A00DFE571 /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D3C2C63B60A00DFE571 /* DiscoverPage.swift */; };
 		52F78D402C63B61F00DFE571 /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D3F2C63B61F00DFE571 /* CartPage.swift */; };
 		52F78D432C63B63400DFE571 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D422C63B63400DFE571 /* ProfilePage.swift */; };
+		52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
+		52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
+		52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
+		52FFF24D2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
+		52FFF24E2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
+		52FFF24F2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
+		52FFF2502C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
+		52FFF2512C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
+		52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
+		52FFF2562C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
+		52FFF2572C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
+		52FFF2582C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
+		52FFF2592C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
+		52FFF25A2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
+		52FFF25B2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
+		52FFF25D2C906CE3001604CF /* GenerateRandomPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFF25C2C906CE3001604CF /* GenerateRandomPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -465,6 +481,12 @@
 		52F78D3C2C63B60A00DFE571 /* DiscoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
 		52F78D3F2C63B61F00DFE571 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 		52F78D422C63B63400DFE571 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Monumental_Figure.usdz; sourceTree = "<group>"; };
+		52FFF2452C904E0C001604CF /* Hand_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Hand_Painting.usdz; sourceTree = "<group>"; };
+		52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Painting.usdz; sourceTree = "<group>"; };
+		52FFF2482C904E0C001604CF /* Trees_with_water.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Trees_with_water.usdz; sourceTree = "<group>"; };
+		52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Canvas.usdz; sourceTree = "<group>"; };
+		52FFF25C2C906CE3001604CF /* GenerateRandomPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRandomPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -848,6 +870,11 @@
 		52A66D832C1C4C620004BDD9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
+				52FFF2452C904E0C001604CF /* Hand_Painting.usdz */,
+				52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */,
+				52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */,
+				52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */,
+				52FFF2482C904E0C001604CF /* Trees_with_water.usdz */,
 				52A66D872C1C4D1D0004BDD9 /* KingFisherSplash.usdz */,
 				52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */,
 				52A66D862C1C4D1D0004BDD9 /* Statues.usdz */,
@@ -892,6 +919,7 @@
 				52B6588C2C579BAD001AC90A /* FetchedResultsController.swift */,
 				5227A0342C5B78E300AF9ACE /* FormatDimension.swift */,
 				522F97192C6B84100002B18E /* FormatPrice.swift */,
+				52FFF25C2C906CE3001604CF /* GenerateRandomPrice.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -955,14 +983,14 @@
 		52BA5C3C2C185A70009734F2 /* Wall AR-t */ = {
 			isa = PBXGroup;
 			children = (
-				524E93ED2C6F566E00AFEF51 /* Resources */,
-				52F78D122C611BBA00DFE571 /* Modifiers */,
-				52F78D002C610E2600DFE571 /* Components */,
-				52F78CF82C60C0FE00DFE571 /* Enums */,
 				52BA5C412C185A72009734F2 /* Assets.xcassets */,
 				528AB5662C2C14FE00CD7561 /* AR Scene */,
+				52F78D002C610E2600DFE571 /* Components */,
+				52F78CF82C60C0FE00DFE571 /* Enums */,
 				52BB03912C29B9810009DE62 /* Extensions */,
+				52F78D122C611BBA00DFE571 /* Modifiers */,
 				52BA5C432C185A72009734F2 /* Preview Content */,
+				524E93ED2C6F566E00AFEF51 /* Resources */,
 				52F78CF02C60BFA800DFE571 /* Stores */,
 				52BB03902C29B9790009DE62 /* Views */,
 			);
@@ -1448,7 +1476,12 @@
 			files = (
 				52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
+				52FFF24F2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
+				52FFF2582C904E0D001604CF /* Trees_with_water.usdz in Resources */,
+				52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93BA2C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
+				52FFF25B2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
 				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
 				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
@@ -1498,18 +1531,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
+				52FFF24E2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
 				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93B92C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				524E93E92C6F30B800AFEF51 /* Outfit-Regular.ttf in Resources */,
 				524E93DA2C6F30B800AFEF51 /* Outfit-Medium.ttf in Resources */,
 				524E93E32C6F30B800AFEF51 /* Outfit-Bold.ttf in Resources */,
+				52FFF2512C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
 				528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				524E93E62C6F30B800AFEF51 /* Outfit-ExtraLight.ttf in Resources */,
+				52FFF25A2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
 				524E93E02C6F30B800AFEF51 /* Outfit-SemiBold.ttf in Resources */,
 				524E93D72C6F30B800AFEF51 /* Outfit-Light.ttf in Resources */,
 				524E93D42C6F30B800AFEF51 /* Outfit-Black.ttf in Resources */,
 				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
+				52FFF2572C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */,
@@ -1524,18 +1562,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
+				52FFF24D2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
 				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
+				52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93B82C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				524E93E82C6F30B800AFEF51 /* Outfit-Regular.ttf in Resources */,
 				524E93D92C6F30B800AFEF51 /* Outfit-Medium.ttf in Resources */,
 				524E93E22C6F30B800AFEF51 /* Outfit-Bold.ttf in Resources */,
+				52FFF2502C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
 				528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				524E93E52C6F30B800AFEF51 /* Outfit-ExtraLight.ttf in Resources */,
+				52FFF2592C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
 				524E93DF2C6F30B800AFEF51 /* Outfit-SemiBold.ttf in Resources */,
 				524E93D62C6F30B800AFEF51 /* Outfit-Light.ttf in Resources */,
 				524E93D32C6F30B800AFEF51 /* Outfit-Black.ttf in Resources */,
 				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
+				52FFF2562C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */,
@@ -1598,6 +1641,7 @@
 				522F971F2C6BA2FE0002B18E /* Tag.swift in Sources */,
 				5227A0412C5BB1C400AF9ACE /* PreviewArtistsStore.swift in Sources */,
 				524E93B12C6CFAA200AFEF51 /* RealTagsStore.swift in Sources */,
+				52FFF25D2C906CE3001604CF /* GenerateRandomPrice.swift in Sources */,
 				522F97182C6B71140002B18E /* Delivery.swift in Sources */,
 				5227A0352C5B78E300AF9ACE /* FormatDimension.swift in Sources */,
 				52F78D052C61190000DFE571 /* AnalyticsEvent.swift in Sources */,

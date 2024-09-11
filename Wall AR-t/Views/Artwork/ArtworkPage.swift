@@ -22,7 +22,7 @@ struct ArtworkPage: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: .infinity)
                         .overlay {
-                            Image("KingFisher")
+                            Image(artwork.photoFileName)
                                 .resizable()
                                 .scaledToFit()
                         }
@@ -118,7 +118,7 @@ struct ArtworkPage: View {
                         .appFont(.bodyEmpasized)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
-                            ForEach(artwork.artist.artworks ?? [], id: \.self) { otherArtwork in
+                            ForEach(artwork.artist.artworks, id: \.self) { otherArtwork in
                                 // TODO: artists.artworks is currently always empty
                                 if artwork.id != otherArtwork.id {
                                     ArtworkRowItem(artwork: otherArtwork, smallVersion: true)
@@ -170,7 +170,7 @@ struct ArtworkPage: View {
             }
         }
         .fullScreenCover(isPresented: $showingAR) {
-            ArArtworkView(isPresented: $showingAR)
+            ArArtworkView(artwork: artwork, isPresented: $showingAR)
         }
     }
 }

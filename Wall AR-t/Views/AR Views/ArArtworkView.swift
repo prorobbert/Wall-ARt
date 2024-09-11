@@ -5,15 +5,17 @@
 //  Created by Robbert Ruiter on 27/06/2024.
 //
 
+import Domain
 import SwiftUI
 
 struct ArArtworkView: View {
+    var artwork: Artwork
     @Binding var isPresented: Bool
     @State private var isCoachingComplete = false
 
     var body: some View {
         ZStack {
-            RealityKitView(isCoachingComplete: $isCoachingComplete)
+            RealityKitView(artwork: artwork, isCoachingComplete: $isCoachingComplete)
                 .ignoresSafeArea()
 
             VStack {

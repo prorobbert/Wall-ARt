@@ -90,7 +90,9 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             subject: "Animals and birds",
             style: "Photorealistic",
             edition: .oneOfAkind,
-            artist: artist
+            artist: artist,
+            photoFileName: "Trees_with_water",
+            modelFileName: "Trees_with_water"
         )
         modelContext.insert(artwork)
     }
@@ -121,19 +123,36 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
                 "Some pretty things on a canvas",
                 "I dreamed about this and wanted to bring it to life. That's why it's here right now. Neat, huh?"
             ]
-            let delivery = Delivery(
-                shippingFrom: "France",
-                price: 30.0,
-                shippingDuration: 3
-            )
+            let artworkPhotoNames = [
+                "Hand_Painting",
+                "Monumental_Figure",
+                "Sunset_Canvas",
+                "Sunset_Painting",
+                "Trees_with_water",
+                "KingFisherSplash"
+            ]
+            let delivertCountries = [
+                "France",
+                "Netherlands",
+                "Belgium",
+                "United Kingdom",
+                "Germany",
+                "Italy"
+            ]
             for _ in 1...12 {
+                let delivery = Delivery(
+                    shippingFrom: delivertCountries.randomElement()!,
+                    price: generateRandomPrice(range: 8.5...35.0, randomizeDecimals: false, skewToLowerValues: false),
+                    shippingDuration: 3
+                )
                 let randomNumber = Int.random(in: 2...6)
                 let selectedTags = Array(tags.shuffled().prefix(randomNumber))
+                let randomPhotoName = artworkPhotoNames.randomElement()!
                 let artwork = Artwork(
                     title: artworkTitles.randomElement()!,
                     story: artworkStories.randomElement()!,
                     medium: Medium.allCases.randomElement()!,
-                    price: 123.0,
+                    price: generateRandomPrice(),
                     width: 300,
                     height: 500,
                     depth: 20,
@@ -141,7 +160,9 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
                     style: "Photorealistic",
                     edition: ArtworkEdition.allCases.randomElement()!,
                     artist: artists.randomElement()!,
-                    deliveryDetails: delivery
+                    deliveryDetails: delivery,
+                    photoFileName: randomPhotoName,
+                    modelFileName: randomPhotoName
                 )
                 modelContext.insert(artwork)
                 artwork.tags = selectedTags

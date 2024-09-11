@@ -14,3 +14,7 @@ public func formatDimension(_ value: Double) -> String {
         return String(format: "%.1f", value)
     }
 }
+
+public func convertMMToMeters(_ mmValue: Int) -> Float {
+    return Float(mmValue) / 1000.0
+}

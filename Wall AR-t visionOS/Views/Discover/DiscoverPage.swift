@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct DiscoverPage: View {
+    @StateObject var navigationStore = NavigationStore()
+
     var body: some View {
-        Text("So much to discover")
+        NavigationStack(path: $navigationStore.path) {
+            Text("So much to discover")
+        }
     }
 }
 

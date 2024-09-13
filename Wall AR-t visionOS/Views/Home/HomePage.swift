@@ -5,14 +5,22 @@
 //  Created by Robbert Ruiter on 13/09/2024.
 //
 
+import Domain
 import SwiftUI
 
-struct HomePage: View {
+struct HomePage<Store: ArtworksStore>: View {
+    @StateObject var navigationStore = NavigationStore()
+
+    @EnvironmentObject var artworksStore: Store
+
     var body: some View {
-        Text("Home page")
+        NavigationStack(path: $navigationStore.path) {
+            Text("Home page")
+        }
     }
 }
 
 #Preview {
-    HomePage()
+    HomePage<PreviewArtworksStore>()
+        .environmentObject(PreviewArtworksStore())
 }

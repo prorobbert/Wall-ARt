@@ -14,7 +14,7 @@ struct TabBar: View {
 
     var body: some View {
         TabView(selection: $activeTab) {
-            HomePage()
+            HomePage<RealArtworksStore>()
                 .tabItem {
                     TabItem(identifier: .home, activeTab: activeTab)
                 }

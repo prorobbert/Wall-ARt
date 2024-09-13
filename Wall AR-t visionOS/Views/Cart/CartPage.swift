@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CartPage: View {
+    @StateObject var navigationStore = NavigationStore()
+
     var body: some View {
-        Text("Cart page")
+        NavigationStack(path: $navigationStore.path) {
+            Text("Cart page")
+        }
     }
 }
 

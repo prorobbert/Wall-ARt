@@ -18,6 +18,7 @@ struct WallARtVisionOSApp: App {
 
     @State private var appState = AppState()
     @State private var modelLoader = ModelLoader()
+    @StateObject var navigationStore = NavigationStore()
 
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
@@ -29,17 +30,21 @@ struct WallARtVisionOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                appState: appState,
-                modelLoader: modelLoader,
-                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
-            )
-                .task {
-//                    setupModelLoader()
-                    await modelLoader.loadObjects()
-                    appState.setPlaceableObjects(modelLoader.placeableObjects)
-                }
+            TabBar()
+                .environmentObject(navigationStore)
         }
+//        WindowGroup {
+//            HomeView(
+//                appState: appState,
+//                modelLoader: modelLoader,
+//                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
+//            )
+//                .task {
+////                    setupModelLoader()
+//                    await modelLoader.loadObjects()
+//                    appState.setPlaceableObjects(modelLoader.placeableObjects)
+//                }
+//        }
         .windowResizability(.contentSize)
         .windowStyle(.plain)
 

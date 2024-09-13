@@ -177,6 +177,7 @@
 		52B82FAD2C9485FF002EFD2B /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B82FAC2C9485FF002EFD2B /* DiscoverPage.swift */; };
 		52B82FAF2C948638002EFD2B /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B82FAE2C948638002EFD2B /* CartPage.swift */; };
 		52B82FB12C9486AD002EFD2B /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B82FB02C9486AD002EFD2B /* ProfilePage.swift */; };
+		52B82FB42C948826002EFD2B /* NavigationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B82FB32C948826002EFD2B /* NavigationStore.swift */; };
 		52BA5C3E2C185A70009734F2 /* Wall_AR_tApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */; };
 		52BA5C402C185A70009734F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA5C3F2C185A70009734F2 /* ContentView.swift */; };
 		52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA5C412C185A72009734F2 /* Assets.xcassets */; };
@@ -468,6 +469,7 @@
 		52B82FAC2C9485FF002EFD2B /* DiscoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
 		52B82FAE2C948638002EFD2B /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 		52B82FB02C9486AD002EFD2B /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		52B82FB32C948826002EFD2B /* NavigationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStore.swift; sourceTree = "<group>"; };
 		52BA5C3A2C185A70009734F2 /* Wall AR-t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wall AR-t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA5C3D2C185A70009734F2 /* Wall_AR_tApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall_AR_tApp.swift; sourceTree = "<group>"; };
 		52BA5C3F2C185A70009734F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 		527EE9352C185D5F00314E94 /* Wall AR-t visionOS */ = {
 			isa = PBXGroup;
 			children = (
+				52B82FB22C948819002EFD2B /* Stores */,
 				52B82FA12C94828D002EFD2B /* Enums */,
 				52067C742C1AF69B00E80F0A /* Views */,
 				527EE93A2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift */,
@@ -1012,6 +1015,14 @@
 				52B82FB02C9486AD002EFD2B /* ProfilePage.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		52B82FB22C948819002EFD2B /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				52B82FB32C948826002EFD2B /* NavigationStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 		52BA5C312C185A70009734F2 = {
@@ -1769,6 +1780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52067C7D2C1AF8D000E80F0A /* ObjectPlacementMenuView.swift in Sources */,
+				52B82FB42C948826002EFD2B /* NavigationStore.swift in Sources */,
 				52B82FAB2C9483C2002EFD2B /* HomePage.swift in Sources */,
 				524E93C02C6E529F00AFEF51 /* AppFont.swift in Sources */,
 				52B82FB12C9486AD002EFD2B /* ProfilePage.swift in Sources */,

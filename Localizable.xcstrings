@@ -192,6 +192,9 @@
         }
       }
     },
+    "Home page" : {
+
+    },
     "horizontal_planes" : {
       "localizations" : {
         "en" : {
@@ -354,6 +357,9 @@
           }
         }
       }
+    },
+    "Profile page" : {
+
     },
     "Reload sample data" : {
 

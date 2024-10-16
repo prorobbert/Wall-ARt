@@ -108,13 +108,7 @@
     "Delivery" : {
 
     },
-    "Delivery tab" : {
-
-    },
     "Description" : {
-
-    },
-    "Details tab" : {
 
     },
     "Dispatches from %@ within" : {
@@ -517,9 +511,6 @@
           }
         }
       }
-    },
-    "Tags tab" : {
-
     },
     "tap_a_plane_to_place_model" : {
       "extractionState" : "stale",

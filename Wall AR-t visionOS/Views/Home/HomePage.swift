@@ -16,6 +16,13 @@ struct HomePage<Store: ArtworksStore>: View {
     var body: some View {
         NavigationStack(path: $navigationStore.path) {
             Text("Home page")
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 24) {
+                    ArtworkRow(title: "Popular artworks", artworks: artworksStore.artworks)
+                }
+            }
+            .withPageDestination()
+            .environmentObject(navigationStore)
         }
     }
 }

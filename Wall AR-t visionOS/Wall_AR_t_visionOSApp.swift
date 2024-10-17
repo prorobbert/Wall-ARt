@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 11/06/2024.
 //
 
+import Domain
 import SwiftUI
 import ARKit
 import ARDomain
@@ -19,6 +20,7 @@ struct WallARtVisionOSApp: App {
     @State private var appState = AppState()
     @State private var modelLoader = ModelLoader()
     @StateObject var navigationStore = NavigationStore()
+    @StateObject private var artworkStore: RealArtworksStore
 
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
@@ -28,10 +30,16 @@ struct WallARtVisionOSApp: App {
         modelLoader = ModelLoader()
     }
 
+    init() {
+        let artworkDB = ArtworkDatabase()
+        _artworkStore = StateObject(wrappedValue: RealArtworksStore(modelContext: artworkDB.modelContainer.mainContext))
+    }
+
     var body: some Scene {
         WindowGroup {
             TabBar()
                 .environmentObject(navigationStore)
+                .environmentObject(artworkStore)
         }
 //        WindowGroup {
 //            HomeView(

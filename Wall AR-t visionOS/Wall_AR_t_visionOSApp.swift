@@ -6,6 +6,7 @@
 //
 
 import Domain
+import Infuse
 import SwiftUI
 import ARKit
 import ARDomain
@@ -19,8 +20,12 @@ struct WallARtVisionOSApp: App {
 
     @State private var appState = AppState()
     @State private var modelLoader = ModelLoader()
+
     @StateObject var navigationStore = NavigationStore()
     @StateObject private var artworkStore: RealArtworksStore
+    @StateObject private var artistsStore: RealArtistsStore
+    @StateObject private var usersStore: RealUsersStore
+    @StateObject private var tagsStore: RealTagsStore
 
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
@@ -32,7 +37,27 @@ struct WallARtVisionOSApp: App {
 
     init() {
         let artworkDB = ArtworkDatabase()
-        _artworkStore = StateObject(wrappedValue: RealArtworksStore(modelContext: artworkDB.modelContainer.mainContext))
+        _artworkStore = StateObject(
+            wrappedValue: RealArtworksStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _artistsStore = StateObject(
+            wrappedValue: RealArtistsStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _usersStore = StateObject(
+            wrappedValue: RealUsersStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _tagsStore = StateObject(
+            wrappedValue: RealTagsStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        Dependencies.shared.setup()
     }
 
     var body: some Scene {
@@ -40,6 +65,9 @@ struct WallARtVisionOSApp: App {
             TabBar()
                 .environmentObject(navigationStore)
                 .environmentObject(artworkStore)
+                .environmentObject(artistsStore)
+                .environmentObject(usersStore)
+                .environmentObject(tagsStore)
         }
 //        WindowGroup {
 //            HomeView(

@@ -44,7 +44,7 @@ struct ProfilePage: View {
                     Button("Yes, but nothing will happen", role: .destructive) {}
                 } else {
                     Button("Yes, reload sample data", role: .destructive) {
-                        reloadSampleData()
+                        reloadData()
                     }
                 }
             }
@@ -59,14 +59,13 @@ struct ProfilePage: View {
     }
 
     @MainActor
-    private func reloadSampleData() {
-        usersStore.reloadSampleData()
-        let users = usersStore.users
-        artistsStore.reloadSampleData(users: users)
-        let artists = artistsStore.artists
-        let tags: [Tag] = .mockedPreview
-        artworksStore.reloadSampleData(artists: artists, tags: tags)
-        print("Finished reloading")
+    private func reloadData() {
+        do {
+            try reloadSampleData(userStore: usersStore, artistStore: artistsStore, artworksStore: artworksStore)
+            print("Finished reloading")
+        } catch {
+            print("Failed to reload data: \(error)")
+        }
     }
 }
 

@@ -38,7 +38,7 @@ public final class PreviewUsersStore: UsersStore, ObservableObject {
         return .mockedPreview
     }
 
-    public func reloadSampleData() {
+    public func reloadSampleData() throws {
         do {
             try modelContext.delete(model: User.self)
             let mockUsers: [User] = .mockedPreview

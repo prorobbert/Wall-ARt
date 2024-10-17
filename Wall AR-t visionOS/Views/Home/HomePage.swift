@@ -24,6 +24,7 @@ struct HomePage<Store: ArtworksStore>: View {
             .withPageDestination()
             .environmentObject(navigationStore)
         }
+        .padding(24)
     }
 }
 

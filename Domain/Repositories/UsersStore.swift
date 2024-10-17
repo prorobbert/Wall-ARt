@@ -14,5 +14,5 @@ public protocol UsersStore: AnyObject, ObservableObject {
     func addUser()
     func deleteUser(_ user: EntryType)
     func getSingleUser() -> EntryType
-    func reloadSampleData()
+    func reloadSampleData() throws
 }

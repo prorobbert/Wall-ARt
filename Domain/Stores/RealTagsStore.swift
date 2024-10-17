@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 public class RealTagsStore: TagsStore, ObservableObject {
     private let modelContext: ModelContext
     private var fetchedResultsController: FetchedResultsController<Tag>

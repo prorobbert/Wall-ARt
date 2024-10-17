@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 public class RealArtworksStore: ArtworksStore, ObservableObject {
     private let modelContext: ModelContext
     private var fetchedResultsController: FetchedResultsController<Artwork>
@@ -101,7 +102,7 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
         modelContext.delete(artwork)
     }
 
-    public func reloadSampleData(artists: [Artist], tags: [Tag]) {
+    public func reloadSampleData(artists: [Artist], tags: [Tag]) throws {
         do {
             try modelContext.delete(model: Artwork.self)
             let artworkTitles = [

@@ -54,7 +54,7 @@ public final class PreviewArtworksStore: ArtworksStore, ObservableObject {
         }
     }
 
-    public func reloadSampleData(artists: [Artist], tags: [Tag]) {}
+    public func reloadSampleData(artists: [Artist], tags: [Tag]) throws {}
 
     private func loadMockData() {
         var user = User.mockedPreview

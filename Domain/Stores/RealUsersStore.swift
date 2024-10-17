@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 public class RealUsersStore: UsersStore, ObservableObject {
     private let modelContext: ModelContext
     private let fetchedResultsController: FetchedResultsController<User>
@@ -47,7 +48,7 @@ public class RealUsersStore: UsersStore, ObservableObject {
         return users.randomElement()!
     }
 
-    public func reloadSampleData() {
+    public func reloadSampleData() throws {
         do {
             try modelContext.delete(model: User.self)
             let mockUsers: [User] = .mockedPreview

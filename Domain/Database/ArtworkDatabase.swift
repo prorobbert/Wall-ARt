@@ -11,6 +11,7 @@ import Foundation
 public struct ArtworkDatabase {
     public let modelContainer: ModelContainer
 
+    @MainActor
     public init(isStoredInMemoryOnly: Bool = false) {
         let modelConfiguration = ModelConfiguration(
             isStoredInMemoryOnly: isStoredInMemoryOnly

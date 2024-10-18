@@ -30,10 +30,22 @@ public class Delivery: Identifiable, Equatable {
 public extension Delivery {
     static var mockedPreview: Delivery {
         let deliveryDetails = Delivery(
-            shippingFrom: "France",
+            shippingFrom: randomCity,
             price: 30.0,
             shippingDuration: 3
         )
         return deliveryDetails
+    }
+
+    static var randomCity: String {
+        let deliveryCountries = [
+            "France",
+            "Netherlands",
+            "Belgium",
+            "United Kingdom",
+            "Germany",
+            "Italy"
+        ]
+        return deliveryCountries.randomElement()!
     }
 }

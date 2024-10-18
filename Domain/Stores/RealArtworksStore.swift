@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 public class RealArtworksStore: ArtworksStore, ObservableObject {
     private let modelContext: ModelContext
     private var fetchedResultsController: FetchedResultsController<Artwork>
@@ -66,22 +67,10 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
     }
 
     public func addArtwork(for artist: Artist) {
-        let artworkTitles = [
-            "Ethereal Whispers",
-            "Solitude's Embrace",
-            "Infinite Horizons",
-            "Silent Echoes",
-            "Radiant Dreams",
-            "Twilight Serenity",
-            "Fractured Reflections",
-            "Mystic Pathways",
-            "Celestial Dances",
-            "Ephemeral Beauty"
-        ]
-        let chosenTitle = artworkTitles.randomElement()!
+        let photoName = Artwork.randomPhotoName
         let artwork = Artwork(
-            title: chosenTitle,
-            story: "",
+            title: Artwork.randomTitle,
+            story: Artwork.randomStory,
             medium: Medium.allCases.randomElement()!,
             price: 123.0,
             width: 300,
@@ -91,8 +80,8 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
             style: "Photorealistic",
             edition: .oneOfAkind,
             artist: artist,
-            photoFileName: "Trees_with_water",
-            modelFileName: "Trees_with_water"
+            photoFileName: photoName,
+            modelFileName: photoName
         )
         modelContext.insert(artwork)
     }
@@ -101,56 +90,21 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
         modelContext.delete(artwork)
     }
 
-    public func reloadSampleData(artists: [Artist], tags: [Tag]) {
+    public func reloadSampleData(artists: [Artist], tags: [Tag]) throws {
         do {
             try modelContext.delete(model: Artwork.self)
-            let artworkTitles = [
-                "Ethereal Whispers",
-                "Solitude's Embrace",
-                "Infinite Horizons",
-                "Silent Echoes",
-                "Radiant Dreams",
-                "Twilight Serenity",
-                "Fractured Reflections",
-                "Mystic Pathways",
-                "Celestial Dances",
-                "Ephemeral Beauty"
-            ]
-            let artworkStories = [
-                "A beautiful piece of art.",
-                "Another beautiful piece of art.",
-                "Yet another beautiful piece of art.",
-                "Some pretty things on a canvas",
-                "I dreamed about this and wanted to bring it to life. That's why it's here right now. Neat, huh?"
-            ]
-            let artworkPhotoNames = [
-                "Hand_Painting",
-                "Monumental_Figure",
-                "Sunset_Canvas",
-                "Sunset_Painting",
-                "Trees_with_water",
-                "KingFisherSplash"
-            ]
-            let delivertCountries = [
-                "France",
-                "Netherlands",
-                "Belgium",
-                "United Kingdom",
-                "Germany",
-                "Italy"
-            ]
             for _ in 1...12 {
                 let delivery = Delivery(
-                    shippingFrom: delivertCountries.randomElement()!,
+                    shippingFrom: Delivery.randomCity,
                     price: generateRandomPrice(range: 8.5...35.0, randomizeDecimals: false, skewToLowerValues: false),
                     shippingDuration: 3
                 )
                 let randomNumber = Int.random(in: 2...6)
                 let selectedTags = Array(tags.shuffled().prefix(randomNumber))
-                let randomPhotoName = artworkPhotoNames.randomElement()!
+                let randomPhotoName = Artwork.randomPhotoName
                 let artwork = Artwork(
-                    title: artworkTitles.randomElement()!,
-                    story: artworkStories.randomElement()!,
+                    title: Artwork.randomTitle,
+                    story: Artwork.randomStory,
                     medium: Medium.allCases.randomElement()!,
                     price: generateRandomPrice(),
                     width: 300,

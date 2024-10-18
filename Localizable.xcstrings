@@ -108,13 +108,7 @@
     "Delivery" : {
 
     },
-    "Delivery tab" : {
-
-    },
     "Description" : {
-
-    },
-    "Details tab" : {
 
     },
     "Dispatches from %@ within" : {
@@ -191,6 +185,9 @@
           }
         }
       }
+    },
+    "Home page" : {
+
     },
     "horizontal_planes" : {
       "localizations" : {
@@ -355,6 +352,9 @@
         }
       }
     },
+    "Profile page" : {
+
+    },
     "Reload sample data" : {
 
     },
@@ -464,6 +464,9 @@
         }
       }
     },
+    "Showing detail of %@" : {
+
+    },
     "Size: %@" : {
 
     },
@@ -511,9 +514,6 @@
           }
         }
       }
-    },
-    "Tags tab" : {
-
     },
     "tap_a_plane_to_place_model" : {
       "extractionState" : "stale",

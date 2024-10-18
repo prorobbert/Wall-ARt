@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 final class FetchedResultsController<T: PersistentModel> {
     private(set) var models: [T] = []
 

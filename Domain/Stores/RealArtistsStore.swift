@@ -10,6 +10,7 @@ import Foundation
 import SwiftData
 
 @Observable
+@MainActor
 public class RealArtistsStore: ArtistsStore, ObservableObject {
     private let modelContext: ModelContext
     private let fetchedResultsController: FetchedResultsController<Artist>
@@ -55,7 +56,7 @@ public class RealArtistsStore: ArtistsStore, ObservableObject {
         }
     }
 
-    public func reloadSampleData(users: [User]) {
+    public func reloadSampleData(users: [User]) throws {
         do {
             try modelContext.delete(model: Artist.self)
             for user in users {

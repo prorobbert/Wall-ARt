@@ -1,8 +1,8 @@
 //
 //  HomePage.swift
-//  Wall AR-t
+//  Wall AR-t visionOS
 //
-//  Created by Robbert Ruiter on 05/08/2024.
+//  Created by Robbert Ruiter on 13/09/2024.
 //
 
 import Domain
@@ -15,28 +15,16 @@ struct HomePage<Store: ArtworksStore>: View {
 
     var body: some View {
         NavigationStack(path: $navigationStore.path) {
-            HStack(spacing: 8) {
-                Color.gray.opacity(0.2)
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
-                .frame(width: 32, height: 32)
-                Text("Wall AR-t")
-                    .appFont(.title2)
-                Spacer()
-            }
-            .padding(.horizontal, 20)
+            Text("Home page")
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 24) {
                     ArtworkRow(title: "Popular artworks", artworks: artworksStore.artworks)
-                    CategoryList()
-                    ArtworkRow(title: "New artworks", artworks: artworksStore.artworks.reversed())
                 }
-                .padding(.horizontal, 20)
             }
-            .accessibilityIdentifier(AccessibilityIdentifiers.Keys.homePage)
             .withPageDestination()
-            .trackScreen(Analytics(screen: .home))
             .environmentObject(navigationStore)
         }
+        .padding(24)
     }
 }
 

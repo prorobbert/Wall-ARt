@@ -5,6 +5,8 @@
 //  Created by Robbert Ruiter on 11/06/2024.
 //
 
+import Domain
+import Infuse
 import SwiftUI
 import ARKit
 import ARDomain
@@ -19,6 +21,12 @@ struct WallARtVisionOSApp: App {
     @State private var appState = AppState()
     @State private var modelLoader = ModelLoader()
 
+    @StateObject var navigationStore = NavigationStore()
+    @StateObject private var artworkStore: RealArtworksStore
+    @StateObject private var artistsStore: RealArtistsStore
+    @StateObject private var usersStore: RealUsersStore
+    @StateObject private var tagsStore: RealTagsStore
+
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
 
@@ -27,19 +35,52 @@ struct WallARtVisionOSApp: App {
         modelLoader = ModelLoader()
     }
 
+    init() {
+        let artworkDB = ArtworkDatabase()
+        _artworkStore = StateObject(
+            wrappedValue: RealArtworksStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _artistsStore = StateObject(
+            wrappedValue: RealArtistsStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _usersStore = StateObject(
+            wrappedValue: RealUsersStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        _tagsStore = StateObject(
+            wrappedValue: RealTagsStore(
+                modelContext: artworkDB.modelContainer.mainContext
+            )
+        )
+        Dependencies.shared.setup()
+    }
+
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                appState: appState,
-                modelLoader: modelLoader,
-                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
-            )
-                .task {
-//                    setupModelLoader()
-                    await modelLoader.loadObjects()
-                    appState.setPlaceableObjects(modelLoader.placeableObjects)
-                }
+            TabBar()
+                .environmentObject(navigationStore)
+                .environmentObject(artworkStore)
+                .environmentObject(artistsStore)
+                .environmentObject(usersStore)
+                .environmentObject(tagsStore)
         }
+//        WindowGroup {
+//            HomeView(
+//                appState: appState,
+//                modelLoader: modelLoader,
+//                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
+//            )
+//                .task {
+////                    setupModelLoader()
+//                    await modelLoader.loadObjects()
+//                    appState.setPlaceableObjects(modelLoader.placeableObjects)
+//                }
+//        }
         .windowResizability(.contentSize)
         .windowStyle(.plain)
 

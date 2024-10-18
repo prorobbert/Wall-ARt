@@ -12,10 +12,6 @@ struct HomePage<Store: ArtworksStore>: View {
     @StateObject var navigationStore = NavigationStore()
 
     @EnvironmentObject var artworksStore: Store
-    @EnvironmentObject var usersStore: RealUsersStore
-    @EnvironmentObject var artistsStore: RealArtistsStore
-
-    @State private var isReloadPresented = false
 
     var body: some View {
         NavigationStack(path: $navigationStore.path) {

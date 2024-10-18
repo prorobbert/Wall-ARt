@@ -8,13 +8,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Wall AR-t visionOS"
+            "value" : "Wall AR-t"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Wall AR-t visionOS"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - Camera Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Detect your surroundings to place the artworks on"
           }
         }
       }

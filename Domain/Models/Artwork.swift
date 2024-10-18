@@ -163,4 +163,43 @@ public extension Artwork {
             modelFileName: "Hand_Painting"
         )
     }
+
+    static var randomTitle: String {
+        let artworkTitles = [
+            "Ethereal Whispers",
+            "Solitude's Embrace",
+            "Infinite Horizons",
+            "Silent Echoes",
+            "Radiant Dreams",
+            "Twilight Serenity",
+            "Fractured Reflections",
+            "Mystic Pathways",
+            "Celestial Dances",
+            "Ephemeral Beauty"
+        ]
+        return artworkTitles.randomElement()!
+    }
+
+    static var randomStory: String {
+        let artworkStories = [
+            "A beautiful piece of art.",
+            "Another beautiful piece of art.",
+            "Yet another beautiful piece of art.",
+            "Some pretty things on a canvas",
+            "I dreamed about this and wanted to bring it to life. That's why it's here right now. Neat, huh?"
+        ]
+        return artworkStories.randomElement()!
+    }
+
+    static var randomPhotoName: String {
+        let artworkPhotoNames = [
+            "Hand_Painting",
+            "Monumental_Figure",
+            "Sunset_Canvas",
+            "Sunset_Painting",
+            "Trees_with_water",
+            "KingFisherSplash"
+        ]
+        return artworkPhotoNames.randomElement()!
+    }
 }

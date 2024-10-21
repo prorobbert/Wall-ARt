@@ -7,6 +7,9 @@
     "@username" : {
 
     },
+    "%@" : {
+      "comment" : "Artwork title"
+    },
     "%lld Artwork" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -351,6 +354,9 @@
           }
         }
       }
+    },
+    "Popular artworks" : {
+
     },
     "Profile page" : {
 

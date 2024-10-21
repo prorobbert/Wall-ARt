@@ -15,20 +15,23 @@ struct HomePage<Store: ArtworksStore>: View {
 
     var body: some View {
         NavigationStack(path: $navigationStore.path) {
-            Text("Home page")
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 24) {
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 20) {
+                    Text("Home page")
                     ArtworkRow(title: "Popular artworks", artworks: artworksStore.artworks)
+                    ArtworkRow(title: "New artworks", artworks: artworksStore.artworks.shuffled())
                 }
+                .padding(60)
             }
+            .scrollClipDisabled()
+            .toolbarBackground(.hidden)
             .withPageDestination()
             .environmentObject(navigationStore)
         }
-        .padding(24)
     }
 }
 
 #Preview {
     HomePage<PreviewArtworksStore>()
-        .environmentObject(PreviewArtworksStore())
+        .environmentObject(PreviewArtworksStore(numberOfArtworks: 5))
 }

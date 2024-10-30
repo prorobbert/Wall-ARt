@@ -7,6 +7,12 @@
     "@username" : {
 
     },
+    "%@" : {
+      "comment" : "Artwork title"
+    },
+    "%@:" : {
+
+    },
     "%lld Artwork" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,7 +69,16 @@
     "Add to cart" : {
 
     },
+    "Availability:" : {
+
+    },
+    "Available" : {
+
+    },
     "by" : {
+
+    },
+    "by %@" : {
 
     },
     "Cart page" : {
@@ -106,6 +121,9 @@
       }
     },
     "Delivery" : {
+
+    },
+    "Delivery details" : {
 
     },
     "Description" : {
@@ -319,6 +337,9 @@
         }
       }
     },
+    "Place in my room" : {
+
+    },
     "point_device_horizontal_surface" : {
       "localizations" : {
         "en" : {
@@ -351,6 +372,9 @@
           }
         }
       }
+    },
+    "Popular artworks" : {
+
     },
     "Profile page" : {
 
@@ -464,13 +488,13 @@
         }
       }
     },
-    "Showing detail of %@" : {
-
-    },
     "Size: %@" : {
 
     },
     "So much to discover" : {
+
+    },
+    "Sold" : {
 
     },
     "Sort by %@" : {
@@ -493,6 +517,9 @@
         }
       }
     },
+    "Story" : {
+
+    },
     "Style: %@" : {
 
     },
@@ -514,6 +541,9 @@
           }
         }
       }
+    },
+    "Tags" : {
+
     },
     "tap_a_plane_to_place_model" : {
       "extractionState" : "stale",

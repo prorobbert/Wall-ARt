@@ -20,33 +20,38 @@ struct ArtworkRowItem: View {
     }
 
     var body: some View {
-        Button {
-            navigationStore.push(.artWork(artwork))
-        } label: {
-            VStack(alignment: .leading, spacing: 8) {
+        Group {
+            VStack(alignment: .leading) {
                 Rectangle()
                     .fill(Color.clear)
-                    .frame(width: smallVersion ? 150 : 220, height: smallVersion ? 150 : 220)
+                    .frame(width: 220, height: 220)
                     .overlay {
                         Image(artwork.photoFileName)
                             .resizable()
                             .scaledToFit()
                     }
+                    .padding([.top, .trailing, .leading], 12)
                 VStack(alignment: .leading) {
-                    Text(artwork.title)
+                    Divider()
+                    Text("\(artwork.title)", comment: "Artwork title")
+                        .font(.title3)
                     HStack {
-                        if !smallVersion {
-                            Text("by")
-                                .foregroundStyle(Color.gray.opacity(0.5))
-                            Text(artwork.artist.name)
-                            Spacer()
-                        }
-                        Text(formatPrice(artwork.price))
+                        Text("by")
+                            .foregroundStyle(.secondary)
+                        Text(artwork.artist.name)
                     }
+                    Text(formatPrice(artwork.price))
                 }
+                .padding(20)
             }
+            .background(.ultraThinMaterial)
+            .hoverEffect()
+            .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .buttonStyle(PlainButtonStyle())
+        .onTapGesture {
+            print("navigating")
+            navigationStore.push(.artWork(artwork))
+        }
     }
 }
 

@@ -15,24 +15,19 @@ struct ArtworkRow: View {
     @EnvironmentObject var navigationStore: NavigationStore
 
     var body: some View {
-        VStack {
-            HStack(alignment: .bottom) {
-                Text(title)
-                Spacer()
-                Button {
-                    navigationStore.push(.artworkList(listTitle: title))
-                } label: {
-                    Text("View all")
-                }
-                .buttonStyle(PlainButtonStyle())
-            }
-            .frame(maxWidth: .infinity)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 24) {
-                    ForEach(artworks, id: \.self) { artwork in
-                        ArtworkRowItem(artwork: artwork)
+        VStack(spacing: 20) {
+            Section {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(artworks, id: \.self) { artwork in
+                            ArtworkRowItem(artwork: artwork)
+                        }
                     }
                 }
+            } header: {
+                Text(title)
+                    .font(.title3.bold())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
             }
         }
     }

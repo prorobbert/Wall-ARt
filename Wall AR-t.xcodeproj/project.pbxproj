@@ -42,6 +42,9 @@
 		52067C852C1B126E00E80F0A /* PlaneSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C842C1B126E00E80F0A /* PlaneSelectionView.swift */; };
 		52067C872C1B1E7300E80F0A /* ObjectPlacementRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */; };
 		52067C892C1B1F6100E80F0A /* PlacementTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */; };
+		520729612CD231B800BE5CE6 /* ArtworkDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729602CD231B800BE5CE6 /* ArtworkDetailItem.swift */; };
+		520729632CD2348900BE5CE6 /* ArtworkPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729622CD2348900BE5CE6 /* ArtworkPreviewView.swift */; };
+		520729652CD2351200BE5CE6 /* ArtworkTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729642CD2351200BE5CE6 /* ArtworkTags.swift */; };
 		5227A0332C5B766800AF9ACE /* DimensionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0322C5B766800AF9ACE /* DimensionUnit.swift */; };
 		5227A0352C5B78E300AF9ACE /* FormatDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0342C5B78E300AF9ACE /* FormatDimension.swift */; };
 		5227A0372C5B79F000AF9ACE /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0362C5B79F000AF9ACE /* Artist.swift */; };
@@ -379,6 +382,9 @@
 		52067C842C1B126E00E80F0A /* PlaneSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneSelectionView.swift; sourceTree = "<group>"; };
 		52067C862C1B1E7300E80F0A /* ObjectPlacementRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPlacementRealityView.swift; sourceTree = "<group>"; };
 		52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementTooltip.swift; sourceTree = "<group>"; };
+		520729602CD231B800BE5CE6 /* ArtworkDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailItem.swift; sourceTree = "<group>"; };
+		520729622CD2348900BE5CE6 /* ArtworkPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkPreviewView.swift; sourceTree = "<group>"; };
+		520729642CD2351200BE5CE6 /* ArtworkTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkTags.swift; sourceTree = "<group>"; };
 		5227A0322C5B766800AF9ACE /* DimensionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionUnit.swift; sourceTree = "<group>"; };
 		5227A0342C5B78E300AF9ACE /* FormatDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDimension.swift; sourceTree = "<group>"; };
 		5227A0362C5B79F000AF9ACE /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -677,6 +683,16 @@
 				52067C822C1B10D200E80F0A /* TooltipView.swift */,
 				52067C842C1B126E00E80F0A /* PlaneSelectionView.swift */,
 				52067C882C1B1F6100E80F0A /* PlacementTooltip.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5207295F2CD231A800BE5CE6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				520729642CD2351200BE5CE6 /* ArtworkTags.swift */,
+				520729622CD2348900BE5CE6 /* ArtworkPreviewView.swift */,
+				520729602CD231B800BE5CE6 /* ArtworkDetailItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1168,6 +1184,7 @@
 		52E7A8F42CC0FBAC00623669 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
+				5207295F2CD231A800BE5CE6 /* Components */,
 				52E7A8F52CC0FBDD00623669 /* ArtworkPage.swift */,
 			);
 			path = Artwork;
@@ -1843,10 +1860,12 @@
 				52B82FAD2C9485FF002EFD2B /* DiscoverPage.swift in Sources */,
 				52067C852C1B126E00E80F0A /* PlaneSelectionView.swift in Sources */,
 				527EE93D2C185D5F00314E94 /* ContentView.swift in Sources */,
+				520729652CD2351200BE5CE6 /* ArtworkTags.swift in Sources */,
 				524E93C42C6E53ED00AFEF51 /* FontStyle.swift in Sources */,
 				52E7A8F02CC009CB00623669 /* View+Extensions.swift in Sources */,
 				52B82FA52C948316002EFD2B /* TabBar.swift in Sources */,
 				52067C872C1B1E7300E80F0A /* ObjectPlacementRealityView.swift in Sources */,
+				520729632CD2348900BE5CE6 /* ArtworkPreviewView.swift in Sources */,
 				52B82FA02C948264002EFD2B /* TabItem.swift in Sources */,
 				52B82FAF2C948638002EFD2B /* CartPage.swift in Sources */,
 				52067C762C1AF6B000E80F0A /* HomeView.swift in Sources */,
@@ -1856,6 +1875,7 @@
 				52067C7F2C1AF93B00E80F0A /* ObjectSelectionView.swift in Sources */,
 				527EE93B2C185D5F00314E94 /* Wall_AR_t_visionOSApp.swift in Sources */,
 				527EE93F2C185D5F00314E94 /* ImmersiveView.swift in Sources */,
+				520729612CD231B800BE5CE6 /* ArtworkDetailItem.swift in Sources */,
 				52067C832C1B10D200E80F0A /* TooltipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

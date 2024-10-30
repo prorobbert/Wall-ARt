@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 13/09/2024.
 //
 
+import ARDomain
 import Domain
 import SwiftUI
 
@@ -12,6 +13,7 @@ struct HomePage<Store: ArtworksStore>: View {
     @StateObject var navigationStore = NavigationStore()
 
     @EnvironmentObject var artworksStore: Store
+    @EnvironmentObject var appState: AppState
 
     var body: some View {
         NavigationStack(path: $navigationStore.path) {

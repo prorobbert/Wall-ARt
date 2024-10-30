@@ -52,9 +52,9 @@ struct ObjectPlacementMenuView: View {
     }
 }
 
-#Preview(windowStyle: .plain) {
-    ObjectPlacementMenuView(appState: AppState.previewAppState(selectedIndex: 1))
-        .padding(20)
-        .frame(width: 400)
-        .glassBackgroundEffect()
-}
+//#Preview(windowStyle: .plain) {
+//    ObjectPlacementMenuView(appState: AppState.previewAppState(selectedIndex: 1))
+//        .padding(20)
+//        .frame(width: 400)
+//        .glassBackgroundEffect()
+//}

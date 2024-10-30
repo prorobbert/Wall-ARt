@@ -52,6 +52,8 @@ struct ObjectPlacementRealityView: View {
             Task {
                 // Run the ARKit session after the user opens the immersive space.
                 await placementManager.runARKitSession()
+
+                placementManager.immersiveSpaceOpened()
             }
         } update: { _, attachments in
             let placementState = placementManager.placementState

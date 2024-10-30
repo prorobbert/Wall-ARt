@@ -5,14 +5,15 @@
 //  Created by Robbert Ruiter on 13/06/2024.
 //
 
+import Combine
+import Domain
 import Foundation
 import RealityKit
 
-@Observable
-public final class ModelLoader {
+public final class ModelLoader: ObservableObject {
     private var didStartLoading = false
-    private(set) public var progress: Float = 0.0
-    private(set) public var placeableObjects = [PlaceableObject]()
+    @Published public var progress: Float = 0.0
+    @Published public var placeableObjects = [PlaceableObject]()
     private var fileCount: Int = 0
     private var filesLoaded: Int = 0
 
@@ -59,6 +60,73 @@ public final class ModelLoader {
                 }
             }
         }
+    }
+
+    @MainActor
+    public func loadModel(for artwork: Artwork) async -> PlaceableObject? {
+        let fileName = artwork.modelFileName
+
+        if let existingObject = placeableObjects.first(where: { $0.descriptor.fileName == fileName }) {
+            return existingObject
+        }
+
+        let placeablePlane = switch CanBePlacedOn(rawValue: artwork.canBePlacedOn)! {
+        case .horizontal:
+            PlaceablePlane.horizontal
+        case .vertical:
+            PlaceablePlane.vertical
+        @unknown default:
+            PlaceablePlane.vertical
+        }
+        // Create descriptor for model
+        let descriptor = ModelDescriptor(
+            fileName: fileName,
+            displayName: artwork.title,
+            placeableOnPlane: placeablePlane
+        )
+
+        await loadSingleObject(descriptor)
+
+        return placeableObjects.first(where: { $0.descriptor.fileName == fileName })
+    }
+
+    @MainActor
+    private func loadSingleObject(_ descriptor: ModelDescriptor) async {
+        let fileName = descriptor.fileName
+        var modelEntity: ModelEntity
+        var previewEntity: Entity
+
+        do {
+            try await modelEntity = ModelEntity(named: fileName)
+
+            try await previewEntity = Entity(named: fileName)
+            previewEntity.name = "Preview of \(modelEntity.name)"
+        } catch {
+            fatalError("Failed to load model \(fileName) : \(error)")
+        }
+
+        do {
+            let shape = try await ShapeResource.generateConvex(from: modelEntity.model!.mesh)
+            previewEntity.components.set(
+                CollisionComponent(
+                    shapes: [shape],
+                    isStatic: false,
+                    filter: CollisionFilter(group: PlaceableObject.previewCollisionGroup, mask: .all)
+                )
+            )
+
+            let previewInput = InputTargetComponent(allowedInputTypes: [.indirect])
+            previewEntity.components[InputTargetComponent.self] = previewInput
+        } catch {
+            fatalError("Failed to generate shape resource for model: \(fileName) : \(error)")
+        }
+
+        let placeableObject = PlaceableObject(
+            descriptor: descriptor,
+            previewEntity: previewEntity,
+            renderContent: modelEntity
+        )
+        placeableObjects.append(placeableObject)
     }
 
     @MainActor

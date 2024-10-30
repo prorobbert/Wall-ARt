@@ -110,20 +110,20 @@ struct HomeView: View {
     }
 }
 
-#Preview(windowStyle: .plain) {
-    HStack {
-        VStack {
-            HomeView(appState: AppState.previewAppState(),
-                     modelLoader: ModelLoader(progress: 0.5),
-                     immersiveSpaceIdentifier: "A")
-            HomeView(appState: AppState.previewAppState(),
-                     modelLoader: ModelLoader(progress: 1.0),
-                     immersiveSpaceIdentifier: "A")
-        }
-        VStack {
-            HomeView(appState: AppState.previewAppState(immersiveSpaceOpened: true),
-                     modelLoader: ModelLoader(progress: 1.0),
-                     immersiveSpaceIdentifier: "A")
-        }
-    }
-}
+//#Preview(windowStyle: .plain) {
+//    HStack {
+//        VStack {
+//            HomeView(appState: AppState.previewAppState(),
+//                     modelLoader: ModelLoader(progress: 0.5),
+//                     immersiveSpaceIdentifier: "A")
+//            HomeView(appState: AppState.previewAppState(),
+//                     modelLoader: ModelLoader(progress: 1.0),
+//                     immersiveSpaceIdentifier: "A")
+//        }
+//        VStack {
+//            HomeView(appState: AppState.previewAppState(immersiveSpaceOpened: true),
+//                     modelLoader: ModelLoader(progress: 1.0),
+//                     immersiveSpaceIdentifier: "A")
+//        }
+//    }
+//}

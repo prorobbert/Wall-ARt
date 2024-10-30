@@ -5,38 +5,51 @@
 //  Created by Robbert Ruiter on 13/06/2024.
 //
 
+import Combine
+import Domain
 import Foundation
 import ARKit
 import RealityKit
 
-@Observable
-public class AppState {
-    public var immersiveSpaceOpened: Bool { placementManager != nil }
+public class AppState: ObservableObject {
     private(set) public weak var placementManager: PlacementManager?
 
-    private(set) public var placeableObjectByFileName: [String: PlaceableObject] = [:]
-    private(set) public var modelDescriptors: [ModelDescriptor] = []
-    public var selectedFileName: String?
+    @Published public var placeableObjectByFileName: [String: PlaceableObject] = [:]
+    @Published public var modelDescriptors: [ModelDescriptor] = []
+    @Published public var selectedFileName: String?
 
-    public var detectVerticalPlanes: Bool = false
+    @Published public var detectVerticalPlanes: Bool = false
+
+    public var immersiveSpaceOpened: Bool { placementManager != nil }
 
     public var filteredModelDescriptors: [ModelDescriptor] {
-        let newModelDescriptors = modelDescriptors.filter { descriptor in
+        return modelDescriptors.filter { descriptor in
             detectVerticalPlanes ? descriptor.placeableOnPlane == .vertical : descriptor.placeableOnPlane == .horizontal
         }
 
-        return newModelDescriptors
+//        return newModelDescriptors
     }
 
-    public init() {}
+    public let modelLoader: ModelLoader
+
+    public init(modelLoader: ModelLoader = ModelLoader()) {
+        self.modelLoader = modelLoader
+    }
 
     public func updateSelectedFileNameAfterPlaneSwitch() async {
         self.selectedFileName = filteredModelDescriptors[0].fileName
         await self.placementManager?.select(self.placeableObjectByFileName[filteredModelDescriptors[0].fileName])
     }
 
+    @MainActor
     public func immersiveSpaceOpened(with manager: PlacementManager) {
         placementManager = manager
+
+        // If there is a selected file, select it in the PlacementManager
+        if let fileName = selectedFileName,
+           let object = placeableObjectByFileName[fileName] {
+            placementManager?.select(object)
+        }
     }
 
     public func didLeaveImmersiveSpace() {
@@ -119,32 +132,48 @@ public class AppState {
         }
     }
 
+    /// Selects an artwork, loads its model, and updates the placement manager
+    @MainActor
+    public func selectArtwork(_ artwork: Artwork) async {
+        guard let placeableObject = await modelLoader.loadModel(for: artwork) else {
+            print ("Failed to load model for \(artwork.title).")
+            return
+        }
+
+        selectedFileName = placeableObject.descriptor.fileName
+        placeableObjectByFileName[placeableObject.descriptor.fileName] = placeableObject
+
+        if immersiveSpaceOpened, let manager = placementManager {
+            manager.select(placeableObject)
+        }
+    }
+
     // Xcode previews
     fileprivate var previewPlacementManager: PlacementManager?
 
     /// An initial app state for previes in Xcode.
-    @MainActor
-    public static func previewAppState(immersiveSpaceOpened: Bool = false, selectedIndex: Int? = nil) -> AppState {
-        let state = AppState()
-
-        state.setPlaceableObjects([
-            previewObject(named: "pancakes", placeableOnPlane: .horizontal),
-            previewObject(named: "retrotv", placeableOnPlane: .horizontal),
-            previewObject(named: "KingFisherSplash", placeableOnPlane: .vertical),
-            previewObject(named: "Statues", placeableOnPlane: .vertical)
-        ])
-
-        if let selectedIndex, selectedIndex < state.modelDescriptors.count {
-            state.selectedFileName = state.filteredModelDescriptors[selectedIndex].fileName
-        }
-
-        if immersiveSpaceOpened {
-            state.previewPlacementManager = PlacementManager()
-            state.placementManager = state.previewPlacementManager
-        }
-
-        return state
-    }
+//    @MainActor
+//    public static func previewAppState(immersiveSpaceOpened: Bool = false, selectedIndex: Int? = nil) -> AppState {
+//        let state = AppState()
+//
+//        state.setPlaceableObjects([
+//            previewObject(named: "pancakes", placeableOnPlane: .horizontal),
+//            previewObject(named: "retrotv", placeableOnPlane: .horizontal),
+//            previewObject(named: "KingFisherSplash", placeableOnPlane: .vertical),
+//            previewObject(named: "Statues", placeableOnPlane: .vertical)
+//        ])
+//
+//        if let selectedIndex, selectedIndex < state.modelDescriptors.count {
+//            state.selectedFileName = state.filteredModelDescriptors[selectedIndex].fileName
+//        }
+//
+//        if immersiveSpaceOpened {
+//            state.previewPlacementManager = PlacementManager()
+//            state.placementManager = state.previewPlacementManager
+//        }
+//
+//        return state
+//    }
 
     @MainActor
     private static func previewObject(named fileName: String, placeableOnPlane: PlaceablePlane) -> PlaceableObject {

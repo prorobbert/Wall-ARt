@@ -27,10 +27,10 @@ struct InfoLabel: View {
     }
 }
 
-#Preview(windowStyle: .plain) {
-    InfoLabel(appState: AppState.previewAppState())
-        .frame(width: 300)
-        .padding(.horizontal, 40.0)
-        .padding(.vertical, 20.0)
-        .glassBackgroundEffect()
-}
+//#Preview(windowStyle: .plain) {
+//    InfoLabel(appState: AppState.previewAppState())
+//        .frame(width: 300)
+//        .padding(.horizontal, 40.0)
+//        .padding(.vertical, 20.0)
+//        .glassBackgroundEffect()
+//}

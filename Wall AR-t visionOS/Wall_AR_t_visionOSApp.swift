@@ -11,15 +11,10 @@ import SwiftUI
 import ARKit
 import ARDomain
 
-private enum UIIdentifier {
-    static let immersiveSpace = "Object Placement"
-}
-
 @main
 struct WallARtVisionOSApp: App {
 
-    @State private var appState = AppState()
-    @State private var modelLoader = ModelLoader()
+    @StateObject private var appState: AppState
 
     @StateObject var navigationStore = NavigationStore()
     @StateObject private var artworkStore: RealArtworksStore
@@ -30,10 +25,10 @@ struct WallARtVisionOSApp: App {
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
 
-    @MainActor
-    private func setupModelLoader() {
-        modelLoader = ModelLoader()
-    }
+//    @MainActor
+//    private func setupModelLoader() {
+//        modelLoader = ModelLoader()
+//    }
 
     init() {
         let artworkDB = ArtworkDatabase()
@@ -58,12 +53,15 @@ struct WallARtVisionOSApp: App {
             )
         )
         Dependencies.shared.setup()
+
+        _appState = StateObject(wrappedValue: AppState())
     }
 
     var body: some Scene {
         WindowGroup {
             TabBar()
                 .environmentObject(navigationStore)
+                .environmentObject(appState)
                 .environmentObject(artworkStore)
                 .environmentObject(artistsStore)
                 .environmentObject(usersStore)

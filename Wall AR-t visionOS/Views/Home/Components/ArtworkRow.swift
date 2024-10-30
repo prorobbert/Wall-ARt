@@ -12,8 +12,6 @@ struct ArtworkRow: View {
     let title: String
     let artworks: [Artwork]
 
-    @EnvironmentObject var navigationStore: NavigationStore
-
     var body: some View {
         VStack(spacing: 20) {
             Section {

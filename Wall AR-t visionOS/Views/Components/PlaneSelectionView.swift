@@ -30,15 +30,15 @@ struct PlaneSelectionView: View {
     }
 }
 
-#Preview(windowStyle: .plain) {
-    struct Preview: View {
-        @State var bool = false
-        var body: some View {
-            PlaneSelectionView(appState: AppState.previewAppState(selectedIndex: 1))
-                .padding(20)
-                .frame(width: 400)
-                .glassBackgroundEffect()
-        }
-    }
-    return Preview()
-}
+//#Preview(windowStyle: .plain) {
+//    struct Preview: View {
+//        @State var bool = false
+//        var body: some View {
+//            PlaneSelectionView(appState: AppState.previewAppState(selectedIndex: 1))
+//                .padding(20)
+//                .frame(width: 400)
+//                .glassBackgroundEffect()
+//        }
+//    }
+//    return Preview()
+//}

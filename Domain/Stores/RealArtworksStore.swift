@@ -115,6 +115,7 @@ public class RealArtworksStore: ArtworksStore, ObservableObject {
                     edition: ArtworkEdition.allCases.randomElement()!,
                     artist: artists.randomElement()!,
                     deliveryDetails: delivery,
+                    isAvailable: Bool.random(),
                     photoFileName: randomPhotoName,
                     modelFileName: randomPhotoName
                 )

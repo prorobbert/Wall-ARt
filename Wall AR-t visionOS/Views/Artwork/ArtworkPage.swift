@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 17/10/2024.
 //
 
+import ARDomain
 import Domain
 import RealityKit
 import SwiftUI
@@ -12,7 +13,10 @@ import SwiftUI
 struct ArtworkPage: View {
     var artwork: Artwork
 
-    @State private var showingAR = false
+    @EnvironmentObject var appState: AppState
+
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         GeometryReader { geometry in
@@ -24,14 +28,14 @@ struct ArtworkPage: View {
                         .clipped()
                     Button(action: {
                         placeArtworkInRoom()
-                    }) {
+                    }, label: {
                         Text("Place in my room")
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
                             .cornerRadius(10)
                             .padding(.horizontal, 30)
-                    }
+                    })
                     .padding(.top, 20)
                 }
                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
@@ -102,11 +106,26 @@ struct ArtworkPage: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
             .padding(.horizontal, 20)
         }
-
     }
     private func placeArtworkInRoom() {
         print("Placing \(artwork.title) in the users room")
-        // TODO: add placing logic
+        Task {
+            await appState.selectArtwork(artwork)
+
+            // open the immersiveSpace
+            let result = await openImmersiveSpace(id: UIIdentifier.immersiveSpace)
+            switch result {
+            case .opened:
+                // Optional to close the ArtworkPage
+                dismiss()
+            case .error:
+                print("An error occured when trying to open the immersive space")
+            case .userCancelled:
+                print("The user declined opening immersive space \(UIIdentifier.immersiveSpace)")
+            @unknown default:
+                break
+            }
+        }
     }
 }
 

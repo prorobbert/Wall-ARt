@@ -51,12 +51,12 @@ struct ObjectSelectionView: View {
     }
 }
 
-#Preview(windowStyle: .plain) {
-    ObjectSelectionView(
-        modelDescriptors: AppState.previewAppState().modelDescriptors,
-        selectedFileName: AppState.previewAppState().modelDescriptors[0].fileName
-    )
-    .padding(20)
-    .frame(width: 400)
-    .glassBackgroundEffect()
-}
+//#Preview(windowStyle: .plain) {
+//    ObjectSelectionView(
+//        modelDescriptors: AppState.previewAppState().modelDescriptors,
+//        selectedFileName: AppState.previewAppState().modelDescriptors[0].fileName
+//    )
+//    .padding(20)
+//    .frame(width: 400)
+//    .glassBackgroundEffect()
+//}

@@ -5,6 +5,7 @@
 //  Created by Robbert Ruiter on 16/10/2024.
 //
 
+import ARDomain
 import Domain
 import SwiftUI
 
@@ -13,6 +14,7 @@ struct ArtworkRowItem: View {
     let smallVersion: Bool
 
     @EnvironmentObject var navigationStore: NavigationStore
+    @EnvironmentObject var appState: AppState
 
     init(artwork: Artwork, smallVersion: Bool = false) {
         self.artwork = artwork

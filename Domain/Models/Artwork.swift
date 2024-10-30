@@ -28,6 +28,7 @@ public class Artwork: Identifiable, Equatable {
     @Relationship(inverse: \Tag.artworks) public var tags: [Tag]?
     public var photoFileName: String
     public var modelFileName: String
+    public var canBePlacedOn: CanBePlacedOn.RawValue
 
     @Attribute(.externalStorage)
     public var photos: [Data]?
@@ -48,7 +49,8 @@ public class Artwork: Identifiable, Equatable {
         tags: [Tag] = [],
         isAvailable: Bool = false,
         photoFileName: String,
-        modelFileName: String
+        modelFileName: String,
+        canBePlacedOn: CanBePlacedOn = .vertical
     ) {
         self.id = UUID()
         self.title = title
@@ -67,6 +69,7 @@ public class Artwork: Identifiable, Equatable {
         self.isAvailable = isAvailable
         self.photoFileName = photoFileName
         self.modelFileName = modelFileName
+        self.canBePlacedOn = canBePlacedOn.rawValue
     }
 
     public var dimensions: (DimensionUnit) -> String {

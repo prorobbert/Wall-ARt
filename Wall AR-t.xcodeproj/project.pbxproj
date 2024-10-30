@@ -45,6 +45,8 @@
 		520729612CD231B800BE5CE6 /* ArtworkDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729602CD231B800BE5CE6 /* ArtworkDetailItem.swift */; };
 		520729632CD2348900BE5CE6 /* ArtworkPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729622CD2348900BE5CE6 /* ArtworkPreviewView.swift */; };
 		520729652CD2351200BE5CE6 /* ArtworkTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520729642CD2351200BE5CE6 /* ArtworkTags.swift */; };
+		520E3ACB2CD257D300F3FA7D /* PlaceablePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */; };
+		520E3ACD2CD2685000F3FA7D /* UIIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */; };
 		5227A0332C5B766800AF9ACE /* DimensionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0322C5B766800AF9ACE /* DimensionUnit.swift */; };
 		5227A0352C5B78E300AF9ACE /* FormatDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0342C5B78E300AF9ACE /* FormatDimension.swift */; };
 		5227A0372C5B79F000AF9ACE /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0362C5B79F000AF9ACE /* Artist.swift */; };
@@ -385,6 +387,8 @@
 		520729602CD231B800BE5CE6 /* ArtworkDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkDetailItem.swift; sourceTree = "<group>"; };
 		520729622CD2348900BE5CE6 /* ArtworkPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkPreviewView.swift; sourceTree = "<group>"; };
 		520729642CD2351200BE5CE6 /* ArtworkTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkTags.swift; sourceTree = "<group>"; };
+		520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceablePlane.swift; sourceTree = "<group>"; };
+		520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifier.swift; sourceTree = "<group>"; };
 		5227A0322C5B766800AF9ACE /* DimensionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionUnit.swift; sourceTree = "<group>"; };
 		5227A0342C5B78E300AF9ACE /* FormatDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDimension.swift; sourceTree = "<group>"; };
 		5227A0362C5B79F000AF9ACE /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -997,6 +1001,7 @@
 				5227A0322C5B766800AF9ACE /* DimensionUnit.swift */,
 				5227A0462C5CC89C00AF9ACE /* ArtworkSortOrder.swift */,
 				522F972A2C6CDC410002B18E /* ArtworkEdition.swift */,
+				520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1013,6 +1018,7 @@
 		52B82FA12C94828D002EFD2B /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */,
 				52B82FA22C948299002EFD2B /* Tab.swift */,
 			);
 			path = Enums;
@@ -1773,6 +1779,7 @@
 				52F78D0E2C611ABC00DFE571 /* AnalyticsWorker.swift in Sources */,
 				52F78D0B2C611A7300DFE571 /* AnalyticsScreen.swift in Sources */,
 				52B658932C5A33C3001AC90A /* Medium.swift in Sources */,
+				520E3ACB2CD257D300F3FA7D /* PlaceablePlane.swift in Sources */,
 				52F78D102C611B0500DFE571 /* Analytics.swift in Sources */,
 				5227A0332C5B766800AF9ACE /* DimensionUnit.swift in Sources */,
 				52E7A8F82CC10D1200623669 /* ReloadSampleData.swift in Sources */,
@@ -1868,6 +1875,7 @@
 				520729632CD2348900BE5CE6 /* ArtworkPreviewView.swift in Sources */,
 				52B82FA02C948264002EFD2B /* TabItem.swift in Sources */,
 				52B82FAF2C948638002EFD2B /* CartPage.swift in Sources */,
+				520E3ACD2CD2685000F3FA7D /* UIIdentifier.swift in Sources */,
 				52067C762C1AF6B000E80F0A /* HomeView.swift in Sources */,
 				52067C812C1B106600E80F0A /* DeleteButton.swift in Sources */,
 				52B82FA32C948299002EFD2B /* Tab.swift in Sources */,

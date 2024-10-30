@@ -19,11 +19,13 @@ public final class PlacementManager {
     private var planeAnchorHandler: PlaneAnchorHandler
     private var persistenceManager: PersistenceManager
 
-    public var appState: AppState? {
-        didSet {
-            persistenceManager.placeableObjectsByFileName = appState?.placeableObjectByFileName ?? [:]
-        }
-    }
+//    public var appState: AppState? {
+//        didSet {
+//            persistenceManager.placeableObjectsByFileName = appState?.placeableObjectByFileName ?? [:]
+//        }
+//    }
+
+    public var appState: AppState?
 
     private var currentDrag: DragState? {
         didSet {
@@ -416,5 +418,13 @@ public final class PlacementManager {
         guard let currentDrag else { return }
         currentDrag.draggedObject.isBeingDragged = false
         self.currentDrag = nil
+    }
+
+    @MainActor
+    public func immersiveSpaceOpened() {
+        if let selectedFilename = appState?.selectedFileName,
+           let placeableObject = appState?.placeableObjectByFileName[selectedFilename] {
+            select(placeableObject)
+        }
     }
 }

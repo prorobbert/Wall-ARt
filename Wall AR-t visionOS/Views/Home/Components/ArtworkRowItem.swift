@@ -49,6 +49,7 @@ struct ArtworkRowItem: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .onTapGesture {
+            print("navigating")
             navigationStore.push(.artWork(artwork))
         }
     }

@@ -88,9 +88,11 @@ public final class ModelLoader {
             fatalError("Failed to generate shape resource for model \(fileName)")
         }
         let placeableOnPlane: PlaceablePlane = {
-            if ["KingFisherSplash", "Statues"].contains(fileName) {
-                modelEntity.scale = [0.002, 0.002, 0.002]
-                previewEntity.scale = [0.002, 0.002, 0.002]
+            if ["KingFisherSplash", "Statues", "Hand_Painting", "Monumental_Figure", "Sunset_Canvas", "Sunset_Painting", "Trees_with_water"].contains(fileName) {
+                if ["KingFisherSplash", "Statues"].contains(fileName) {
+                    modelEntity.scale = [0.002, 0.002, 0.002]
+                    previewEntity.scale = [0.002, 0.002, 0.002]
+                }
                 return .vertical
             } else {
                 return .horizontal

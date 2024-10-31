@@ -18,7 +18,7 @@ public class AppState: ObservableObject {
     @Published public var modelDescriptors: [ModelDescriptor] = []
     @Published public var selectedFileName: String?
 
-    @Published public var detectVerticalPlanes: Bool = false
+    @Published public var detectVerticalPlanes: Bool = true
 
     public var immersiveSpaceOpened: Bool { placementManager != nil }
 

@@ -196,7 +196,7 @@ public extension Artwork {
 
     static var randomPhotoName: String {
         let artworkPhotoNames = [
-            "Hand_Painting",
+            "Hands_Painting",
             "Monumental_Figure",
             "Sunset_Canvas",
             "Sunset_Painting",

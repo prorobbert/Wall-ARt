@@ -48,6 +48,9 @@
 		520E3ACB2CD257D300F3FA7D /* PlaceablePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */; };
 		520E3ACD2CD2685000F3FA7D /* UIIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */; };
 		520E3ACF2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACE2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift */; };
+		520E3ADD2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
+		520E3ADE2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
+		520E3ADF2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
 		5227A0332C5B766800AF9ACE /* DimensionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0322C5B766800AF9ACE /* DimensionUnit.swift */; };
 		5227A0352C5B78E300AF9ACE /* FormatDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0342C5B78E300AF9ACE /* FormatDimension.swift */; };
 		5227A0372C5B79F000AF9ACE /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0362C5B79F000AF9ACE /* Artist.swift */; };
@@ -224,9 +227,6 @@
 		52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
 		52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
 		52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
-		52FFF24D2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
-		52FFF24E2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
-		52FFF24F2C904E0D001604CF /* Hand_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2452C904E0C001604CF /* Hand_Painting.usdz */; };
 		52FFF2502C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
 		52FFF2512C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
 		52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
@@ -391,6 +391,7 @@
 		520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceablePlane.swift; sourceTree = "<group>"; };
 		520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifier.swift; sourceTree = "<group>"; };
 		520E3ACE2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveOrnamentView.swift; sourceTree = "<group>"; };
+		520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hands_Painting.usdz; sourceTree = "<group>"; };
 		5227A0322C5B766800AF9ACE /* DimensionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionUnit.swift; sourceTree = "<group>"; };
 		5227A0342C5B78E300AF9ACE /* FormatDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDimension.swift; sourceTree = "<group>"; };
 		5227A0362C5B79F000AF9ACE /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -522,7 +523,6 @@
 		52F78D3F2C63B61F00DFE571 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 		52F78D422C63B63400DFE571 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Monumental_Figure.usdz; sourceTree = "<group>"; };
-		52FFF2452C904E0C001604CF /* Hand_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Hand_Painting.usdz; sourceTree = "<group>"; };
 		52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Painting.usdz; sourceTree = "<group>"; };
 		52FFF2482C904E0C001604CF /* Trees_with_water.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Trees_with_water.usdz; sourceTree = "<group>"; };
 		52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Canvas.usdz; sourceTree = "<group>"; };
@@ -931,7 +931,6 @@
 		52A66D832C1C4C620004BDD9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
-				52FFF2452C904E0C001604CF /* Hand_Painting.usdz */,
 				52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */,
 				52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */,
 				52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */,
@@ -940,6 +939,7 @@
 				52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */,
 				52A66D862C1C4D1D0004BDD9 /* Statues.usdz */,
 				52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */,
+				520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */,
 			);
 			path = "3D Models";
 			sourceTree = "<group>";
@@ -1633,11 +1633,11 @@
 				52A66D8A2C1C4D1D0004BDD9 /* KingFisherSplash.usdz in Resources */,
 				52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
-				52FFF24F2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
 				52FFF2582C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93BA2C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				52FFF25B2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
+				520E3ADF2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
 				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
 				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
@@ -1687,7 +1687,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A66D8C2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
-				52FFF24E2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
 				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
@@ -1706,6 +1705,7 @@
 				52FFF2572C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
+				520E3ADD2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
 				52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				524E93DD2C6F30B800AFEF51 /* Outfit-ExtraBold.ttf in Resources */,
 				527EE9412C185D6000314E94 /* Assets.xcassets in Resources */,
@@ -1718,7 +1718,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A66D8D2C1C4D220004BDD9 /* KingFisherSplash.usdz in Resources */,
-				52FFF24D2C904E0D001604CF /* Hand_Painting.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
 				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
 				52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
@@ -1737,6 +1736,7 @@
 				52FFF2562C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
+				520E3ADE2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
 				52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				524E93DC2C6F30B800AFEF51 /* Outfit-ExtraBold.ttf in Resources */,
 				52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */,

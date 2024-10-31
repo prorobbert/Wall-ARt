@@ -12,7 +12,7 @@ import ARKit
 import RealityKit
 
 public class AppState: ObservableObject {
-    private(set) public weak var placementManager: PlacementManager?
+    @Published public var placementManager: PlacementManager?
 
     @Published public var placeableObjectByFileName: [String: PlaceableObject] = [:]
     @Published public var modelDescriptors: [ModelDescriptor] = []
@@ -52,7 +52,8 @@ public class AppState: ObservableObject {
         }
     }
 
-    public func didLeaveImmersiveSpace() {
+    @MainActor
+    public func didLeaveImmersiveSpace() async {
         // Remember which placed object is attached to which persistent world anchor when leaving the immersive space.
         if let placementManager {
             placementManager.saveWorldAnchorsObjectsMapToDisk()

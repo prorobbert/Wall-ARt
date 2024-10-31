@@ -82,7 +82,7 @@ struct WallARtVisionOSApp: App {
                 if appState.immersiveSpaceOpened {
                     Task {
                         await dismissImmersiveSpace()
-                        appState.didLeaveImmersiveSpace()
+                        await appState.didLeaveImmersiveSpace()
                     }
                 }
             }

@@ -78,7 +78,7 @@ struct HomeView: View {
                 if appState.immersiveSpaceOpened {
                     Task {
                         await dismissImmersiveSpace()
-                        appState.didLeaveImmersiveSpace()
+                        await appState.didLeaveImmersiveSpace()
                     }
                 }
             }
@@ -89,7 +89,7 @@ struct HomeView: View {
                 if appState.immersiveSpaceOpened {
                     Task {
                         await dismissImmersiveSpace()
-                        appState.didLeaveImmersiveSpace()
+                        await appState.didLeaveImmersiveSpace()
                     }
                 }
 

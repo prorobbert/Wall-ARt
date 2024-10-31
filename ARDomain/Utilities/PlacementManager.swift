@@ -25,7 +25,7 @@ public final class PlacementManager {
 //        }
 //    }
 
-    public var appState: AppState?
+    public weak var appState: AppState?
 
     private var currentDrag: DragState? {
         didSet {

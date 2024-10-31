@@ -132,7 +132,9 @@ struct ObjectPlacementRealityView: View {
         }
         .onDisappear {
             print("Sadly leaving the amazing immersive space.")
-            appState.didLeaveImmersiveSpace()
+            Task {
+                await appState.didLeaveImmersiveSpace()
+            }
         }
     }
 }

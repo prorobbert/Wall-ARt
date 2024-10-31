@@ -43,7 +43,7 @@ struct ObjectPlacementMenuView: View {
             Button("leave", systemImage: "xmark.circle") {
                 Task {
                     await dismissImmersiveSpace()
-                    appState.didLeaveImmersiveSpace()
+                    await appState.didLeaveImmersiveSpace()
                 }
             }
             .font(.subheadline)

@@ -112,18 +112,20 @@ struct ArtworkPage: View {
         Task {
             await appState.selectArtwork(artwork)
 
-            // open the immersiveSpace
-            let result = await openImmersiveSpace(id: UIIdentifier.immersiveSpace)
-            switch result {
-            case .opened:
-                // Optional to close the ArtworkPage
-                dismiss()
-            case .error:
-                print("An error occured when trying to open the immersive space")
-            case .userCancelled:
-                print("The user declined opening immersive space \(UIIdentifier.immersiveSpace)")
-            @unknown default:
-                break
+            // open the immersiveSpace if it isn't open yet
+            if !appState.immersiveSpaceOpened {
+                let result = await openImmersiveSpace(id: UIIdentifier.immersiveSpace)
+                switch result {
+                case .opened:
+                    // Optional to close the ArtworkPage
+                    dismiss()
+                case .error:
+                    print("An error occured when trying to open the immersive space")
+                case .userCancelled:
+                    print("The user declined opening immersive space \(UIIdentifier.immersiveSpace)")
+                @unknown default:
+                    break
+                }
             }
         }
     }

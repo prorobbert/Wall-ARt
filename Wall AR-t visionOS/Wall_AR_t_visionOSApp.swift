@@ -25,11 +25,6 @@ struct WallARtVisionOSApp: App {
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.scenePhase) private var scenePhase
 
-//    @MainActor
-//    private func setupModelLoader() {
-//        modelLoader = ModelLoader()
-//    }
-
     init() {
         let artworkDB = ArtworkDatabase()
         _artworkStore = StateObject(
@@ -66,19 +61,15 @@ struct WallARtVisionOSApp: App {
                 .environmentObject(artistsStore)
                 .environmentObject(usersStore)
                 .environmentObject(tagsStore)
+                .ornament(
+                    visibility: appState.immersiveSpaceOpened ? .visible : .hidden,
+                    attachmentAnchor: .scene(.bottomFront),
+                    contentAlignment: .top
+                ) {
+                    ImmersiveOrnamentView()
+                        .environmentObject(appState)
+                }
         }
-//        WindowGroup {
-//            HomeView(
-//                appState: appState,
-//                modelLoader: modelLoader,
-//                immersiveSpaceIdentifier: UIIdentifier.immersiveSpace
-//            )
-//                .task {
-////                    setupModelLoader()
-//                    await modelLoader.loadObjects()
-//                    appState.setPlaceableObjects(modelLoader.placeableObjects)
-//                }
-//        }
         .windowResizability(.contentSize)
         .windowStyle(.plain)
 

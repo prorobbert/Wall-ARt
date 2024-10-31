@@ -98,6 +98,9 @@
         }
       }
     },
+    "Currently placing:" : {
+
+    },
     "Delete" : {
 
     },
@@ -124,6 +127,9 @@
 
     },
     "Description" : {
+
+    },
+    "Deselect artwork" : {
 
     },
     "Dispatches from %@ within" : {
@@ -200,9 +206,6 @@
           }
         }
       }
-    },
-    "Hi there :)" : {
-
     },
     "Home page" : {
 
@@ -309,6 +312,9 @@
         }
       }
     },
+    "More actions" : {
+
+    },
     "More from %@" : {
 
     },
@@ -319,6 +325,9 @@
 
     },
     "No tags linked to this artwork" : {
+
+    },
+    "None selected" : {
 
     },
     "object_placement" : {

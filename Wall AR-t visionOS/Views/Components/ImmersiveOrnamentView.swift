@@ -18,11 +18,33 @@ struct ImmersiveOrnamentView: View {
     @State private var presentConfirmationDialog = false
 
     var body: some View {
-        HStack {
-            Text("Hi there :)")
-                .padding()
-            Button("remove_all_objects", systemImage: "trash") {
-                presentConfirmationDialog = true
+        HStack(spacing: 12) {
+            VStack(spacing: 10) {
+                Text("Currently placing:")
+                if let filename = appState.selectedFileName {
+                    Text(appState.placeableObjectByFileName[filename]?.descriptor.displayName ?? "None selected")
+                } else {
+                    Text("None selected")
+                }
+            }
+            Button("Deselect artwork", systemImage: "xmark.cirlce") {
+                Task {
+                    await appState.deselectArtwork()
+                }
+            }
+            Menu {
+                Button("remove_all_objects", systemImage: "trash") {
+                    presentConfirmationDialog = true
+                }
+
+                Button("leave", systemImage: "xmark.circle") {
+                    Task {
+                        await dismissImmersiveSpace()
+                        await appState.didLeaveImmersiveSpace()
+                    }
+                }
+            } label: {
+                Label("More actions", systemImage: "arrow.2.circlepath.circle")
             }
             .confirmationDialog(String(localized: "remove_all_objects_question"), isPresented: $presentConfirmationDialog) {
                 Button("remove_all", role: .destructive) {
@@ -31,14 +53,8 @@ struct ImmersiveOrnamentView: View {
                     }
                 }
             }
-
-            Button("leave", systemImage: "xmark.circle") {
-                Task {
-                    await dismissImmersiveSpace()
-                    await appState.didLeaveImmersiveSpace()
-                }
-            }
         }
+        .padding(20)
         .glassBackgroundEffect(
             in: RoundedRectangle(cornerRadius: 32, style: .continuous)
         )

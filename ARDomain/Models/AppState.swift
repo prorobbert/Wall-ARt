@@ -149,6 +149,15 @@ public class AppState: ObservableObject {
         }
     }
 
+    @MainActor
+    public func deselectArtwork() async {
+        guard immersiveSpaceOpened, let manager = placementManager else {
+            return
+        }
+        manager.select(nil)
+        selectedFileName = nil
+    }
+
     // Xcode previews
     fileprivate var previewPlacementManager: PlacementManager?
 

@@ -21,13 +21,12 @@ public class AppState: ObservableObject {
     @Published public var detectVerticalPlanes: Bool = true
 
     public var immersiveSpaceOpened: Bool { placementManager != nil }
+    public var showObjectAttachments: Bool = true
 
     public var filteredModelDescriptors: [ModelDescriptor] {
         return modelDescriptors.filter { descriptor in
             detectVerticalPlanes ? descriptor.placeableOnPlane == .vertical : descriptor.placeableOnPlane == .horizontal
         }
-
-//        return newModelDescriptors
     }
 
     public let modelLoader: ModelLoader

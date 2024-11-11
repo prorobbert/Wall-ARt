@@ -16,9 +16,10 @@ struct ImmersiveOrnamentView: View {
     @Environment(\.scenePhase) private var scenePhase
 
     @State private var presentConfirmationDialog = false
+    var test = false
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 24) {
             VStack(spacing: 10) {
                 Text("Currently placing:")
                 if let filename = appState.selectedFileName {
@@ -27,11 +28,21 @@ struct ImmersiveOrnamentView: View {
                     Text("None selected")
                 }
             }
-            Button("Deselect artwork", systemImage: "xmark.cirlce") {
+            Button(
+                appState.showObjectAttachments ? "Hide tooltips" : "Show tooltips",
+                systemImage: appState.showObjectAttachments ? "eye.slash" : "eye"
+            ) {
+                Task {
+                    appState.showObjectAttachments.toggle()
+                }
+            }
+            .controlSize(.large)
+            Button("Deselect artwork", systemImage: "xmark.circle") {
                 Task {
                     await appState.deselectArtwork()
                 }
             }
+            .controlSize(.large)
             Menu {
                 Button("remove_all_objects", systemImage: "trash") {
                     presentConfirmationDialog = true
@@ -44,8 +55,9 @@ struct ImmersiveOrnamentView: View {
                     }
                 }
             } label: {
-                Label("More actions", systemImage: "arrow.2.circlepath.circle")
+                Label("More actions", systemImage: "ellipsis.circle")
             }
+            .controlSize(.large)
             .confirmationDialog(String(localized: "remove_all_objects_question"), isPresented: $presentConfirmationDialog) {
                 Button("remove_all", role: .destructive) {
                     Task {

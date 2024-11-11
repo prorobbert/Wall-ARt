@@ -207,6 +207,9 @@
         }
       }
     },
+    "Hide tooltips" : {
+
+    },
     "Home page" : {
 
     },
@@ -463,6 +466,9 @@
 
     },
     "Shipping to the Netherlands" : {
+
+    },
+    "Show tooltips" : {
 
     },
     "show_ar" : {

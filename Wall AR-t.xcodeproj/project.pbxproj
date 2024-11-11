@@ -1418,7 +1418,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				52A66D9B2C1C5D730004BDD9 /* PBXTargetDependency */,
+				303372562CE20EFC0050ECF5 /* PBXTargetDependency */,
 			);
 			name = Domain;
 			packageProductDependencies = (
@@ -1461,7 +1461,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				52A66D9D2C1C5D790004BDD9 /* PBXTargetDependency */,
 				527EE9262C185BD900314E94 /* PBXTargetDependency */,
 				527EE92B2C185BF300314E94 /* PBXTargetDependency */,
 			);
@@ -1501,7 +1500,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				52A66D972C1C5D230004BDD9 /* PBXTargetDependency */,
+				303372542CE20EF50050ECF5 /* PBXTargetDependency */,
 				52067C3F2C19C87900E80F0A /* PBXTargetDependency */,
 			);
 			name = "Wall AR-t visionOS";
@@ -1524,7 +1523,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				52A66D992C1C5D6D0004BDD9 /* PBXTargetDependency */,
+				303372522CE20EEF0050ECF5 /* PBXTargetDependency */,
 				527EE8F62C185B0D00314E94 /* PBXTargetDependency */,
 				52067C442C19C87F00E80F0A /* PBXTargetDependency */,
 				52CFD7D92C37E46400E28FA3 /* PBXTargetDependency */,
@@ -1950,6 +1949,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		303372522CE20EEF0050ECF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 303372512CE20EEF0050ECF5 /* SwiftLintBuildToolPlugin */;
+		};
+		303372542CE20EF50050ECF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 303372532CE20EF50050ECF5 /* SwiftLintBuildToolPlugin */;
+		};
+		303372562CE20EFC0050ECF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 303372552CE20EFC0050ECF5 /* SwiftLintBuildToolPlugin */;
+		};
 		52067C3F2C19C87900E80F0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52067C322C19C86D00E80F0A /* Models */;
@@ -2002,22 +2013,6 @@
 			);
 			target = 527EE8E12C185B0D00314E94 /* Domain */;
 			targetProxy = 527EE92A2C185BF300314E94 /* PBXContainerItemProxy */;
-		};
-		52A66D972C1C5D230004BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 52A66D962C1C5D230004BDD9 /* SwiftLintBuildToolPlugin */;
-		};
-		52A66D992C1C5D6D0004BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 52A66D982C1C5D6D0004BDD9 /* SwiftLintBuildToolPlugin */;
-		};
-		52A66D9B2C1C5D730004BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 52A66D9A2C1C5D730004BDD9 /* SwiftLintBuildToolPlugin */;
-		};
-		52A66D9D2C1C5D790004BDD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 52A66D9C2C1C5D790004BDD9 /* SwiftLintBuildToolPlugin */;
 		};
 		52CFD7D92C37E46400E28FA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2820,29 +2815,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		303372512CE20EEF0050ECF5 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		303372532CE20EF50050ECF5 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		303372552CE20EFC0050ECF5 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		527EE9382C185D5F00314E94 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
-		};
-		52A66D962C1C5D230004BDD9 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-		52A66D982C1C5D6D0004BDD9 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-		52A66D9A2C1C5D730004BDD9 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-		52A66D9C2C1C5D790004BDD9 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52A66D942C1C58140004BDD9 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		52F78D1B2C6223B400DFE571 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -57,15 +57,22 @@ struct ObjectPlacementRealityView: View {
             }
         } update: { _, attachments in
             let placementState = placementManager.placementState
+            let showAttachments = appState.showObjectAttachments
 
             if let placementTooltip = attachments.entity(for: Attachments.placementTooltip) {
                 placementTooltip.isEnabled = (placementState.selectedObject != nil && placementState.shouldShowPreview)
+//                placementTooltip.isEnabled = showAttachments && (placementState.selectedObject != nil && placementState.shouldShowPreview)
             }
 
             if let dragTooltip = attachments.entity(for: Attachments.dragTooltip) {
                 // Dismiss the drag tooltip after the user demostrates it.
                 dragTooltip.isEnabled = !placementState.userDraggedAnObject
+//                dragTooltip.isEnabled = showAttachments && !placementState.userDraggedAnObject
             }
+
+//            if let deleteButton = attachments.entity(for: Attachments.deleteButton) {
+//                deleteButton.isEnabled = showAttachments && (placementState.highlightedObject != nil)
+//            }
 
             if let selectedObject = placementState.selectedObject {
                 selectedObject.isPreviewActive = placementState.isPlacementPossible
@@ -85,7 +92,7 @@ struct ObjectPlacementRealityView: View {
                     Task {
                         await placementManager.removeHighlightedObject()
                     }
-                }
+                    }
             }
         }
         .task {

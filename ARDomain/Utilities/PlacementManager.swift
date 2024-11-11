@@ -19,12 +19,6 @@ public final class PlacementManager {
     private var planeAnchorHandler: PlaneAnchorHandler
     private var persistenceManager: PersistenceManager
 
-//    public var appState: AppState? {
-//        didSet {
-//            persistenceManager.placeableObjectsByFileName = appState?.placeableObjectByFileName ?? [:]
-//        }
-//    }
-
     public weak var appState: AppState?
 
     private var currentDrag: DragState? {
@@ -292,6 +286,32 @@ public final class PlacementManager {
         }
     }
 
+//    @MainActor
+//    func setHighlightedObject(_ objectToHighlight: PlacedObject?) {
+//        guard placementState.highlightedObject != objectToHighlight else {
+//            return
+//        }
+//        placementState.highlightedObject = objectToHighlight
+//
+//        // Detach UI from the previously highlighted object.
+//        guard let deleteButton, let dragTooltip else { return }
+//        deleteButton.removeFromParent()
+//        dragTooltip.removeFromParent()
+//
+//        guard let objectToHighlight else { return }
+//
+//        // Position and attach the UI to the newly highlighted object.
+//        let extents = objectToHighlight.extents
+//        let topLeftCorner: SIMD3<Float> = [-extents.x / 2, (extents.y / 2) + 0.02, 0]
+//        let frontBottomCenter: SIMD3<Float> = [0, (-extents.y / 2) + 0.04, extents.z / 2 + 0.04]
+//        deleteButton.position = topLeftCorner
+//        dragTooltip.position = frontBottomCenter
+//
+//        objectToHighlight.uiOrigin.addChild(deleteButton)
+//        deleteButton.scale = 1 / objectToHighlight.scale
+//        objectToHighlight.uiOrigin.addChild(dragTooltip)
+//        dragTooltip.scale = 1 / objectToHighlight.scale
+//    }
     @MainActor
     func setHighlightedObject(_ objectToHighlight: PlacedObject?) {
         guard placementState.highlightedObject != objectToHighlight else {
@@ -306,15 +326,25 @@ public final class PlacementManager {
 
         guard let objectToHighlight else { return }
 
-        // Position and attach the UI to the newly highlighted object.
+        // Calculate the base position: below the object and slightly towards the user
         let extents = objectToHighlight.extents
-        let topLeftCorner: SIMD3<Float> = [-extents.x / 2, (extents.y / 2) + 0.02, 0]
-        let frontBottomCenter: SIMD3<Float> = [0, (-extents.y / 2) + 0.04, extents.z / 2 + 0.04]
-        deleteButton.position = topLeftCorner
-        dragTooltip.position = frontBottomCenter
+        let verticalOffset: Float = -extents.y - 0.05 // 5cm below the bottom
+        let depthOffset: Float = 0.10
+
+        // Base position relative to the object's origin
+        let basePosition: SIMD3<Float> = [0, verticalOffset, depthOffset]
+        // Define horizontal spacing between the items
+        let horizontalSpacing: Float = 0.1
+
+        let deleteButtonPosition: SIMD3<Float> = basePosition + SIMD3<Float>(-horizontalSpacing, 0, 0)
+        deleteButton.position = deleteButtonPosition
+
+        let dragTooltipPosition: SIMD3<Float> = basePosition + SIMD3<Float>(horizontalSpacing, 0, 0)
+        dragTooltip.position = dragTooltipPosition
 
         objectToHighlight.uiOrigin.addChild(deleteButton)
         deleteButton.scale = 1 / objectToHighlight.scale
+
         objectToHighlight.uiOrigin.addChild(dragTooltip)
         dragTooltip.scale = 1 / objectToHighlight.scale
     }

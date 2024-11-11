@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3033723C2CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372352CE20CB20050ECF5 /* Hands_Painting.usdz */; };
+		3033723D2CE20CB20050ECF5 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372382CE20CB20050ECF5 /* Statues.usdz */; };
+		3033723E2CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372372CE20CB20050ECF5 /* Monumental_Figure.usdz */; };
+		3033723F2CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372392CE20CB20050ECF5 /* Sunset_Canvas.usdz */; };
+		303372402CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372362CE20CB20050ECF5 /* KingFisherSplash.usdz */; };
+		303372412CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723B2CE20CB20050ECF5 /* Trees_with_water.usdz */; };
+		303372422CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723A2CE20CB20050ECF5 /* Sunset_Painting.usdz */; };
+		303372432CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372352CE20CB20050ECF5 /* Hands_Painting.usdz */; };
+		303372442CE20CB20050ECF5 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372382CE20CB20050ECF5 /* Statues.usdz */; };
+		303372452CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372372CE20CB20050ECF5 /* Monumental_Figure.usdz */; };
+		303372462CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372392CE20CB20050ECF5 /* Sunset_Canvas.usdz */; };
+		303372472CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372362CE20CB20050ECF5 /* KingFisherSplash.usdz */; };
+		303372482CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723B2CE20CB20050ECF5 /* Trees_with_water.usdz */; };
+		303372492CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723A2CE20CB20050ECF5 /* Sunset_Painting.usdz */; };
+		3033724A2CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372352CE20CB20050ECF5 /* Hands_Painting.usdz */; };
+		3033724B2CE20CB20050ECF5 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372382CE20CB20050ECF5 /* Statues.usdz */; };
+		3033724C2CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372372CE20CB20050ECF5 /* Monumental_Figure.usdz */; };
+		3033724D2CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372392CE20CB20050ECF5 /* Sunset_Canvas.usdz */; };
+		3033724E2CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 303372362CE20CB20050ECF5 /* KingFisherSplash.usdz */; };
+		3033724F2CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723B2CE20CB20050ECF5 /* Trees_with_water.usdz */; };
+		303372502CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3033723A2CE20CB20050ECF5 /* Sunset_Painting.usdz */; };
 		52067C372C19C86D00E80F0A /* Models.docc in Sources */ = {isa = PBXBuildFile; fileRef = 52067C362C19C86D00E80F0A /* Models.docc */; };
 		52067C382C19C86D00E80F0A /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 52067C352C19C86D00E80F0A /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52067C3C2C19C87900E80F0A /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52067C332C19C86D00E80F0A /* Models.framework */; };
@@ -48,12 +69,6 @@
 		520E3ACB2CD257D300F3FA7D /* PlaceablePlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */; };
 		520E3ACD2CD2685000F3FA7D /* UIIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */; };
 		520E3ACF2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E3ACE2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift */; };
-		520E3ADD2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
-		520E3ADE2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
-		520E3ADF2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */; };
-		520E3AE12CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3AE02CD3CBBA00F3FA7D /* KingFisherSplash.usdz */; };
-		520E3AE22CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3AE02CD3CBBA00F3FA7D /* KingFisherSplash.usdz */; };
-		520E3AE32CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 520E3AE02CD3CBBA00F3FA7D /* KingFisherSplash.usdz */; };
 		5227A0332C5B766800AF9ACE /* DimensionUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0322C5B766800AF9ACE /* DimensionUnit.swift */; };
 		5227A0352C5B78E300AF9ACE /* FormatDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0342C5B78E300AF9ACE /* FormatDimension.swift */; };
 		5227A0372C5B79F000AF9ACE /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A0362C5B79F000AF9ACE /* Artist.swift */; };
@@ -158,12 +173,9 @@
 		52A66D812C1C2CB90004BDD9 /* ARDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; };
 		52A66D822C1C2CB90004BDD9 /* ARDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 527EE9082C185BC600314E94 /* ARDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
-		52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
 		52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
 		52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
 		52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */; };
-		52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
-		52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D862C1C4D1D0004BDD9 /* Statues.usdz */; };
 		52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
 		52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */; };
 		52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */; };
@@ -224,18 +236,6 @@
 		52F78D3D2C63B60A00DFE571 /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D3C2C63B60A00DFE571 /* DiscoverPage.swift */; };
 		52F78D402C63B61F00DFE571 /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D3F2C63B61F00DFE571 /* CartPage.swift */; };
 		52F78D432C63B63400DFE571 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F78D422C63B63400DFE571 /* ProfilePage.swift */; };
-		52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
-		52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
-		52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */; };
-		52FFF2502C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
-		52FFF2512C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
-		52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */; };
-		52FFF2562C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
-		52FFF2572C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
-		52FFF2582C904E0D001604CF /* Trees_with_water.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2482C904E0C001604CF /* Trees_with_water.usdz */; };
-		52FFF2592C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
-		52FFF25A2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
-		52FFF25B2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */; };
 		52FFF25D2C906CE3001604CF /* GenerateRandomPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFF25C2C906CE3001604CF /* GenerateRandomPrice.swift */; };
 /* End PBXBuildFile section */
 
@@ -353,6 +353,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		303372352CE20CB20050ECF5 /* Hands_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hands_Painting.usdz; sourceTree = "<group>"; };
+		303372362CE20CB20050ECF5 /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
+		303372372CE20CB20050ECF5 /* Monumental_Figure.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monumental_Figure.usdz; sourceTree = "<group>"; };
+		303372382CE20CB20050ECF5 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Statues.usdz; sourceTree = "<group>"; };
+		303372392CE20CB20050ECF5 /* Sunset_Canvas.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sunset_Canvas.usdz; sourceTree = "<group>"; };
+		3033723A2CE20CB20050ECF5 /* Sunset_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sunset_Painting.usdz; sourceTree = "<group>"; };
+		3033723B2CE20CB20050ECF5 /* Trees_with_water.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trees_with_water.usdz; sourceTree = "<group>"; };
 		52067C332C19C86D00E80F0A /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52067C352C19C86D00E80F0A /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		52067C362C19C86D00E80F0A /* Models.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Models.docc; sourceTree = "<group>"; };
@@ -391,8 +398,6 @@
 		520E3ACA2CD257D300F3FA7D /* PlaceablePlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceablePlane.swift; sourceTree = "<group>"; };
 		520E3ACC2CD2685000F3FA7D /* UIIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifier.swift; sourceTree = "<group>"; };
 		520E3ACE2CD387DA00F3FA7D /* ImmersiveOrnamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveOrnamentView.swift; sourceTree = "<group>"; };
-		520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hands_Painting.usdz; sourceTree = "<group>"; };
-		520E3AE02CD3CBBA00F3FA7D /* KingFisherSplash.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = KingFisherSplash.usdz; sourceTree = "<group>"; };
 		5227A0322C5B766800AF9ACE /* DimensionUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionUnit.swift; sourceTree = "<group>"; };
 		5227A0342C5B78E300AF9ACE /* FormatDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDimension.swift; sourceTree = "<group>"; };
 		5227A0362C5B79F000AF9ACE /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -471,7 +476,6 @@
 		528AB5672C2C151F00CD7561 /* ARScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScene.swift; sourceTree = "<group>"; };
 		528AB56B2C2C160C00CD7561 /* ARSceneSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneSpec.swift; sourceTree = "<group>"; };
 		52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pancakes.usdz; sourceTree = "<group>"; };
-		52A66D862C1C4D1D0004BDD9 /* Statues.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Statues.usdz; sourceTree = "<group>"; };
 		52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = retrotv.usdz; sourceTree = "<group>"; };
 		52A66D9E2C1C69D00004BDD9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		52A66DB32C2956360004BDD9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -522,10 +526,6 @@
 		52F78D3C2C63B60A00DFE571 /* DiscoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
 		52F78D3F2C63B61F00DFE571 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 		52F78D422C63B63400DFE571 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
-		52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Monumental_Figure.usdz; sourceTree = "<group>"; };
-		52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Painting.usdz; sourceTree = "<group>"; };
-		52FFF2482C904E0C001604CF /* Trees_with_water.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Trees_with_water.usdz; sourceTree = "<group>"; };
-		52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sunset_Canvas.usdz; sourceTree = "<group>"; };
 		52FFF25C2C906CE3001604CF /* GenerateRandomPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRandomPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -931,15 +931,15 @@
 		52A66D832C1C4C620004BDD9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
-				520E3AE02CD3CBBA00F3FA7D /* KingFisherSplash.usdz */,
-				52FFF2442C904E0C001604CF /* Monumental_Figure.usdz */,
-				52FFF2492C904E0D001604CF /* Sunset_Canvas.usdz */,
-				52FFF2462C904E0C001604CF /* Sunset_Painting.usdz */,
-				52FFF2482C904E0C001604CF /* Trees_with_water.usdz */,
 				52A66D882C1C4D1D0004BDD9 /* retrotv.usdz */,
-				52A66D862C1C4D1D0004BDD9 /* Statues.usdz */,
 				52A66D842C1C4CFC0004BDD9 /* pancakes.usdz */,
-				520E3ADC2CD3C6CB00F3FA7D /* Hands_Painting.usdz */,
+				303372352CE20CB20050ECF5 /* Hands_Painting.usdz */,
+				303372362CE20CB20050ECF5 /* KingFisherSplash.usdz */,
+				303372372CE20CB20050ECF5 /* Monumental_Figure.usdz */,
+				303372382CE20CB20050ECF5 /* Statues.usdz */,
+				303372392CE20CB20050ECF5 /* Sunset_Canvas.usdz */,
+				3033723A2CE20CB20050ECF5 /* Sunset_Painting.usdz */,
+				3033723B2CE20CB20050ECF5 /* Trees_with_water.usdz */,
 			);
 			path = "3D Models";
 			sourceTree = "<group>";
@@ -1630,17 +1630,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303372432CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */,
+				303372442CE20CB20050ECF5 /* Statues.usdz in Resources */,
+				303372452CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */,
+				303372462CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */,
+				303372472CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */,
+				303372482CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */,
+				303372492CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */,
 				52A66DB62C2956360004BDD9 /* Localizable.xcstrings in Resources */,
-				52FFF2522C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
-				52FFF2582C904E0D001604CF /* Trees_with_water.usdz in Resources */,
-				52FFF24C2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93BA2C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
-				52FFF25B2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
-				520E3AE22CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */,
-				520E3ADF2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
 				52A66D852C1C4CFC0004BDD9 /* pancakes.usdz in Resources */,
 				52A66D8B2C1C4D1D0004BDD9 /* retrotv.usdz in Resources */,
-				52A66D892C1C4D1D0004BDD9 /* Statues.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1686,30 +1686,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520E3AE32CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */,
 				527EE9442C185D6100314E94 /* Preview Assets.xcassets in Resources */,
 				52A66DB52C2956360004BDD9 /* Localizable.xcstrings in Resources */,
-				52FFF24B2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93B92C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				524E93E92C6F30B800AFEF51 /* Outfit-Regular.ttf in Resources */,
 				524E93DA2C6F30B800AFEF51 /* Outfit-Medium.ttf in Resources */,
 				524E93E32C6F30B800AFEF51 /* Outfit-Bold.ttf in Resources */,
-				52FFF2512C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
 				528AB55E2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				524E93E62C6F30B800AFEF51 /* Outfit-ExtraLight.ttf in Resources */,
-				52FFF25A2C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
 				524E93E02C6F30B800AFEF51 /* Outfit-SemiBold.ttf in Resources */,
 				524E93D72C6F30B800AFEF51 /* Outfit-Light.ttf in Resources */,
 				524E93D42C6F30B800AFEF51 /* Outfit-Black.ttf in Resources */,
 				52A66D8E2C1C4D250004BDD9 /* retrotv.usdz in Resources */,
-				52FFF2572C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66DA02C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D932C1C4D2D0004BDD9 /* pancakes.usdz in Resources */,
-				520E3ADD2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
-				52A66D902C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				524E93DD2C6F30B800AFEF51 /* Outfit-ExtraBold.ttf in Resources */,
 				527EE9412C185D6000314E94 /* Assets.xcassets in Resources */,
 				524E93D12C6F30B800AFEF51 /* Outfit-Thin.ttf in Resources */,
+				3033724A2CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */,
+				3033724B2CE20CB20050ECF5 /* Statues.usdz in Resources */,
+				3033724C2CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */,
+				3033724D2CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */,
+				3033724E2CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */,
+				3033724F2CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */,
+				303372502CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1717,30 +1717,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520E3AE12CD3CBBA00F3FA7D /* KingFisherSplash.usdz in Resources */,
 				52BA5C452C185A72009734F2 /* Preview Assets.xcassets in Resources */,
 				52A66DB42C2956360004BDD9 /* Localizable.xcstrings in Resources */,
-				52FFF24A2C904E0D001604CF /* Monumental_Figure.usdz in Resources */,
 				524E93B82C6E3FAB00AFEF51 /* Images.xcassets in Resources */,
 				524E93E82C6F30B800AFEF51 /* Outfit-Regular.ttf in Resources */,
 				524E93D92C6F30B800AFEF51 /* Outfit-Medium.ttf in Resources */,
 				524E93E22C6F30B800AFEF51 /* Outfit-Bold.ttf in Resources */,
-				52FFF2502C904E0D001604CF /* Sunset_Painting.usdz in Resources */,
 				528AB55D2C2AEE6A00CD7561 /* InfoPlist.xcstrings in Resources */,
 				524E93E52C6F30B800AFEF51 /* Outfit-ExtraLight.ttf in Resources */,
-				52FFF2592C904E0D001604CF /* Sunset_Canvas.usdz in Resources */,
 				524E93DF2C6F30B800AFEF51 /* Outfit-SemiBold.ttf in Resources */,
 				524E93D62C6F30B800AFEF51 /* Outfit-Light.ttf in Resources */,
 				524E93D32C6F30B800AFEF51 /* Outfit-Black.ttf in Resources */,
 				52A66D8F2C1C4D260004BDD9 /* retrotv.usdz in Resources */,
-				52FFF2562C904E0D001604CF /* Trees_with_water.usdz in Resources */,
 				52A66D9F2C1C69D00004BDD9 /* .swiftlint.yml in Resources */,
 				52A66D922C1C4D2C0004BDD9 /* pancakes.usdz in Resources */,
-				520E3ADE2CD3C6CB00F3FA7D /* Hands_Painting.usdz in Resources */,
-				52A66D912C1C4D290004BDD9 /* Statues.usdz in Resources */,
 				524E93DC2C6F30B800AFEF51 /* Outfit-ExtraBold.ttf in Resources */,
 				52BA5C422C185A72009734F2 /* Assets.xcassets in Resources */,
 				524E93D02C6F30B800AFEF51 /* Outfit-Thin.ttf in Resources */,
+				3033723C2CE20CB20050ECF5 /* Hands_Painting.usdz in Resources */,
+				3033723D2CE20CB20050ECF5 /* Statues.usdz in Resources */,
+				3033723E2CE20CB20050ECF5 /* Monumental_Figure.usdz in Resources */,
+				3033723F2CE20CB20050ECF5 /* Sunset_Canvas.usdz in Resources */,
+				303372402CE20CB20050ECF5 /* KingFisherSplash.usdz in Resources */,
+				303372412CE20CB20050ECF5 /* Trees_with_water.usdz in Resources */,
+				303372422CE20CB20050ECF5 /* Sunset_Painting.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
